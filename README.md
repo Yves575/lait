@@ -4,7 +4,7 @@
   <img src="./lait_white.png" width="80" alt="LAIT Logo" />
 </p>
 
-[![arxiv](https://img.shields.io/badge/arXiv-2606.26040-b31b1b.svg)](http://arxiv.org/abs/2606.26040) ![Website](https://img.shields.io/website?url=https%3A%2F%2Flait.cs.sfu.ca%2F)
+[![arxiv](https://img.shields.io/badge/arXiv-2606.26040-b31b1b.svg)](http://arxiv.org/abs/2606.26040) [![Website](https://img.shields.io/website?url=https%3A%2F%2Flait.cs.sfu.ca%2F)](https://lait.cs.sfu.ca/)
 
 LAIT is a public research release for a reader-centered evaluation study of
 literary machine translation. The repository centers the three MT pipelines
