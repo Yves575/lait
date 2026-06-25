@@ -1,0 +1,45 @@
+Model summary
+Generalized linear mixed model fit by maximum likelihood (Laplace
+  Approximation) [glmerMod]
+ Family: binomial  ( logit )
+Formula: confidence ~ group + (1 | reader) + (1 | book)
+   Data: model_data
+Control: glmerControl(optimizer = "bobyqa", optCtrl = list(maxfun = 2e+05))
+
+      AIC       BIC    logLik -2*log(L)  df.resid 
+     49.9      56.9     -20.0      39.9        25 
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-1.5275 -1.0000  0.6546  1.0000  1.0000 
+
+Random effects:
+ Groups Name        Variance Std.Dev. 
+ reader (Intercept) 5.4e-08  0.0002324
+ book   (Intercept) 0.0e+00  0.0000000
+Number of obs: 30, groups:  reader, 30; book, 16
+
+Fixed effects:
+                Estimate Std. Error z value Pr(>|z|)
+(Intercept)    1.742e-08  6.325e-01   0.000    1.000
+groupJapanese -7.619e-08  8.944e-01   0.000    1.000
+groupPolish    8.473e-01  9.361e-01   0.905    0.365
+
+Correlation of Fixed Effects:
+            (Intr) grpJpn
+groupJapans -0.707       
+groupPolish -0.676  0.478
+optimizer (bobyqa) convergence code: 0 (OK)
+boundary (singular) fit: see help('isSingular')
+
+
+Confidence intervals
+                   2.5 %   97.5 %
+.sig01                NA       NA
+.sig02                NA       NA
+(Intercept)   -1.2395901 1.239590
+groupJapanese -1.7530452 1.753045
+groupPolish   -0.9873273 2.681923
+
+Model warnings
+No warnings captured.

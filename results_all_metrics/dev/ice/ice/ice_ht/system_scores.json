@@ -1,0 +1,17 @@
+{
+  "pkl": "dev/ice/ice",
+  "system": "ice_ht",
+  "reference_system": "ice_ht",
+  "metrics": {
+    "cometkiwi": {
+      "score": 0.6960816993464053,
+      "num_scored_segments": 153,
+      "higher_is_better": true
+    },
+    "metricx-qe": {
+      "score": 6.9875466075598025,
+      "num_scored_segments": 153,
+      "higher_is_better": false
+    }
+  }
+}

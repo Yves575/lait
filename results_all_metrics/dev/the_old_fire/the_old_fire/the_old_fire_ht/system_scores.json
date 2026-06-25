@@ -1,0 +1,17 @@
+{
+  "pkl": "dev/the_old_fire/the_old_fire",
+  "system": "the_old_fire_ht",
+  "reference_system": "the_old_fire_ht",
+  "metrics": {
+    "cometkiwi": {
+      "score": 0.7196533333333334,
+      "num_scored_segments": 60,
+      "higher_is_better": true
+    },
+    "metricx-qe": {
+      "score": 5.417846130331357,
+      "num_scored_segments": 60,
+      "higher_is_better": false
+    }
+  }
+}

@@ -1,0 +1,7 @@
+field,n_responses,stat,word_count,token_count
+chunk_justification,772,max,215.0,272.0
+chunk_justification,772,mean,47.880829015544045,61.303108808290155
+chunk_justification,772,median,38.0,48.0
+chunk_justification,772,min,16.0,18.0
+chunk_justification,772,std,29.597363701732725,38.6080620422058
+chunk_justification,772,sum,36964.0,47326.0

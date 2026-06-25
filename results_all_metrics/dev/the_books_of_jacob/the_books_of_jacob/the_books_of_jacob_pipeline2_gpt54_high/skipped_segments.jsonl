@@ -1,0 +1,16 @@
+{"metric": "comet22", "segment_index": 9, "reason": "max_input_length_exceeded", "token_count": 798, "max_input_length": 512}
+{"metric": "comet22", "segment_index": 13, "reason": "max_input_length_exceeded", "token_count": 621, "max_input_length": 512}
+{"metric": "comet22", "segment_index": 15, "reason": "max_input_length_exceeded", "token_count": 734, "max_input_length": 512}
+{"metric": "comet22", "segment_index": 26, "reason": "max_input_length_exceeded", "token_count": 629, "max_input_length": 512}
+{"metric": "comet22", "segment_index": 32, "reason": "max_input_length_exceeded", "token_count": 598, "max_input_length": 512}
+{"metric": "comet22", "segment_index": 34, "reason": "max_input_length_exceeded", "token_count": 622, "max_input_length": 512}
+{"metric": "comet22", "segment_index": 38, "reason": "max_input_length_exceeded", "token_count": 661, "max_input_length": 512}
+{"metric": "comet22", "segment_index": 54, "reason": "max_input_length_exceeded", "token_count": 595, "max_input_length": 512}
+{"metric": "comet22", "segment_index": 56, "reason": "max_input_length_exceeded", "token_count": 1057, "max_input_length": 512}
+{"metric": "comet22", "segment_index": 84, "reason": "max_input_length_exceeded", "token_count": 780, "max_input_length": 512}
+{"metric": "comet22", "segment_index": 91, "reason": "max_input_length_exceeded", "token_count": 889, "max_input_length": 512}
+{"metric": "comet22", "segment_index": 108, "reason": "max_input_length_exceeded", "token_count": 576, "max_input_length": 512}
+{"metric": "cometkiwi", "segment_index": 56, "reason": "max_input_length_exceeded", "token_count": 699, "max_input_length": 512}
+{"metric": "cometkiwi", "segment_index": 91, "reason": "max_input_length_exceeded", "token_count": 570, "max_input_length": 512}
+{"metric": "metricx", "segment_index": 56, "reason": "max_input_length_exceeded", "token_count": 1919, "max_input_length": 1536}
+{"metric": "metricx", "segment_index": 91, "reason": "max_input_length_exceeded", "token_count": 1582, "max_input_length": 1536}

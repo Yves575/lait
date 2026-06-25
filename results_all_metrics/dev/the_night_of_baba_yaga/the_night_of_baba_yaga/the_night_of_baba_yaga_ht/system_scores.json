@@ -1,0 +1,17 @@
+{
+  "pkl": "dev/the_night_of_baba_yaga/the_night_of_baba_yaga",
+  "system": "the_night_of_baba_yaga_ht",
+  "reference_system": "the_night_of_baba_yaga_ht",
+  "metrics": {
+    "cometkiwi": {
+      "score": 0.6703359649122808,
+      "num_scored_segments": 114,
+      "higher_is_better": true
+    },
+    "metricx-qe": {
+      "score": 6.268615427247265,
+      "num_scored_segments": 114,
+      "higher_is_better": false
+    }
+  }
+}

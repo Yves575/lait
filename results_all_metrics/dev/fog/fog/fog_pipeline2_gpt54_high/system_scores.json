@@ -1,0 +1,27 @@
+{
+  "pkl": "dev/fog/fog",
+  "system": "fog_pipeline2_gpt54_high",
+  "reference_system": "fog_ht",
+  "metrics": {
+    "comet22": {
+      "score": 0.7932706806282723,
+      "num_scored_segments": 191,
+      "higher_is_better": true
+    },
+    "cometkiwi": {
+      "score": 0.7497847715736041,
+      "num_scored_segments": 197,
+      "higher_is_better": true
+    },
+    "metricx": {
+      "score": 5.906445041823027,
+      "num_scored_segments": 199,
+      "higher_is_better": false
+    },
+    "metricx-qe": {
+      "score": 5.648486072570085,
+      "num_scored_segments": 200,
+      "higher_is_better": false
+    }
+  }
+}

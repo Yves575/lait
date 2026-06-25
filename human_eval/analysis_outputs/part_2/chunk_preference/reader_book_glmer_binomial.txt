@@ -1,0 +1,55 @@
+Test: GLMER (generalized linear mixed model, binomial logit)
+
+Formula:
+chunk_pref_HT ~ 1 + (1 | reader) + (1 | book)
+
+Singular fit check
+isSingular(model): FALSE
+
+Model summary
+Generalized linear mixed model fit by maximum likelihood (Laplace
+  Approximation) [glmerMod]
+ Family: binomial  ( logit )
+Formula: chunk_pref_HT ~ 1 + (1 | reader) + (1 | book)
+   Data: model_data
+Control: glmerControl(optimizer = "bobyqa", optCtrl = list(maxfun = 2e+05))
+
+      AIC       BIC    logLik -2*log(L)  df.resid 
+    787.5     801.5    -390.8     781.5       769 
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-5.9922 -0.5658  0.2831  0.6642  3.0456 
+
+Random effects:
+ Groups Name        Variance Std.Dev.
+ reader (Intercept) 1.065    1.032   
+ book   (Intercept) 1.923    1.387   
+Number of obs: 772, groups:  reader, 15; book, 15
+
+Fixed effects:
+            Estimate Std. Error z value Pr(>|z|)  
+(Intercept)   1.1735     0.4627   2.536   0.0112 *
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Random effects (VarCorr)
+ Groups Name        Std.Dev.
+ reader (Intercept) 1.0321  
+ book   (Intercept) 1.3869  
+
+Confidence intervals
+               2.5 %   97.5 %
+.sig01            NA       NA
+.sig02            NA       NA
+(Intercept) 0.266582 2.080479
+Estimated marginal means
+emmeans(model, ~ 1, type = "response")
+ 1        prob     SE  df asymp.LCL asymp.UCL
+ overall 0.764 0.0835 Inf     0.566     0.889
+
+Confidence level used: 0.95 
+Intervals are back-transformed from the logit scale 
+
+Model warnings
+No warnings captured.

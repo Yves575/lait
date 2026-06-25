@@ -1,0 +1,160 @@
+{
+  "num_rows": 682,
+  "num_system_score_files": 186,
+  "systems": [
+    "ht",
+    "pipeline1_gemini",
+    "pipeline1_gpt54_high",
+    "pipeline2_gemini",
+    "pipeline2_gpt54_high",
+    "pipeline3"
+  ],
+  "metrics": [
+    "comet22",
+    "cometkiwi",
+    "metricx",
+    "metricx-qe"
+  ],
+  "splits": [
+    "dev",
+    "eval"
+  ],
+  "metric_extremes": {
+    "comet22": {
+      "best": {
+        "split": "dev",
+        "book": "ilaria_or_the_conquest_of_disobedience",
+        "system_folder": "ilaria_or_the_conquest_of_disobedience_pipeline1_gemini",
+        "pipeline": "pipeline1",
+        "model": "gemini",
+        "pipeline_model": "pipeline1_gemini",
+        "system_name": "pipeline1_gemini",
+        "metric": "comet22",
+        "score": "0.8594088235294117",
+        "higher_is_better": "True",
+        "num_scored_segments": "68",
+        "num_filtered_segments": "0",
+        "num_available_segments": "68",
+        "path": "results_all_metrics/dev/ilaria_or_the_conquest_of_disobedience/ilaria_or_the_conquest_of_disobedience/ilaria_or_the_conquest_of_disobedience_pipeline1_gemini/segment_scores.jsonl"
+      },
+      "worst": {
+        "split": "eval",
+        "book": "my_grandfather_the_master_detective",
+        "system_folder": "my_grandfather_the_master_detective_pipeline2_gpt54_high",
+        "pipeline": "pipeline2",
+        "model": "gpt54_high",
+        "pipeline_model": "pipeline2_gpt54_high",
+        "system_name": "pipeline2_gpt54_high",
+        "metric": "comet22",
+        "score": "0.7417570680628273",
+        "higher_is_better": "True",
+        "num_scored_segments": "382",
+        "num_filtered_segments": "38",
+        "num_available_segments": "420",
+        "path": "results_all_metrics/eval/my_grandfather_the_master_detective/my_grandfather_the_master_detective/my_grandfather_the_master_detective_pipeline2_gpt54_high/segment_scores.jsonl"
+      }
+    },
+    "cometkiwi": {
+      "best": {
+        "split": "dev",
+        "book": "the_city_and_its_uncertain_walls",
+        "system_folder": "the_city_and_its_uncertain_walls_pipeline1_gemini",
+        "pipeline": "pipeline1",
+        "model": "gemini",
+        "pipeline_model": "pipeline1_gemini",
+        "system_name": "pipeline1_gemini",
+        "metric": "cometkiwi",
+        "score": "0.8166469879518072",
+        "higher_is_better": "True",
+        "num_scored_segments": "166",
+        "num_filtered_segments": "0",
+        "num_available_segments": "166",
+        "path": "results_all_metrics/dev/the_city_and_its_uncertain_walls/the_city_and_its_uncertain_walls/the_city_and_its_uncertain_walls_pipeline1_gemini/segment_scores.jsonl"
+      },
+      "worst": {
+        "split": "dev",
+        "book": "the_books_of_jacob",
+        "system_folder": "the_books_of_jacob_ht",
+        "pipeline": "ht",
+        "model": "",
+        "pipeline_model": "ht",
+        "system_name": "ht",
+        "metric": "cometkiwi",
+        "score": "0.6592725663716814",
+        "higher_is_better": "True",
+        "num_scored_segments": "113",
+        "num_filtered_segments": "0",
+        "num_available_segments": "113",
+        "path": "results_all_metrics/dev/the_books_of_jacob/the_books_of_jacob/the_books_of_jacob_ht/segment_scores.jsonl"
+      }
+    },
+    "metricx": {
+      "best": {
+        "split": "dev",
+        "book": "the_city_and_its_uncertain_walls",
+        "system_folder": "the_city_and_its_uncertain_walls_pipeline1_gemini",
+        "pipeline": "pipeline1",
+        "model": "gemini",
+        "pipeline_model": "pipeline1_gemini",
+        "system_name": "pipeline1_gemini",
+        "metric": "metricx",
+        "score": "3.5686264063220428",
+        "higher_is_better": "False",
+        "num_scored_segments": "166",
+        "num_filtered_segments": "0",
+        "num_available_segments": "166",
+        "path": "results_all_metrics/dev/the_city_and_its_uncertain_walls/the_city_and_its_uncertain_walls/the_city_and_its_uncertain_walls_pipeline1_gemini/segment_scores.jsonl"
+      },
+      "worst": {
+        "split": "dev",
+        "book": "the_place_of_shells",
+        "system_folder": "the_place_of_shells_pipeline3",
+        "pipeline": "pipeline3",
+        "model": "",
+        "pipeline_model": "pipeline3",
+        "system_name": "pipeline3",
+        "metric": "metricx",
+        "score": "7.778438000843443",
+        "higher_is_better": "False",
+        "num_scored_segments": "29",
+        "num_filtered_segments": "0",
+        "num_available_segments": "29",
+        "path": "results_all_metrics/dev/the_place_of_shells/the_place_of_shells/the_place_of_shells_pipeline3/segment_scores.jsonl"
+      }
+    },
+    "metricx-qe": {
+      "best": {
+        "split": "eval",
+        "book": "the_ark",
+        "system_folder": "the_ark_pipeline2_gemini",
+        "pipeline": "pipeline2",
+        "model": "gemini",
+        "pipeline_model": "pipeline2_gemini",
+        "system_name": "pipeline2_gemini",
+        "metric": "metricx-qe",
+        "score": "3.174324162794571",
+        "higher_is_better": "False",
+        "num_scored_segments": "304",
+        "num_filtered_segments": "15",
+        "num_available_segments": "319",
+        "path": "results_all_metrics/eval/the_ark/the_ark/the_ark_pipeline2_gemini/segment_scores.jsonl"
+      },
+      "worst": {
+        "split": "dev",
+        "book": "the_place_of_shells",
+        "system_folder": "the_place_of_shells_ht",
+        "pipeline": "ht",
+        "model": "",
+        "pipeline_model": "ht",
+        "system_name": "ht",
+        "metric": "metricx-qe",
+        "score": "7.577301049232483",
+        "higher_is_better": "False",
+        "num_scored_segments": "30",
+        "num_filtered_segments": "0",
+        "num_available_segments": "30",
+        "path": "results_all_metrics/dev/the_place_of_shells/the_place_of_shells/the_place_of_shells_ht/segment_scores.jsonl"
+      }
+    }
+  }
+}

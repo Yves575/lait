@@ -1,0 +1,42 @@
+Test: GLM (generalized linear model, quasibinomial logit)
+
+Formula:
+cbind(n_correct, n_wrong) ~ stage + order
+
+Model summary
+
+Call:
+glm(formula = formula, family = quasibinomial, data = model_data)
+
+Coefficients:
+                  Estimate Std. Error t value Pr(>|t|)
+(Intercept)      4.445e-02  3.686e-01   0.121    0.904
+stagecomparison -5.639e-16  5.005e-01   0.000    1.000
+orderMT-first    4.545e-01  4.721e-01   0.963    0.340
+
+(Dispersion parameter for quasibinomial family taken to be 1.214622)
+
+    Null deviance: 95.436  on 59  degrees of freedom
+Residual deviance: 94.302  on 57  degrees of freedom
+AIC: NA
+
+Number of Fisher Scoring iterations: 4
+
+
+Confidence intervals
+                     2.5 %    97.5 %
+(Intercept)     -0.6834971 0.7748441
+stagecomparison -0.9806267 0.9950706
+orderMT-first   -0.4665174 1.3927775
+Estimated marginal means
+emmeans(model, ~ stage, type = "response")
+ stage           prob     SE  df asymp.LCL asymp.UCL
+ single_reading 0.568 0.0709 Inf     0.427     0.698
+ comparison     0.568 0.1000 Inf     0.371     0.745
+
+Results are averaged over the levels of: order 
+Confidence level used: 0.95 
+Intervals are back-transformed from the logit scale 
+
+Model warnings
+No warnings captured.

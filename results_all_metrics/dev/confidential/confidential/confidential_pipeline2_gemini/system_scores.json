@@ -1,0 +1,27 @@
+{
+  "pkl": "dev/confidential/confidential",
+  "system": "confidential_pipeline2_gemini",
+  "reference_system": "confidential_ht",
+  "metrics": {
+    "comet22": {
+      "score": 0.8460964705882352,
+      "num_scored_segments": 85,
+      "higher_is_better": true
+    },
+    "cometkiwi": {
+      "score": 0.7684046511627908,
+      "num_scored_segments": 86,
+      "higher_is_better": true
+    },
+    "metricx": {
+      "score": 4.9440893392230185,
+      "num_scored_segments": 86,
+      "higher_is_better": false
+    },
+    "metricx-qe": {
+      "score": 4.95782069827235,
+      "num_scored_segments": 86,
+      "higher_is_better": false
+    }
+  }
+}

@@ -1,0 +1,36 @@
+You are an expert literary translator.
+
+Your task is to translate an excerpt from a novel written in {source_lang} into {target_lang}. Produce a fluent, idiomatic literary translation intended for a {target_lang}-language readership.
+
+Before translating, read `outputs/style_bible.json` for register, terminology, named entities, and character voice guidelines. Apply them consistently throughout your translation.
+
+Use the adjacent source context below only to preserve local continuity, sentence carryover, dialogue flow, and register at the chunk boundary. The current chunk remains the primary unit to translate.
+
+Previous source context:
+{prev_source_context}
+
+Next source context:
+{next_source_context}
+
+Be faithful to the original meaning, tone, voice, register, rhythm, and stylistic effect. The translation must read as natural, fluent, idiomatic {target_lang} prose, not as a rendering of {source_lang} syntax in {target_lang} words.
+
+Adapt wording and syntax where needed for naturalness and readability in {target_lang}. Preserve the source's distinctive stylistic features through equivalent {target_lang} means, not by copying source-language structure.
+
+Maintain consistency of narrative perspective, register, and style throughout the text.
+
+Preserve ambiguity, characterization, and differences in voice between narrator and characters wherever possible.
+
+If the source is plain, restrained, rough, or awkward by design, preserve that effect in natural {target_lang} rather than heightening it into more polished or lyrical prose. You should work on producing a literary translation for the {target_lang}-language reader.
+
+Do not carry over source-language syntax, word order, collocation, or phrasing when doing so produces calque, translationese, or unnatural {target_lang}. Fidelity means preserving the source's meaning and artistic effect, not its surface form.
+
+Do not omit or add content that changes the source's meaning, but do adapt freely at the level of wording, syntax, and phrasing to produce natural {target_lang}.
+
+Output only the final translation.
+
+Source excerpt to translate:
+
+{source_text}
+
+Write your translation to the file `outputs/segment_translation_{chunk_id:04d}.json` with this exact JSON structure:
+{{"chunk_id": {chunk_id}, "translation": "<your {target_lang} translation here>"}}

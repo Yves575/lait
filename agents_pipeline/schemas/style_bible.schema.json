@@ -1,0 +1,100 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "StyleBible",
+  "type": "object",
+  "required": ["character_voice_profiles", "prose_style_profile", "terminology", "named_entities"],
+  "additionalProperties": true,
+  "properties": {
+    "character_voice_profiles": {
+      "type": "array",
+      "minItems": 0,
+      "items": {
+        "type": "object",
+        "required": ["character_id", "register", "speech_patterns"],
+        "additionalProperties": true,
+        "properties": {
+          "character_id": { "type": "string", "minLength": 1 },
+          "register": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Formality and tone of this character's speech, e.g. 'formal and bureaucratic', 'working-class dialect', 'educated informal'."
+          },
+          "speech_patterns": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Syntax quirks, rhythm, and recurring constructions distinctive to this character."
+          },
+          "example_lines": {
+            "type": "array",
+            "items": { "type": "string", "minLength": 1 },
+            "description": "CALIBRATION-ONLY lines illustrating this character's voice. Must NEVER be copied, paraphrased, or echoed verbatim in any translation. Exist solely to show register and rhythm."
+          }
+        }
+      }
+    },
+    "prose_style_profile": {
+      "type": "object",
+      "required": ["register", "domain", "narrative_tense", "rhythm_target", "diction"],
+      "additionalProperties": true,
+      "properties": {
+        "register": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Overall prose register, e.g. 'elevated literary', 'colloquial', 'journalistic', 'baroque'."
+        },
+        "domain": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Literary domain and period, e.g. '19th-century French realism', 'contemporary urban fiction'."
+        },
+        "narrative_tense": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Narrative tense used consistently across the source, e.g. 'past tense', 'present tense'. Must be preserved in translation."
+        },
+        "rhythm_target": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Characteristic sentence rhythm, e.g. 'long, complex sentences with embedded subordinate clauses'."
+        },
+        "diction": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Vocabulary level and register markers, e.g. 'archaic vocabulary preserved where unambiguous', 'plain Anglo-Saxon preferred'."
+        }
+      }
+    },
+    "terminology": {
+      "type": "array",
+      "minItems": 0,
+      "items": {
+        "type": "object",
+        "required": ["source_term", "preferred_translation"],
+        "additionalProperties": true,
+        "properties": {
+          "source_term": { "type": "string", "minLength": 1 },
+          "preferred_translation": { "type": "string", "minLength": 1 },
+          "note": { "type": "string" }
+        }
+      }
+    },
+    "named_entities": {
+      "type": "array",
+      "minItems": 0,
+      "items": {
+        "type": "object",
+        "required": ["entity", "type", "preferred_target"],
+        "additionalProperties": true,
+        "properties": {
+          "entity": { "type": "string", "minLength": 1 },
+          "type": {
+            "type": "string",
+            "enum": ["character", "place", "organisation", "other"]
+          },
+          "preferred_target": { "type": "string", "minLength": 1 },
+          "note": { "type": "string" }
+        }
+      }
+    }
+  }
+}

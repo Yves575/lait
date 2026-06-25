@@ -1,0 +1,17 @@
+{
+  "pkl": "dev/jackson_alone/jackson_alone",
+  "system": "jackson_alone_ht",
+  "reference_system": "jackson_alone_ht",
+  "metrics": {
+    "cometkiwi": {
+      "score": 0.6983895522388059,
+      "num_scored_segments": 67,
+      "higher_is_better": true
+    },
+    "metricx-qe": {
+      "score": 5.932785247688863,
+      "num_scored_segments": 67,
+      "higher_is_better": false
+    }
+  }
+}

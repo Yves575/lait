@@ -1,0 +1,61 @@
+Test: GLMER (generalized linear mixed model, binomial logit)
+
+Formula:
+chunk_pref_HT ~ order + chunk_index_z + (1 | assignment_id) +      (1 | chunk_uid)
+
+Singular fit check
+isSingular(model): TRUE
+Singular fit detected. Prefer simpler GLM without random effects.
+
+Model summary
+Generalized linear mixed model fit by maximum likelihood (Laplace
+  Approximation) [glmerMod]
+ Family: binomial  ( logit )
+Formula: chunk_pref_HT ~ order + chunk_index_z + (1 | assignment_id) +  
+    (1 | chunk_uid)
+   Data: model_data
+Control: glmerControl(optimizer = "bobyqa", optCtrl = list(maxfun = 2e+05))
+
+      AIC       BIC    logLik -2*log(L)  df.resid 
+    787.3     810.6    -388.7     777.3       767 
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-4.0137 -0.6374  0.2591  0.6346  3.4356 
+
+Random effects:
+ Groups        Name        Variance Std.Dev.
+ chunk_uid     (Intercept) 0.000    0.000   
+ assignment_id (Intercept) 2.919    1.708   
+Number of obs: 772, groups:  chunk_uid, 386; assignment_id, 30
+
+Fixed effects:
+              Estimate Std. Error z value Pr(>|z|)   
+(Intercept)    1.42337    0.47337   3.007  0.00264 **
+orderMT-first -0.45613    0.66441  -0.687  0.49238   
+chunk_index_z -0.06075    0.09146  -0.664  0.50655   
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Correlation of Fixed Effects:
+            (Intr) ordMT-
+ordrMT-frst -0.712       
+chunk_ndx_z -0.002  0.001
+optimizer (bobyqa) convergence code: 0 (OK)
+boundary (singular) fit: see help('isSingular')
+
+
+Random effects (VarCorr)
+ Groups        Name        Std.Dev.
+ chunk_uid     (Intercept) 0.0000  
+ assignment_id (Intercept) 1.7084  
+
+Confidence intervals
+                   2.5 %    97.5 %
+.sig01                NA        NA
+.sig02                NA        NA
+(Intercept)    0.4955726 2.3511603
+orderMT-first -1.7583559 0.8460862
+chunk_index_z -0.2400036 0.1185070
+Model warnings
+No warnings captured.

@@ -1,0 +1,33 @@
+{
+  "pkl": "watching_over_her_fr_en",
+  "system": "watching_over_her_fr_en_ht",
+  "reference_system": "watching_over_her_fr_en_ht",
+  "metrics": {
+    "litransproqa": {
+      "score": 0.9610759493670885,
+      "num_scored_segments": 28,
+      "higher_is_better": true
+    },
+    "metricx-qe": {
+      "score": 8.650108831269401,
+      "num_scored_segments": 28,
+      "higher_is_better": false
+    },
+    "paragraph_mean_cometkiwi": {
+      "score": 0.7441476828231293,
+      "num_scored_segments": 28,
+      "higher_is_better": true,
+      "source": "[withheld from public GitHub release]"
+    },
+    "paragraph_mean_metricx-qe": {
+      "score": 5.757255037828368,
+      "num_scored_segments": 28,
+      "higher_is_better": false,
+      "source": "[withheld from public GitHub release]"
+    }
+  },
+  "paragraph_metric_mapping": {
+    "source_results_dir": "results_all_metrics",
+    "score_prefix": "paragraph_mean_"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "pkl": "dev/return_from_the_stars/return_from_the_stars",
+  "system": "return_from_the_stars_pipeline1_gpt54_high",
+  "reference_system": "return_from_the_stars_ht",
+  "metrics": {
+    "comet22": {
+      "score": 0.8065066037735849,
+      "num_scored_segments": 106,
+      "higher_is_better": true
+    },
+    "cometkiwi": {
+      "score": 0.7148798245614035,
+      "num_scored_segments": 114,
+      "higher_is_better": true
+    },
+    "metricx": {
+      "score": 6.359317225322389,
+      "num_scored_segments": 114,
+      "higher_is_better": false
+    },
+    "metricx-qe": {
+      "score": 6.747762271913431,
+      "num_scored_segments": 118,
+      "higher_is_better": false
+    }
+  }
+}

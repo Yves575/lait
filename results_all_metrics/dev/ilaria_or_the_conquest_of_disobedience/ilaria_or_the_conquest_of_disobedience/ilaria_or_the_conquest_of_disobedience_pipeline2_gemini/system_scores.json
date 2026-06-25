@@ -1,0 +1,27 @@
+{
+  "pkl": "dev/ilaria_or_the_conquest_of_disobedience/ilaria_or_the_conquest_of_disobedience",
+  "system": "ilaria_or_the_conquest_of_disobedience_pipeline2_gemini",
+  "reference_system": "ilaria_or_the_conquest_of_disobedience_ht",
+  "metrics": {
+    "comet22": {
+      "score": 0.8560470588235294,
+      "num_scored_segments": 68,
+      "higher_is_better": true
+    },
+    "cometkiwi": {
+      "score": 0.8057985294117647,
+      "num_scored_segments": 68,
+      "higher_is_better": true
+    },
+    "metricx": {
+      "score": 4.153835414087071,
+      "num_scored_segments": 68,
+      "higher_is_better": false
+    },
+    "metricx-qe": {
+      "score": 4.106167376041412,
+      "num_scored_segments": 68,
+      "higher_is_better": false
+    }
+  }
+}

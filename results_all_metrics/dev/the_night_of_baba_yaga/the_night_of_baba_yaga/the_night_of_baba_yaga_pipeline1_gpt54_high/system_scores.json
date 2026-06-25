@@ -1,0 +1,27 @@
+{
+  "pkl": "dev/the_night_of_baba_yaga/the_night_of_baba_yaga",
+  "system": "the_night_of_baba_yaga_pipeline1_gpt54_high",
+  "reference_system": "the_night_of_baba_yaga_ht",
+  "metrics": {
+    "comet22": {
+      "score": 0.7610228070175439,
+      "num_scored_segments": 114,
+      "higher_is_better": true
+    },
+    "cometkiwi": {
+      "score": 0.74828,
+      "num_scored_segments": 115,
+      "higher_is_better": true
+    },
+    "metricx": {
+      "score": 5.871301291281717,
+      "num_scored_segments": 114,
+      "higher_is_better": false
+    },
+    "metricx-qe": {
+      "score": 4.744079901342807,
+      "num_scored_segments": 115,
+      "higher_is_better": false
+    }
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "pkl": "inner_space_pl_en",
+  "system": "inner_space_pl_en_mt",
+  "reference_system": "inner_space_pl_en_ht",
+  "metrics": {
+    "litransproqa": {
+      "score": 1.0,
+      "num_scored_segments": 26,
+      "higher_is_better": true
+    },
+    "metricx-qe": {
+      "score": 7.384456194364107,
+      "num_scored_segments": 26,
+      "higher_is_better": false
+    },
+    "paragraph_mean_comet22": {
+      "score": 0.8289033385977951,
+      "num_scored_segments": 24,
+      "higher_is_better": true,
+      "source": "[withheld from public GitHub release]"
+    },
+    "paragraph_mean_cometkiwi": {
+      "score": 0.7407459459468068,
+      "num_scored_segments": 25,
+      "higher_is_better": true,
+      "source": "[withheld from public GitHub release]"
+    },
+    "paragraph_mean_metricx-qe": {
+      "score": 5.339294253366288,
+      "num_scored_segments": 26,
+      "higher_is_better": false,
+      "source": "[withheld from public GitHub release]"
+    },
+    "paragraph_mean_metricx": {
+      "score": 5.894602384157006,
+      "num_scored_segments": 25,
+      "higher_is_better": false,
+      "source": "[withheld from public GitHub release]"
+    }
+  },
+  "paragraph_metric_mapping": {
+    "source_results_dir": "results_all_metrics",
+    "score_prefix": "paragraph_mean_"
+  }
+}

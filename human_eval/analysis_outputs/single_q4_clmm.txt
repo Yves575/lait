@@ -1,0 +1,36 @@
+Model summary
+Cumulative Link Mixed Model fitted with the Laplace approximation
+
+formula: q4 ~ version + (1 | reader) + (1 | book)
+data:    model_data
+
+ link  threshold nobs logLik AIC    niter    max.grad cond.H 
+ logit flexible  60   -85.68 185.35 308(642) 5.25e-05 4.2e+01
+
+Random effects:
+ Groups Name        Variance  Std.Dev. 
+ reader (Intercept) 1.209e-08 0.0001099
+ book   (Intercept) 1.327e-01 0.3643161
+Number of groups:  reader 30,  book 16 
+
+Coefficients:
+          Estimate Std. Error z value Pr(>|z|)
+versionMT  -0.6601     0.4806  -1.373     0.17
+
+Threshold coefficients:
+    Estimate Std. Error z value
+1|2  -3.3676     0.6905  -4.877
+2|3  -1.4468     0.4098  -3.531
+3|4  -0.7186     0.3658  -1.964
+4|5   0.1230     0.3574   0.344
+
+Confidence intervals
+               2.5 %       97.5 %
+1|2       -4.7209088 -2.014229074
+2|3       -2.2499424 -0.643629774
+3|4       -1.4355303 -0.001629239
+4|5       -0.5775113  0.823573419
+versionMT -1.6019768  0.281852931
+
+Model warnings
+No warnings captured.

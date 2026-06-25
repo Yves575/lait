@@ -1,0 +1,46 @@
+Test: LMER (linear mixed model, Gaussian)
+
+Model summary
+Linear mixed model fit by REML ['lmerMod']
+Formula: q5_nbr_words ~ version + order + (1 | reader) + (1 | book)
+   Data: model_data
+Control: lmerControl(optimizer = "bobyqa")
+
+REML criterion at convergence: 523.8
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-1.7946 -0.6551 -0.2053  0.3626  2.3841 
+
+Random effects:
+ Groups   Name        Variance Std.Dev.
+ reader   (Intercept) 195.9    14.00   
+ book     (Intercept)   0.0     0.00   
+ Residual             366.8    19.15   
+Number of obs: 60, groups:  reader, 15; book, 15
+
+Fixed effects:
+              Estimate Std. Error t value
+(Intercept)     36.600      5.603   6.532
+versionMT       -3.533      4.945  -0.715
+orderMT-first    1.533      4.945   0.310
+
+Correlation of Fixed Effects:
+            (Intr) vrsnMT
+versionMT   -0.441       
+ordrMT-frst -0.441  0.000
+optimizer (bobyqa) convergence code: 0 (OK)
+boundary (singular) fit: see help('isSingular')
+
+
+Confidence intervals
+                   2.5 %    97.5 %
+.sig01                NA        NA
+.sig02                NA        NA
+.sigma                NA        NA
+(Intercept)    25.617961 47.582039
+versionMT     -13.224976  6.158309
+orderMT-first  -8.158309 11.224976
+
+Model warnings
+No warnings captured.

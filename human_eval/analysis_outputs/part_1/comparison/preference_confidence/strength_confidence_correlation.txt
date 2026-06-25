@@ -1,0 +1,54 @@
+Test: Spearman and Kendall rank correlation (cor.test)
+
+Preference strength (clear=1, slight=0) vs Q6 confidence (1-5)
+
+Spearman rank correlation
+
+	Spearman's rank correlation rho
+
+data:  comparison_pref_confidence_df$ai_confidence and comparison_pref_confidence_df$preference_strength_num
+S = 3443.3, p-value = 0.2133
+alternative hypothesis: true rho is not equal to 0
+sample estimates:
+      rho 
+0.2339805 
+
+
+Kendall rank correlation
+
+	Kendall's rank correlation tau
+
+data:  comparison_pref_confidence_df$ai_confidence and comparison_pref_confidence_df$preference_strength_num
+z = 1.26, p-value = 0.2077
+alternative hypothesis: true tau is not equal to 0
+sample estimates:
+     tau 
+0.214873 
+
+
+Pearson correlation (numeric Q6 vs binary clear preference)
+
+	Pearson's product-moment correlation
+
+data:  comparison_pref_confidence_df$ai_confidence and comparison_pref_confidence_df$preference_strength_num
+t = 1.8267, df = 28, p-value = 0.07842
+alternative hypothesis: true correlation is not equal to 0
+95 percent confidence interval:
+ -0.03847412  0.61436161
+sample estimates:
+      cor 
+0.3263182 
+
+
+Spearman: raw comparison_q3 (1-4) vs Q6 confidence
+(includes direction and strength; reference only)
+
+	Spearman's rank correlation rho
+
+data:  comparison_pref_confidence_df$ai_confidence and comparison_pref_confidence_df$comparison_q3
+S = 5167.3, p-value = 0.4302
+alternative hypothesis: true rho is not equal to 0
+sample estimates:
+       rho 
+-0.1495605 
+

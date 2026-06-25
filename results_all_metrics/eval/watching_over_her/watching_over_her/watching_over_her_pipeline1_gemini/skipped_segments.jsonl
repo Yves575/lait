@@ -1,0 +1,5 @@
+{"metric": "comet22", "segment_index": 5, "reason": "max_input_length_exceeded", "token_count": 583, "max_input_length": 512}
+{"metric": "comet22", "segment_index": 23, "reason": "max_input_length_exceeded", "token_count": 536, "max_input_length": 512}
+{"metric": "comet22", "segment_index": 36, "reason": "max_input_length_exceeded", "token_count": 581, "max_input_length": 512}
+{"metric": "comet22", "segment_index": 92, "reason": "max_input_length_exceeded", "token_count": 748, "max_input_length": 512}
+{"metric": "comet22", "segment_index": 98, "reason": "max_input_length_exceeded", "token_count": 619, "max_input_length": 512}

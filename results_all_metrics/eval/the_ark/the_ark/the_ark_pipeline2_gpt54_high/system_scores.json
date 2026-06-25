@@ -1,0 +1,27 @@
+{
+  "pkl": "eval/the_ark/the_ark",
+  "system": "the_ark_pipeline2_gpt54_high",
+  "reference_system": "the_ark_ht",
+  "metrics": {
+    "comet22": {
+      "score": 0.7875253918495297,
+      "num_scored_segments": 319,
+      "higher_is_better": true
+    },
+    "cometkiwi": {
+      "score": 0.7805159874608151,
+      "num_scored_segments": 319,
+      "higher_is_better": true
+    },
+    "metricx": {
+      "score": 4.661089078946547,
+      "num_scored_segments": 319,
+      "higher_is_better": false
+    },
+    "metricx-qe": {
+      "score": 3.662083987625415,
+      "num_scored_segments": 319,
+      "higher_is_better": false
+    }
+  }
+}

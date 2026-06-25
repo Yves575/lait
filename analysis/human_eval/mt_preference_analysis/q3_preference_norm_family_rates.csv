@@ -1,0 +1,9 @@
+scope,polarity,family,MT_cases_with_family,HT_cases_with_family,MT_total_cases,HT_total_cases,MT_rate,HT_rate
+Q3 whole-excerpt preference explanations,NEG,Language,9,19,11,19,0.8181818181818182,1.0
+Q3 whole-excerpt preference explanations,NEG,Meta-translation,3,7,11,19,0.2727272727272727,0.3684210526315789
+Q3 whole-excerpt preference explanations,NEG,Narrative,3,7,11,19,0.2727272727272727,0.3684210526315789
+Q3 whole-excerpt preference explanations,NEG,Reader experience,7,14,11,19,0.6363636363636364,0.7368421052631579
+Q3 whole-excerpt preference explanations,POS,Language,10,15,11,19,0.9090909090909091,0.7894736842105263
+Q3 whole-excerpt preference explanations,POS,Meta-translation,3,5,11,19,0.2727272727272727,0.2631578947368421
+Q3 whole-excerpt preference explanations,POS,Narrative,7,9,11,19,0.6363636363636364,0.47368421052631576
+Q3 whole-excerpt preference explanations,POS,Reader experience,11,16,11,19,1.0,0.8421052631578947

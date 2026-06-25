@@ -1,0 +1,67 @@
+Test: CLM (cumulative link model, ordinal logit)
+
+Model note
+Formula: smoother ~ group + order
+Fixed effects: group (source language) and order (HT-first vs MT-first).
+No random effects (cumulative link model).
+
+Question
+Smoother translation (MT < NO DIFF < HT)
+
+Model summary
+formula: smoother ~ group + order
+data:    model_data
+
+ link  threshold nobs logLik AIC   niter max.grad cond.H 
+ logit flexible  30   -24.13 58.27 8(1)  7.28e-07 8.1e+01
+
+Coefficients:
+              Estimate Std. Error z value Pr(>|z|)
+groupJapanese -0.87364    0.91602  -0.954    0.340
+groupPolish    0.08723    0.94790   0.092    0.927
+orderMT-first  1.02870    0.78479   1.311    0.190
+
+Threshold coefficients:
+           Estimate Std. Error z value
+MT|NO DIFF  -0.5170     0.6917  -0.747
+NO DIFF|HT  -0.2016     0.6857  -0.294
+
+Confidence intervals
+                   2.5 %    97.5 %
+groupJapanese -2.7625603 0.8968405
+groupPolish   -1.7911591 2.0202790
+orderMT-first -0.4654744 2.6674390
+
+Estimated marginal means (mean.class by group)
+ group    mean.class    SE  df asymp.LCL asymp.UCL
+ French         2.39 0.253 Inf      1.89      2.88
+ Japanese       2.00 0.304 Inf      1.40      2.60
+ Polish         2.42 0.275 Inf      1.88      2.96
+
+Results are averaged over the levels of: order 
+Confidence level used: 0.95 
+
+Estimated marginal means (prob by group | smoother)
+smoother = MT:
+ group      prob     SE  df asymp.LCL asymp.UCL
+ French   0.2746 0.1220 Inf  0.034846     0.514
+ Japanese 0.4631 0.1540 Inf  0.161069     0.765
+ Polish   0.2584 0.1320 Inf -0.000785     0.518
+
+smoother = NO DIFF:
+ group      prob     SE  df asymp.LCL asymp.UCL
+ French   0.0633 0.0447 Inf -0.024298     0.151
+ Japanese 0.0737 0.0504 Inf -0.025052     0.173
+ Polish   0.0614 0.0441 Inf -0.024992     0.148
+
+smoother = HT:
+ group      prob     SE  df asymp.LCL asymp.UCL
+ French   0.6620 0.1340 Inf  0.399256     0.925
+ Japanese 0.4631 0.1540 Inf  0.161069     0.765
+ Polish   0.6802 0.1460 Inf  0.393556     0.967
+
+Results are averaged over the levels of: order 
+Confidence level used: 0.95 
+
+Model warnings
+No warnings captured.

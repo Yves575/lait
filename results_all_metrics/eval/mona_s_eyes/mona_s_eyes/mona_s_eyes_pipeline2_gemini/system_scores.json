@@ -1,0 +1,27 @@
+{
+  "pkl": "eval/mona_s_eyes/mona_s_eyes",
+  "system": "mona_s_eyes_pipeline2_gemini",
+  "reference_system": "mona_s_eyes_ht",
+  "metrics": {
+    "comet22": {
+      "score": 0.8487591240875912,
+      "num_scored_segments": 137,
+      "higher_is_better": true
+    },
+    "cometkiwi": {
+      "score": 0.8015401408450704,
+      "num_scored_segments": 142,
+      "higher_is_better": true
+    },
+    "metricx": {
+      "score": 4.064144841336704,
+      "num_scored_segments": 143,
+      "higher_is_better": false
+    },
+    "metricx-qe": {
+      "score": 4.222430955541545,
+      "num_scored_segments": 145,
+      "higher_is_better": false
+    }
+  }
+}

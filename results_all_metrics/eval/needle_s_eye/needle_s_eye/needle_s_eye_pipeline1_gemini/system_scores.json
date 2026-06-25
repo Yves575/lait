@@ -1,0 +1,27 @@
+{
+  "pkl": "eval/needle_s_eye/needle_s_eye",
+  "system": "needle_s_eye_pipeline1_gemini",
+  "reference_system": "needle_s_eye_ht",
+  "metrics": {
+    "comet22": {
+      "score": 0.8023,
+      "num_scored_segments": 177,
+      "higher_is_better": true
+    },
+    "cometkiwi": {
+      "score": 0.7105622222222222,
+      "num_scored_segments": 180,
+      "higher_is_better": true
+    },
+    "metricx": {
+      "score": 5.8923832423157165,
+      "num_scored_segments": 180,
+      "higher_is_better": false
+    },
+    "metricx-qe": {
+      "score": 6.222456131662641,
+      "num_scored_segments": 182,
+      "higher_is_better": false
+    }
+  }
+}

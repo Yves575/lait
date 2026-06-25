@@ -1,0 +1,42 @@
+Model summary
+Generalized linear mixed model fit by maximum likelihood (Laplace
+  Approximation) [glmerMod]
+ Family: binomial  ( logit )
+Formula: origin_guess ~ version + (1 | reader) + (1 | book)
+   Data: model_data
+Control: glmerControl(optimizer = "bobyqa", optCtrl = list(maxfun = 2e+05))
+
+      AIC       BIC    logLik -2*log(L)  df.resid 
+     89.8      98.2     -40.9      81.8        56 
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-1.0690 -0.8165 -0.8165  0.9354  1.2247 
+
+Random effects:
+ Groups Name        Variance Std.Dev.
+ reader (Intercept) 0        0       
+ book   (Intercept) 0        0       
+Number of obs: 60, groups:  reader, 30; book, 16
+
+Fixed effects:
+            Estimate Std. Error z value Pr(>|z|)
+(Intercept)  -0.4055     0.3727  -1.088    0.277
+versionMT     0.5390     0.5223   1.032    0.302
+
+Correlation of Fixed Effects:
+          (Intr)
+versionMT -0.714
+optimizer (bobyqa) convergence code: 0 (OK)
+boundary (singular) fit: see help('isSingular')
+
+
+Confidence intervals
+                 2.5 %    97.5 %
+.sig01              NA        NA
+.sig02              NA        NA
+(Intercept) -1.1359006 0.3249703
+versionMT   -0.4847305 1.5627235
+
+Model warnings
+No warnings captured.

@@ -1,0 +1,17 @@
+{
+  "pkl": "dev/the_deserters/the_deserters",
+  "system": "the_deserters_ht",
+  "reference_system": "the_deserters_ht",
+  "metrics": {
+    "cometkiwi": {
+      "score": 0.763032558139535,
+      "num_scored_segments": 172,
+      "higher_is_better": true
+    },
+    "metricx-qe": {
+      "score": 4.979364787076795,
+      "num_scored_segments": 172,
+      "higher_is_better": false
+    }
+  }
+}

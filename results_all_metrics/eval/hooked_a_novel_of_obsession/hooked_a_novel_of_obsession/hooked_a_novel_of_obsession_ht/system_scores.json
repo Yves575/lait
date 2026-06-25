@@ -1,0 +1,17 @@
+{
+  "pkl": "eval/hooked_a_novel_of_obsession/hooked_a_novel_of_obsession",
+  "system": "hooked_a_novel_of_obsession_ht",
+  "reference_system": "hooked_a_novel_of_obsession_ht",
+  "metrics": {
+    "cometkiwi": {
+      "score": 0.6929625,
+      "num_scored_segments": 120,
+      "higher_is_better": true
+    },
+    "metricx-qe": {
+      "score": 6.120847131311893,
+      "num_scored_segments": 120,
+      "higher_is_better": false
+    }
+  }
+}

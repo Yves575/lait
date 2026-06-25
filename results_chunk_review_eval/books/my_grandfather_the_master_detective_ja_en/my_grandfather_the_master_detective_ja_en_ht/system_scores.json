@@ -1,0 +1,17 @@
+{
+  "pkl": "my_grandfather_the_master_detective_ja_en",
+  "system": "my_grandfather_the_master_detective_ja_en_ht",
+  "reference_system": "my_grandfather_the_master_detective_ja_en_ht",
+  "metrics": {
+    "litransproqa": {
+      "score": 0.9752013808975835,
+      "num_scored_segments": 22,
+      "higher_is_better": true
+    },
+    "metricx-qe": {
+      "score": 9.066117893565785,
+      "num_scored_segments": 22,
+      "higher_is_better": false
+    }
+  }
+}

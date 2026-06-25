@@ -1,0 +1,31 @@
+Test: None (descriptive)
+
+Prefer translation reader treats as human (perceived HT)
+perceived_HT_version = excerpt not identified as AI on Q5
+prefers_perceived_HT = excerpt_preference == perceived_HT_version
+
+n assignments: 30 
+
+Proportion prefers_perceived_HT: 0.9333333 
+Proportion prefers_actual_HT: 0.6333333 
+
+Crosstab: continue-reading preference (rows) x excerpt identified as AI (cols)
+          ai_identified
+preference HT MT
+        MT 11  0
+        HT  2 17
+
+Row proportions (preference)
+          ai_identified
+preference        HT        MT
+        MT 1.0000000 0.0000000
+        HT 0.1052632 0.8947368
+
+prefers_perceived_HT by ai_guess_correct (1 = correctly tagged actual MT as AI)
+        0         1 
+0.8461538 1.0000000 
+
+Counts by ai_guess_correct
+
+ 0  1 
+13 17 

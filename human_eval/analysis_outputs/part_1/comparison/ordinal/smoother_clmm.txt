@@ -1,0 +1,54 @@
+Test: CLMM (cumulative link mixed model, ordinal logit)
+
+Model note
+Formula: smoother ~ group + order + (1 | reader) + (1 | book)
+Fixed effects: group (source language) and order (HT-first vs MT-first).
+Random intercepts: reader and book.
+Response is an ordered factor (cumulative link mixed model).
+
+Question
+Smoother translation (MT < NO DIFF < HT)
+
+Singular fit
+*** SINGULAR FIT ***
+All random-effect standard deviations are near zero (variance on the boundary).
+With n ~ 60 and ~15 readers, reader / book / src_lang random intercepts are not separately identifiable.
+Fixed effects for type (HT vs MT) and order (HT-first vs MT-first) may still be useful; random-effect inference is not.
+Consider a simpler random structure, e.g. (1 | reader) only.
+
+Model summary
+Cumulative Link Mixed Model fitted with the Laplace approximation
+
+formula: smoother ~ group + order + (1 | reader) + (1 | book)
+data:    model_data
+
+ link  threshold nobs logLik AIC   niter    max.grad cond.H 
+ logit flexible  30   -24.13 62.27 229(156) 4.14e-06 8.1e+01
+
+Random effects:
+ Groups Name        Variance Std.Dev.
+ book   (Intercept) 0        0       
+ reader (Intercept) 0        0       
+Number of groups:  reader 15,  book 15 
+
+Coefficients:
+              Estimate Std. Error z value Pr(>|z|)
+groupJapanese -0.87364    0.91602  -0.954    0.340
+groupPolish    0.08723    0.94790   0.092    0.927
+orderMT-first  1.02870    0.78479   1.311    0.190
+
+Threshold coefficients:
+           Estimate Std. Error z value
+MT|NO DIFF  -0.5170     0.6917  -0.747
+NO DIFF|HT  -0.2016     0.6857  -0.294
+
+Confidence intervals
+                   2.5 %    97.5 %
+MT|NO DIFF    -1.8726819 0.8386491
+NO DIFF|HT    -1.5454445 1.1423021
+groupJapanese -2.6690118 0.9217249
+groupPolish   -1.7706156 1.9450784
+orderMT-first -0.5094568 2.5668591
+
+Model warnings
+* no. random effects (=30) >= no. observations (=30)

@@ -1,0 +1,2 @@
+Skipped model for comparison_q4_nbr_words 
+lmer failed: number of levels of each grouping factor must be < number of observations (problems: reader) 

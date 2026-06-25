@@ -1,0 +1,17 @@
+{
+  "pkl": "my_name_is_stramer_pl_en",
+  "system": "my_name_is_stramer_pl_en_mt",
+  "reference_system": "my_name_is_stramer_pl_en_ht",
+  "metrics": {
+    "litransproqa": {
+      "score": 0.9937439143135346,
+      "num_scored_segments": 26,
+      "higher_is_better": true
+    },
+    "metricx-qe": {
+      "score": 8.548279743928175,
+      "num_scored_segments": 26,
+      "higher_is_better": false
+    }
+  }
+}

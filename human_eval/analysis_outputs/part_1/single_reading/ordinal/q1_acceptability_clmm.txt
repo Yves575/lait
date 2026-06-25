@@ -1,0 +1,48 @@
+Test: CLMM (cumulative link mixed model, ordinal logit)
+
+Model note
+Formula: q1 ~ type + order + (1 | reader) + (1 | book)
+Fixed effects: type (HT vs MT) and order (HT-first vs MT-first).
+Random intercepts: reader and book nested within src_lang.
+
+Question
+Acceptability (1 unacceptable -> 5 acceptable)
+
+Model summary
+Cumulative Link Mixed Model fitted with the Laplace approximation
+
+formula: q1 ~ type + order + (1 | reader) + (1 | book)
+data:    model_data
+
+ link  threshold nobs logLik AIC    niter    max.grad cond.H 
+ logit flexible  60   -75.10 164.20 256(522) 2.56e-05 3.3e+01
+
+Random effects:
+ Groups Name        Variance  Std.Dev. 
+ book   (Intercept) 3.835e-02 1.958e-01
+ reader (Intercept) 7.439e-12 2.727e-06
+Number of groups:  reader 15,  book 15 
+
+Coefficients:
+              Estimate Std. Error z value Pr(>|z|)   
+typeMT         -1.3785     0.5098  -2.704  0.00685 **
+orderMT-first   0.4105     0.4855   0.846  0.39781   
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Threshold coefficients:
+     Estimate Std. Error z value
+2|3 -2.369748   0.554126  -4.277
+3|4 -0.973558   0.447210  -2.177
+4|5  0.007725   0.428150   0.018
+
+Confidence intervals
+                   2.5 %      97.5 %
+2|3           -3.4558153 -1.28367972
+3|4           -1.8500743 -0.09704142
+4|5           -0.8314346  0.84688433
+typeMT        -2.3775879 -0.37937345
+orderMT-first -0.5410609  1.36208185
+
+Model warnings
+No warnings captured.

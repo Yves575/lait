@@ -1,0 +1,23 @@
+Test: None (paper summary derived from CLMM/CLM outputs)
+
+Q1 — Acceptability (1 unacceptable -> 5 acceptable)
+
+Main result to communicate in paper:
+MT was rated lower in acceptability than HT
+HT has about 4.0 times the odds of a higher acceptability rating than MT (exp(1.3785) = 3.97).
+The result is statistically significant (p = .0068 < .05); and the 95% CI for the type effect excludes zero; suggesting a large practical effect.
+Reading order has NO effect.
+
+Model statistics:
+MT was rated significantly lower than HT in acceptability, beta = -1.38, SE = 0.51, z = -2.70, p = .0068, OR (MT vs HT) = 0.25, 95% CI [0.09, 0.68].
+Reading order was not a significant predictor, beta = 0.41, p = .3978.
+
+Estimated probabilities (CLM fit (same specification as analysis), averaged over order):
+For rating 5 (acceptable):
+  HT: 55% probability
+  MT: 24% probability
+
+For ratings 4 or 5 combined:
+  HT: 0.2126 + 0.5486 = 0.7613 (76%)
+  MT: 0.2134 + 0.2409 = 0.4543 (45%)
+So HT has about 76% probability of receiving 4 or 5, while MT has about 45%.

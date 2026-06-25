@@ -1,0 +1,17 @@
+{
+  "pkl": "hooked_a_novel_of_obsession_ja_en",
+  "system": "hooked_a_novel_of_obsession_ja_en_ht",
+  "reference_system": "hooked_a_novel_of_obsession_ja_en_ht",
+  "metrics": {
+    "litransproqa": {
+      "score": 0.9123745089480576,
+      "num_scored_segments": 29,
+      "higher_is_better": true
+    },
+    "metricx-qe": {
+      "score": 9.203331371833539,
+      "num_scored_segments": 29,
+      "higher_is_better": false
+    }
+  }
+}

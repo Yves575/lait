@@ -1,0 +1,57 @@
+Test: CLMM (cumulative link mixed model, ordinal logit)
+
+Model note
+Formula: q3 ~ type + order + (1 | reader) + (1 | book)
+Fixed effects: type (HT vs MT) and order (HT-first vs MT-first).
+Random intercepts: reader and book nested within src_lang.
+
+Question
+Immersion (1 interfered -> 5 supported)
+
+Singular fit
+*** SINGULAR FIT ***
+All random-effect standard deviations are near zero (variance on the boundary).
+With n ~ 60 and ~15 readers, reader / book / src_lang random intercepts are not separately identifiable.
+Fixed effects for type (HT vs MT) and order (HT-first vs MT-first) may still be useful; random-effect inference is not.
+Consider a simpler random structure, e.g. (1 | reader) only.
+
+Model summary
+Cumulative Link Mixed Model fitted with the Laplace approximation
+
+formula: q3 ~ type + order + (1 | reader) + (1 | book)
+data:    model_data
+
+ link  threshold nobs logLik AIC    niter    max.grad cond.H 
+ logit flexible  60   -84.93 185.86 303(373) 5.72e-06 6.3e+01
+
+Random effects:
+ Groups Name        Variance  Std.Dev. 
+ book   (Intercept) 1.125e-10 1.060e-05
+ reader (Intercept) 5.706e-09 7.554e-05
+Number of groups:  reader 15,  book 15 
+
+Coefficients:
+              Estimate Std. Error z value Pr(>|z|)  
+typeMT         -0.8300     0.4765  -1.742   0.0815 .
+orderMT-first   0.2653     0.4699   0.565   0.5724  
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Threshold coefficients:
+    Estimate Std. Error z value
+1|2  -2.9861     0.6280  -4.755
+2|3  -1.2334     0.4390  -2.809
+3|4  -0.8324     0.4223  -1.971
+4|5   0.3899     0.4144   0.941
+
+Confidence intervals
+                   2.5 %       97.5 %
+1|2           -4.2170598 -1.755216249
+2|3           -2.0938558 -0.372934421
+3|4           -1.6599839 -0.004781657
+4|5           -0.4222237  1.202110379
+typeMT        -1.7638698  0.103899038
+orderMT-first -0.6557616  1.186395783
+
+Model warnings
+No warnings captured.

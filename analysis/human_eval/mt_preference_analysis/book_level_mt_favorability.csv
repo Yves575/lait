@@ -1,0 +1,16 @@
+book_id,comparison_mt_preference_count,mt_preference_false_ai_count,chunk_mt_rate
+japanese_eval_hooked_a_novel_of_obsession,2,2,0.8793103448275862
+french_eval_mona_s_eyes,1,1,0.5689655172413793
+polish_eval_the_witcher_crossroads_of_ravens,1,1,0.5434782608695652
+japanese_eval_the_ark,1,1,0.5
+polish_eval_my_name_is_stramer,1,1,0.36538461538461536
+french_eval_watching_over_her,1,1,0.32142857142857145
+french_eval_the_story_of_marceau_miller,1,1,0.3125
+polish_eval_the_empusium_a_health_resort_horror_story,1,1,0.25
+japanese_eval_sisters_in_yellow,1,1,0.11538461538461539
+japanese_eval_my_grandfather_the_master_detective,1,1,0.06818181818181818
+polish_eval_inner_space,0,0,0.36538461538461536
+french_eval_make_me_famous,0,0,0.3148148148148148
+polish_eval_needle_s_eye,0,0,0.06
+japanese_eval_kokun_the_girl_from_the_west,0,0,0.041666666666666664
+french_eval_symphony_of_monsters,0,0,0.038461538461538464

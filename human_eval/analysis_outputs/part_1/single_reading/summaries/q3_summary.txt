@@ -1,0 +1,25 @@
+Test: None (paper summary derived from CLMM/CLM outputs)
+
+Q3 — Immersion (1 interfered -> 5 supported)
+
+Main result to communicate in paper:
+MT was rated lower in immersion than HT
+HT has about 2.3 times the odds of a higher immersion rating than MT (exp(0.8300) = 2.29).
+The result is marginal (p = .0815); and the 95% CI for the type effect includes zero.
+Reading order has NO effect.
+
+Model statistics:
+MT was not rated significantly lower in immersion than HT, beta = -0.83, SE = 0.48, z = -1.74, p = .0815, OR (MT vs HT) = 0.44, 95% CI [0.17, 1.10].
+Reading order was not a significant predictor, beta = 0.27, p = .5724.
+
+Note: CLMM showed a singular fit; model statistics and estimated probabilities are taken from q3_immersion_clm.txt.
+
+Estimated probabilities (q3_immersion_clm.txt, averaged over order):
+For rating 5 (highly immersive):
+  HT: 44% probability
+  MT: 25% probability
+
+For ratings 4 or 5 combined:
+  HT: 0.2870 + 0.4363 = 0.7233 (72%)
+  MT: 0.2806 + 0.2530 = 0.5336 (53%)
+So HT has about 72% probability of receiving 4 or 5, while MT has about 53%.

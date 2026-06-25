@@ -1,0 +1,27 @@
+{
+  "pkl": "eval/kokun_the_girl_from_the_west/kokun_the_girl_from_the_west",
+  "system": "kokun_the_girl_from_the_west_pipeline3",
+  "reference_system": "kokun_the_girl_from_the_west_ht",
+  "metrics": {
+    "comet22": {
+      "score": 0.7526160256410256,
+      "num_scored_segments": 468,
+      "higher_is_better": true
+    },
+    "cometkiwi": {
+      "score": 0.7782608974358973,
+      "num_scored_segments": 468,
+      "higher_is_better": true
+    },
+    "metricx": {
+      "score": 6.240982172692306,
+      "num_scored_segments": 468,
+      "higher_is_better": false
+    },
+    "metricx-qe": {
+      "score": 4.424466231599068,
+      "num_scored_segments": 468,
+      "higher_is_better": false
+    }
+  }
+}

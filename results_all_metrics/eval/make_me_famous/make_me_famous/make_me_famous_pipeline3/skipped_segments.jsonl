@@ -1,0 +1,4 @@
+{"metric": "comet22", "segment_index": 7, "reason": "max_input_length_exceeded", "token_count": 636, "max_input_length": 512}
+{"metric": "comet22", "segment_index": 18, "reason": "max_input_length_exceeded", "token_count": 580, "max_input_length": 512}
+{"metric": "comet22", "segment_index": 98, "reason": "max_input_length_exceeded", "token_count": 640, "max_input_length": 512}
+{"metric": "comet22", "segment_index": 106, "reason": "max_input_length_exceeded", "token_count": 720, "max_input_length": 512}

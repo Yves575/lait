@@ -1,0 +1,27 @@
+{
+  "pkl": "dev/jackson_alone/jackson_alone",
+  "system": "jackson_alone_pipeline1_gemini",
+  "reference_system": "jackson_alone_ht",
+  "metrics": {
+    "comet22": {
+      "score": 0.7855253731343284,
+      "num_scored_segments": 67,
+      "higher_is_better": true
+    },
+    "cometkiwi": {
+      "score": 0.7888208955223881,
+      "num_scored_segments": 67,
+      "higher_is_better": true
+    },
+    "metricx": {
+      "score": 5.4316787648556835,
+      "num_scored_segments": 67,
+      "higher_is_better": false
+    },
+    "metricx-qe": {
+      "score": 4.059935483469892,
+      "num_scored_segments": 67,
+      "higher_is_better": false
+    }
+  }
+}

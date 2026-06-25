@@ -1,0 +1,17 @@
+{
+  "pkl": "needle_s_eye_pl_en",
+  "system": "needle_s_eye_pl_en_ht",
+  "reference_system": "needle_s_eye_pl_en_ht",
+  "metrics": {
+    "litransproqa": {
+      "score": 0.9364050632911392,
+      "num_scored_segments": 25,
+      "higher_is_better": true
+    },
+    "metricx-qe": {
+      "score": 10.496987144152323,
+      "num_scored_segments": 24,
+      "higher_is_better": false
+    }
+  }
+}

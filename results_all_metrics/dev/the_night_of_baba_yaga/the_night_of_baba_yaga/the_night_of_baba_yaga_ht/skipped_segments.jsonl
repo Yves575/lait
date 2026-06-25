@@ -1,0 +1,4 @@
+{"metric": "cometkiwi", "segment_index": 0, "reason": "empty_hypothesis", "empty_fields": ["hypothesis"]}
+{"metric": "cometkiwi", "segment_index": 114, "reason": "max_input_length_exceeded", "token_count": 603, "max_input_length": 512}
+{"metric": "metricx-qe", "segment_index": 0, "reason": "empty_hypothesis", "empty_fields": ["hypothesis"]}
+{"metric": "metricx-qe", "segment_index": 114, "reason": "max_input_length_exceeded", "token_count": 1672, "max_input_length": 1536}

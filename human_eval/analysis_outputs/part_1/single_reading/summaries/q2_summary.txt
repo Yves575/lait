@@ -1,0 +1,25 @@
+Test: None (paper summary derived from CLMM/CLM outputs)
+
+Q2 — Smoothness (1 unsmooth -> 5 smooth)
+
+Main result to communicate in paper:
+MT was rated lower in smoothness than HT
+HT has about 4.4 times the odds of a higher smoothness rating than MT (exp(1.4903) = 4.44).
+The result is statistically significant (p = .0029 < .05); and the 95% CI for the type effect excludes zero; suggesting a large practical effect.
+Reading order has NO effect.
+
+Model statistics:
+MT was rated significantly less smooth than HT, beta = -1.49, SE = 0.50, z = -2.98, p = .0029, OR (MT vs HT) = 0.23, 95% CI [0.08, 0.59].
+Reading order was not a significant predictor, beta = 0.30, p = .5279.
+
+Note: CLMM showed a singular fit; model statistics and estimated probabilities are taken from q2_smoothness_clm.txt.
+
+Estimated probabilities (q2_smoothness_clm.txt, averaged over order):
+For rating 5 (very smooth):
+  HT: 52% probability
+  MT: 19% probability
+
+For ratings 4 or 5 combined:
+  HT: 0.3039 + 0.5161 = 0.8200 (82%)
+  MT: 0.3134 + 0.1949 = 0.5083 (51%)
+So HT has about 82% probability of receiving 4 or 5, while MT has about 51%.

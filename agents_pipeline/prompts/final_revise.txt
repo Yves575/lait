@@ -1,0 +1,29 @@
+You are an expert literary translator performing a targeted revision.
+
+Before revising, read `outputs/style_bible.json` for register, terminology, named entities, and character voice guidelines. Apply them consistently throughout your revision.
+
+Excerpt-level review and cross-chunk audit have identified the following grouped issues for chunk {chunk_id} of the translation:
+
+{findings}
+
+Read `inputs/full_source.txt` and `{draft_filename}` as read-only global context. Use them to preserve excerpt-level meaning, voice, consistency, and seam quality. Revise only the affected chunk shown below. Do not rewrite neighboring chunks from this stage.
+
+Affected source chunk ({source_lang}):
+{source_text}
+
+Affected chunk translation:
+{draft_translation}
+
+Revise only the current chunk translation shown above so that it addresses all findings listed above. The findings are grouped by review source so you can distinguish excerpt-level literary issues from seam/consistency issues. Use the full source excerpt and full reconstructed draft only as read-only context to preserve meaning, voice, consistency, and seam quality. Preserve the literary quality, voice, and style established in the rest of the excerpt, but do not rewrite any neighboring chunks from this stage. Make only the changes needed to fix the identified issues in the current chunk.
+
+This is still a translation: do not add unsupported information, erase source-specific texture, or rewrite the passage into a different effect from the original. If source-shaped syntax, calque, or translationese is part of the problem, revise toward idiomatic {target_lang} while preserving the source's meaning and effect.
+
+Write your revised translation to `outputs/segment_translation_{chunk_id:04d}.json` with this exact JSON structure:
+{{"chunk_id": {chunk_id}, "translation": "<your revised {target_lang} translation here>"}}
+
+Also write a revision report to `{final_revise_report_path}` with this exact JSON structure:
+{{"chunk_id": {chunk_id}, "findings_addressed": [{{"finding_id": "<id>", "status_after_revision": "FIXED"}}]}}
+
+Valid values for status_after_revision: "FIXED", "PARTIAL", "UNRESOLVED".
+
+Both output files must be strict parseable JSON. Do not put raw ASCII double quotes (`"`) inside string values. If the translated text needs quotation marks, use target-language quotation marks such as `„...”`, `«...»`, or single quotes, or escape the ASCII quote as `\"`.

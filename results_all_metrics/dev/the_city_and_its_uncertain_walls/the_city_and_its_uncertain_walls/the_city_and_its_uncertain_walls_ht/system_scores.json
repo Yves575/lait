@@ -1,0 +1,17 @@
+{
+  "pkl": "dev/the_city_and_its_uncertain_walls/the_city_and_its_uncertain_walls",
+  "system": "the_city_and_its_uncertain_walls_ht",
+  "reference_system": "the_city_and_its_uncertain_walls_ht",
+  "metrics": {
+    "cometkiwi": {
+      "score": 0.7965698795180723,
+      "num_scored_segments": 166,
+      "higher_is_better": true
+    },
+    "metricx-qe": {
+      "score": 3.9413039745336556,
+      "num_scored_segments": 166,
+      "higher_is_better": false
+    }
+  }
+}

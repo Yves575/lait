@@ -1,0 +1,27 @@
+{
+  "pkl": "eval/the_story_of_marceau_miller/the_story_of_marceau_miller",
+  "system": "the_story_of_marceau_miller_pipeline2_gemini",
+  "reference_system": "the_story_of_marceau_miller_ht",
+  "metrics": {
+    "comet22": {
+      "score": 0.8040624000000001,
+      "num_scored_segments": 125,
+      "higher_is_better": true
+    },
+    "cometkiwi": {
+      "score": 0.7954184615384615,
+      "num_scored_segments": 130,
+      "higher_is_better": true
+    },
+    "metricx": {
+      "score": 5.158825690999175,
+      "num_scored_segments": 132,
+      "higher_is_better": false
+    },
+    "metricx-qe": {
+      "score": 4.68125415565376,
+      "num_scored_segments": 133,
+      "higher_is_better": false
+    }
+  }
+}

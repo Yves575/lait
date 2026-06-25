@@ -1,0 +1,27 @@
+{
+  "pkl": "dev/ice/ice",
+  "system": "ice_pipeline2_gemini",
+  "reference_system": "ice_ht",
+  "metrics": {
+    "comet22": {
+      "score": 0.7996020547945205,
+      "num_scored_segments": 146,
+      "higher_is_better": true
+    },
+    "cometkiwi": {
+      "score": 0.7276477124183006,
+      "num_scored_segments": 153,
+      "higher_is_better": true
+    },
+    "metricx": {
+      "score": 6.369820624200347,
+      "num_scored_segments": 153,
+      "higher_is_better": false
+    },
+    "metricx-qe": {
+      "score": 6.407071862345427,
+      "num_scored_segments": 153,
+      "higher_is_better": false
+    }
+  }
+}

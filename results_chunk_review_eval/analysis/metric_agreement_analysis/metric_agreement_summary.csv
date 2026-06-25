@@ -1,0 +1,2 @@
+n_chunks,agree_count,agreement_rate,both_tie_count,both_non_tie_chunks,non_tie_agree_count,non_tie_agreement_rate,kendall_tau,kendall_p_value
+385,100,0.2597402597402597,0,158,100,0.6329113924050633,0.07659831427193378,0.12799461165704257

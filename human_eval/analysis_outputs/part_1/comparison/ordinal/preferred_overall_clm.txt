@@ -1,0 +1,69 @@
+Test: CLM (cumulative link model, ordinal logit)
+
+Model note
+Formula: preferred_overall ~ group + order
+Fixed effects: group (source language) and order (HT-first vs MT-first).
+No random effects (cumulative link model).
+
+Question
+Overall preference (MT < NO DIFF < HT)
+
+Model summary
+formula: preferred_overall ~ group + order
+data:    model_data
+
+ link  threshold nobs logLik AIC   niter max.grad cond.H 
+ logit flexible  30   -26.35 62.70 8(0)  6.16e-10 3.9e+01
+
+Coefficients:
+              Estimate Std. Error z value Pr(>|z|)  
+groupJapanese   0.2565     0.8927   0.287   0.7738  
+groupPolish     1.0489     0.9254   1.133   0.2571  
+orderMT-first   1.3385     0.7754   1.726   0.0843 .
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Threshold coefficients:
+           Estimate Std. Error z value
+MT|NO DIFF  0.08868    0.68504   0.129
+NO DIFF|HT  0.75026    0.69965   1.072
+
+Confidence intervals
+                   2.5 %   97.5 %
+groupJapanese -1.5031159 2.060206
+groupPolish   -0.7162011 2.988889
+orderMT-first -0.1297117 2.957817
+
+Estimated marginal means (mean.class by group)
+ group    mean.class    SE  df asymp.LCL asymp.UCL
+ French         2.11 0.255 Inf      1.61      2.61
+ Japanese       2.22 0.284 Inf      1.66      2.78
+ Polish         2.52 0.235 Inf      2.06      2.98
+
+Results are averaged over the levels of: order 
+Confidence level used: 0.95 
+
+Estimated marginal means (prob by group | preferred_overall)
+preferred_overall = MT:
+ group     prob     SE  df asymp.LCL asymp.UCL
+ French   0.372 0.1290 Inf   0.12025     0.625
+ Japanese 0.320 0.1390 Inf   0.04802     0.592
+ Polish   0.184 0.1050 Inf  -0.02243     0.391
+
+preferred_overall = NO DIFF:
+ group     prob     SE  df asymp.LCL asymp.UCL
+ French   0.146 0.0681 Inf   0.01215     0.279
+ Japanese 0.141 0.0669 Inf   0.00987     0.272
+ Polish   0.110 0.0587 Inf  -0.00476     0.225
+
+preferred_overall = HT:
+ group     prob     SE  df asymp.LCL asymp.UCL
+ French   0.482 0.1350 Inf   0.21692     0.747
+ Japanese 0.539 0.1530 Inf   0.24011     0.838
+ Polish   0.706 0.1350 Inf   0.44052     0.971
+
+Results are averaged over the levels of: order 
+Confidence level used: 0.95 
+
+Model warnings
+No warnings captured.

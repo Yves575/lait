@@ -1,0 +1,17 @@
+{
+  "pkl": "eval/the_ark/the_ark",
+  "system": "the_ark_ht",
+  "reference_system": "the_ark_ht",
+  "metrics": {
+    "cometkiwi": {
+      "score": 0.7265423197492162,
+      "num_scored_segments": 319,
+      "higher_is_better": true
+    },
+    "metricx-qe": {
+      "score": 4.827008845383844,
+      "num_scored_segments": 319,
+      "higher_is_better": false
+    }
+  }
+}

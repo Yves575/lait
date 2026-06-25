@@ -1,0 +1,42 @@
+Test: GLM (generalized linear model, binomial logit)
+
+Formula:
+guessed_MT ~ actual_version + single_read_position
+
+Model summary
+
+Call:
+glm(formula = formula, family = binomial, data = model_data)
+
+Coefficients:
+                      Estimate Std. Error z value Pr(>|z|)
+(Intercept)            -0.2707     0.4520  -0.599    0.549
+actual_versionMT        0.5415     0.5236   1.034    0.301
+single_read_position2  -0.2732     0.5235  -0.522    0.602
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 82.911  on 59  degrees of freedom
+Residual deviance: 81.563  on 57  degrees of freedom
+AIC: 87.563
+
+Number of Fisher Scoring iterations: 4
+
+
+Confidence intervals
+                          2.5 %    97.5 %
+(Intercept)           -1.181777 0.6126379
+actual_versionMT      -0.478371 1.5858463
+single_read_position2 -1.311808 0.7525408
+Estimated marginal means
+emmeans(model, ~ actual_version, type = "response")
+ actual_version  prob     SE  df asymp.LCL asymp.UCL
+ HT             0.400 0.0896 Inf     0.242     0.581
+ MT             0.533 0.0913 Inf     0.358     0.701
+
+Results are averaged over the levels of: single_read_position 
+Confidence level used: 0.95 
+Intervals are back-transformed from the logit scale 
+
+Model warnings
+No warnings captured.

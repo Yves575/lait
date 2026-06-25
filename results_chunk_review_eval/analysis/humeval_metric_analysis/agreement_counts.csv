@@ -1,0 +1,11 @@
+metric,metric_preference,human_preference,n
+litransproqa,HT,HT,15
+litransproqa,HT,MT,9
+litransproqa,MT,HT,197
+litransproqa,MT,MT,95
+litransproqa,tie,HT,310
+litransproqa,tie,MT,146
+metricx-qe,HT,HT,209
+metricx-qe,HT,MT,103
+metricx-qe,MT,HT,311
+metricx-qe,MT,MT,147

@@ -1,0 +1,27 @@
+{
+  "pkl": "eval/inner_space/inner_space",
+  "system": "inner_space_pipeline2_gemini",
+  "reference_system": "inner_space_ht",
+  "metrics": {
+    "comet22": {
+      "score": 0.8442055214723927,
+      "num_scored_segments": 163,
+      "higher_is_better": true
+    },
+    "cometkiwi": {
+      "score": 0.7702546511627907,
+      "num_scored_segments": 172,
+      "higher_is_better": true
+    },
+    "metricx": {
+      "score": 5.327751196747602,
+      "num_scored_segments": 172,
+      "higher_is_better": false
+    },
+    "metricx-qe": {
+      "score": 4.965865097293964,
+      "num_scored_segments": 173,
+      "higher_is_better": false
+    }
+  }
+}

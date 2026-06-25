@@ -1,0 +1,27 @@
+{
+  "pkl": "dev/the_deserters/the_deserters",
+  "system": "the_deserters_pipeline3",
+  "reference_system": "the_deserters_ht",
+  "metrics": {
+    "comet22": {
+      "score": 0.8340325443786983,
+      "num_scored_segments": 169,
+      "higher_is_better": true
+    },
+    "cometkiwi": {
+      "score": 0.7672912790697674,
+      "num_scored_segments": 172,
+      "higher_is_better": true
+    },
+    "metricx": {
+      "score": 4.344078053828588,
+      "num_scored_segments": 172,
+      "higher_is_better": false
+    },
+    "metricx-qe": {
+      "score": 4.952591558528501,
+      "num_scored_segments": 172,
+      "higher_is_better": false
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "pkl": "eval/my_name_is_stramer/my_name_is_stramer",
+  "system": "my_name_is_stramer_pipeline3",
+  "reference_system": "my_name_is_stramer_ht",
+  "metrics": {
+    "comet22": {
+      "score": 0.7930059829059829,
+      "num_scored_segments": 234,
+      "higher_is_better": true
+    },
+    "cometkiwi": {
+      "score": 0.7484961538461539,
+      "num_scored_segments": 234,
+      "higher_is_better": true
+    },
+    "metricx": {
+      "score": 6.065552142950205,
+      "num_scored_segments": 234,
+      "higher_is_better": false
+    },
+    "metricx-qe": {
+      "score": 5.284041843607894,
+      "num_scored_segments": 234,
+      "higher_is_better": false
+    }
+  }
+}

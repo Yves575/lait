@@ -1,0 +1,17 @@
+{
+  "pkl": "symphony_of_monsters_fr_en",
+  "system": "symphony_of_monsters_fr_en_mt",
+  "reference_system": "symphony_of_monsters_fr_en_ht",
+  "metrics": {
+    "litransproqa": {
+      "score": 0.9992210321324245,
+      "num_scored_segments": 26,
+      "higher_is_better": true
+    },
+    "metricx-qe": {
+      "score": 6.806001498148992,
+      "num_scored_segments": 26,
+      "higher_is_better": false
+    }
+  }
+}

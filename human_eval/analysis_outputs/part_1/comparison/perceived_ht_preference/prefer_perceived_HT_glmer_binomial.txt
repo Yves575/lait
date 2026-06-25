@@ -1,0 +1,60 @@
+Test: GLMER (generalized linear mixed model, binomial logit)
+
+Formula:
+prefers_perceived_HT ~ order + (1 | reader) + (1 | book)
+
+Singular fit check
+isSingular(model): FALSE
+
+Model summary
+Generalized linear mixed model fit by maximum likelihood (Laplace
+  Approximation) [glmerMod]
+ Family: binomial  ( logit )
+Formula: prefers_perceived_HT ~ order + (1 | reader) + (1 | book)
+   Data: model_data
+Control: glmerControl(optimizer = "bobyqa", optCtrl = list(maxfun = 2e+05))
+
+      AIC       BIC    logLik -2*log(L)  df.resid 
+     19.8      25.4      -5.9      11.8        26 
+
+Scaled residuals: 
+     Min       1Q   Median       3Q      Max 
+-2.54951  0.00001  0.00001  0.39223  0.39223 
+
+Random effects:
+ Groups Name        Variance  Std.Dev. 
+ reader (Intercept) 3.990e-08 0.0001997
+ book   (Intercept) 3.976e-08 0.0001994
+Number of obs: 30, groups:  reader, 15; book, 15
+
+Fixed effects:
+               Estimate Std. Error z value Pr(>|z|)  
+(Intercept)   1.872e+00  7.596e-01   2.464   0.0137 *
+orderMT-first 2.060e+01  1.961e+04   0.001   0.9992  
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Correlation of Fixed Effects:
+            (Intr)
+ordrMT-frst 0.000 
+optimizer (bobyqa) convergence code: 0 (OK)
+unable to evaluate scaled gradient
+Model failed to converge: degenerate  Hessian with 1 negative eigenvalues
+  See ?lme4::convergence and ?lme4::troubleshooting.
+
+
+Random effects (VarCorr)
+ Groups Name        Std.Dev.  
+ reader (Intercept) 0.00019975
+ book   (Intercept) 0.00019940
+
+Confidence intervals
+                      2.5 %       97.5 %
+.sig01                   NA           NA
+.sig02                   NA           NA
+(Intercept)    3.831027e-01     3.360502
+orderMT-first -3.841175e+04 38452.952533
+Model warnings
+* unable to evaluate scaled gradient
+* Model failed to converge: degenerate  Hessian with 1 negative eigenvalues
+  See ?lme4::convergence and ?lme4::troubleshooting.

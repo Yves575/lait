@@ -1,0 +1,17 @@
+{
+  "pkl": "sisters_in_yellow_ja_en",
+  "system": "sisters_in_yellow_ja_en_ht",
+  "reference_system": "sisters_in_yellow_ja_en_ht",
+  "metrics": {
+    "litransproqa": {
+      "score": 0.9350778967867576,
+      "num_scored_segments": 26,
+      "higher_is_better": true
+    },
+    "metricx-qe": {
+      "score": 9.108513832092285,
+      "num_scored_segments": 26,
+      "higher_is_better": false
+    }
+  }
+}

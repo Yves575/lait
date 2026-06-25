@@ -1,0 +1,17 @@
+{
+  "pkl": "the_story_of_marceau_miller_fr_en",
+  "system": "the_story_of_marceau_miller_fr_en_ht",
+  "reference_system": "the_story_of_marceau_miller_fr_en_ht",
+  "metrics": {
+    "litransproqa": {
+      "score": 0.5560917721518986,
+      "num_scored_segments": 24,
+      "higher_is_better": true
+    },
+    "metricx-qe": {
+      "score": 9.131087919076284,
+      "num_scored_segments": 24,
+      "higher_is_better": false
+    }
+  }
+}

@@ -1,0 +1,17 @@
+metric,metric_label,human_variant,n_books,mean_spa,median_spa,mean_hard_pairwise_agreement,source_lang,source_lang_label
+litransproqa,LitTransProQA,participant_similar_quality_as_tie,15,0.1830150318301503,0.0024997500249974713,0.13333333333333333,,
+litransproqa,LitTransProQA,participant_strict,15,0.21121221211212216,0.006999300069993053,0.2,,
+metricx-qe,MetricX-QE,participant_similar_quality_as_tie,15,0.39156084391560847,0.4119588041195881,0.3333333333333333,,
+metricx-qe,MetricX-QE,participant_strict,15,0.4147851881478519,0.4763523647635236,0.4,,
+litransproqa,LitTransProQA,participant_similar_quality_as_tie,5,0.15082491750824917,0.020697930206979298,0.2,fr,French
+litransproqa,LitTransProQA,participant_similar_quality_as_tie,5,0.22873712628737128,9.999000099991662e-05,0.2,ja,Japanese
+litransproqa,LitTransProQA,participant_similar_quality_as_tie,5,0.16948305169483052,0.0024997500249974713,0.0,pl,Polish
+litransproqa,LitTransProQA,participant_strict,5,0.18384161583841616,0.006999300069993053,0.2,fr,French
+litransproqa,LitTransProQA,participant_strict,5,0.31214878512148786,9.999000099991662e-05,0.4,ja,Japanese
+litransproqa,LitTransProQA,participant_strict,5,0.13764623537646237,0.032996700329967044,0.0,pl,Polish
+metricx-qe,MetricX-QE,participant_similar_quality_as_tie,5,0.39256074392560747,0.472952704729527,0.2,fr,French
+metricx-qe,MetricX-QE,participant_similar_quality_as_tie,5,0.391960803919608,0.4119588041195881,0.4,ja,Japanese
+metricx-qe,MetricX-QE,participant_similar_quality_as_tie,5,0.39016098390160986,0.307069293070693,0.4,pl,Polish
+metricx-qe,MetricX-QE,participant_strict,5,0.3832216778322168,0.4763523647635236,0.2,fr,French
+metricx-qe,MetricX-QE,participant_strict,5,0.4753724627537247,0.508049195080492,0.6,ja,Japanese
+metricx-qe,MetricX-QE,participant_strict,5,0.38576142385761425,0.307069293070693,0.4,pl,Polish

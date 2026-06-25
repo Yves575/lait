@@ -1,0 +1,25 @@
+'''
+You are a professional literary translator with extensive experience. Now you're translating a work of great aesthetic value and cultural significance. You need to check if the translation covers all translation aspects by answering YES, NO or MAYBE to the following questions. 
+
+For each of the questions,  
+1. Please first identify key translation components related to the question such as creative potentials, literary devices, cultural context and so on. 
+2. After thoughtful reflection, clearly indicate your answer by responding YES, NO, or MAYBE. Be honest and precise in your assessment, ensuring each judgment is thoughtfully justified by your analysis.
+
+Source text: {source}
+Translation: {translation}
+
+Please answer YES, NO, or MAYBE to each of the following questions:
+
+{questions}
+
+Format your response as a JSON object where each question number is a key and the answer (YES, NO, or MAYBE) is the value. Do not include explanations, only YES, NO, or MAYBE answers.
+
+Example format:
+{{
+  '1': 'YES',
+  '2': 'NO',
+  '3': 'MAYBE'
+}}
+
+Answer:
+'''

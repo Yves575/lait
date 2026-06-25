@@ -1,0 +1,49 @@
+Test: GLM (generalized linear model, binomial logit)
+
+Formula:
+prefers_perceived_HT ~ order
+
+Model summary
+
+Call:
+glm(formula = formula, family = binomial, data = model_data)
+
+Coefficients:
+               Estimate Std. Error z value Pr(>|z|)  
+(Intercept)      1.8718     0.7596   2.464   0.0137 *
+orderMT-first   18.6943  4577.9619   0.004   0.9967  
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 14.696  on 29  degrees of freedom
+Residual deviance: 11.780  on 28  degrees of freedom
+AIC: 15.78
+
+Number of Fisher Scoring iterations: 19
+
+
+Confidence intervals
+                     2.5 %   97.5 %
+(Intercept)      0.5855872 3.727431
+orderMT-first -728.9214262       NA
+Estimated marginal means
+emmeans(model, ~ order, type = "response")
+ order        prob       SE  df asymp.LCL asymp.UCL
+ HT-first 0.866667 8.78e-02 Inf  0.594621  0.966447
+ MT-first 1.000000 5.36e-06 Inf  0.000000  1.000000
+
+Confidence level used: 0.95 
+Intervals are back-transformed from the logit scale 
+
+emmeans(model, ~ 1, type = "response")
+ 1       prob     SE  df asymp.LCL asymp.UCL
+ overall    1 0.0307 Inf  2.22e-16         1
+
+Results are averaged over the levels of: order 
+Confidence level used: 0.95 
+Intervals are back-transformed from the logit scale 
+
+Model warnings
+No warnings captured.

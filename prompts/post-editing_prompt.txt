@@ -1,0 +1,27 @@
+You are given:
+1. A literary source text written in {source_lang}, which is a fragment of a novel.
+2. An English translation of that text produced by a machine translation system.
+
+Your task is to revise the English translation by comparing it carefully with the original {source_lang} text.
+
+When revising ensure faithfulness to the original meaning, tone, voice, register, rhythm, and stylistic effect, while producing natural, fluent, idiomatic prose in English. 
+
+Adapt wording and syntax where needed for naturalness and readability. 
+
+Preserve ambiguity, characterization, and differences in voice between narrator and characters of the original text wherever possible. 
+
+Ensure consistency of narrative perspective, register, and style throughout the text.
+
+Keep the existing English where it already works well, but revise where needed. Correct mistranslations, unjustified omissions or additions, and awkward or unnatural phrasing, making the translation more suitable for an English-language readership.
+
+Return only the revised English translation.
+
+Original literary text in {source_lang}:
+<SOURCE>
+{source}
+</SOURCE>
+
+English translation to revise:
+<TRANSLATION>
+{text}
+</TRANSLATION>

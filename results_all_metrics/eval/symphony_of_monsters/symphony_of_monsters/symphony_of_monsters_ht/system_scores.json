@@ -1,0 +1,17 @@
+{
+  "pkl": "eval/symphony_of_monsters/symphony_of_monsters",
+  "system": "symphony_of_monsters_ht",
+  "reference_system": "symphony_of_monsters_ht",
+  "metrics": {
+    "cometkiwi": {
+      "score": 0.7930113924050632,
+      "num_scored_segments": 158,
+      "higher_is_better": true
+    },
+    "metricx-qe": {
+      "score": 4.444593135290925,
+      "num_scored_segments": 159,
+      "higher_is_better": false
+    }
+  }
+}

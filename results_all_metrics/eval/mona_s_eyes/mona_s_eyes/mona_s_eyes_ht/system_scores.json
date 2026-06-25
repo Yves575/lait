@@ -1,0 +1,17 @@
+{
+  "pkl": "eval/mona_s_eyes/mona_s_eyes",
+  "system": "mona_s_eyes_ht",
+  "reference_system": "mona_s_eyes_ht",
+  "metrics": {
+    "cometkiwi": {
+      "score": 0.7778542253521127,
+      "num_scored_segments": 142,
+      "higher_is_better": true
+    },
+    "metricx-qe": {
+      "score": 4.732764739825808,
+      "num_scored_segments": 145,
+      "higher_is_better": false
+    }
+  }
+}

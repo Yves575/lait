@@ -1,0 +1,27 @@
+{
+  "pkl": "dev/the_old_fire/the_old_fire",
+  "system": "the_old_fire_pipeline1_gemini",
+  "reference_system": "the_old_fire_ht",
+  "metrics": {
+    "comet22": {
+      "score": 0.7816583333333333,
+      "num_scored_segments": 60,
+      "higher_is_better": true
+    },
+    "cometkiwi": {
+      "score": 0.7837999999999999,
+      "num_scored_segments": 60,
+      "higher_is_better": true
+    },
+    "metricx": {
+      "score": 5.563530909518401,
+      "num_scored_segments": 60,
+      "higher_is_better": false
+    },
+    "metricx-qe": {
+      "score": 4.7511748701334,
+      "num_scored_segments": 60,
+      "higher_is_better": false
+    }
+  }
+}

@@ -1,0 +1,10 @@
+metric,variant,n,agreement_rate,metric_ties,human_similar_quality,human_agreed_chunks
+litransproqa,participant_strict_no_metric_ties,316,0.34810126582278483,456,238,492
+litransproqa,human_agreed_chunks_strict_no_metric_ties,200,0.26,456,238,492
+litransproqa,litransproqa_similar_quality_as_tie,772,0.26295336787564766,456,238,492
+metricx-qe,participant_strict_no_metric_ties,770,0.4623376623376623,0,237,490
+metricx-qe,human_agreed_chunks_strict_no_metric_ties,490,0.44081632653061226,0,237,490
+paragraph_mean_cometkiwi,participant_strict_no_metric_ties,754,0.34084880636604775,0,231,480
+paragraph_mean_cometkiwi,human_agreed_chunks_strict_no_metric_ties,480,0.25,0,231,480
+paragraph_mean_metricx-qe,participant_strict_no_metric_ties,770,0.3922077922077922,0,237,490
+paragraph_mean_metricx-qe,human_agreed_chunks_strict_no_metric_ties,490,0.3306122448979592,0,237,490

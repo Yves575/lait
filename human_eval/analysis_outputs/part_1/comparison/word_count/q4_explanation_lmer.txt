@@ -1,0 +1,50 @@
+Test: LMER (linear mixed model, Gaussian)
+
+Model summary
+Linear mixed model fit by REML ['lmerMod']
+Formula: comparison_q4_nbr_words ~ group + order + (1 | reader) + (1 |  
+    book)
+   Data: model_data
+Control: lmerControl(optimizer = "bobyqa")
+
+REML criterion at convergence: 268.9
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-1.1511 -0.5493 -0.2138  0.3100  2.2970 
+
+Random effects:
+ Groups   Name        Variance Std.Dev.
+ reader   (Intercept) 537.2    23.18   
+ book     (Intercept)   0.0     0.00   
+ Residual             846.3    29.09   
+Number of obs: 30, groups:  reader, 15; book, 15
+
+Fixed effects:
+              Estimate Std. Error t value
+(Intercept)     76.820     12.658   6.069
+groupJapanese   -3.871     15.920  -0.243
+groupPolish     -9.587     13.390  -0.716
+orderMT-first    9.067     10.622   0.854
+
+Correlation of Fixed Effects:
+            (Intr) grpJpn grpPls
+groupJapans -0.567              
+groupPolish -0.529  0.421       
+ordrMT-frst -0.420  0.000  0.000
+optimizer (bobyqa) convergence code: 0 (OK)
+boundary (singular) fit: see help('isSingular')
+
+
+Confidence intervals
+                  2.5 %    97.5 %
+.sig01               NA        NA
+.sig02               NA        NA
+.sigma               NA        NA
+(Intercept)    52.00954 101.62958
+groupJapanese -35.07472  27.33204
+groupPolish   -35.83033  16.65565
+orderMT-first -11.75268  29.88601
+
+Model warnings
+No warnings captured.

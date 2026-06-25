@@ -1,0 +1,23 @@
+Test: None (descriptive)
+
+Confusion matrix (actual x guessed)
+      guessed
+actual HT MT
+    HT 18 12
+    MT 14 16
+
+Row proportions
+      guessed
+actual        HT        MT
+    HT 0.6000000 0.4000000
+    MT 0.4666667 0.5333333
+
+Cell counts
+true_HT_guessed_HT: 18 
+true_HT_guessed_MT: 12 
+true_MT_guessed_HT: 14 
+true_MT_guessed_MT: 16 
+
+Identification summary
+   accuracy sensitivity_MT specificity_HT false_positive_MT bias_guess_MT
+1 0.5666667      0.5333333            0.6               0.4     0.4666667

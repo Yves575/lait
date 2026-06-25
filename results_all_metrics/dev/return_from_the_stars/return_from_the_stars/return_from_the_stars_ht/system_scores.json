@@ -1,0 +1,17 @@
+{
+  "pkl": "dev/return_from_the_stars/return_from_the_stars",
+  "system": "return_from_the_stars_ht",
+  "reference_system": "return_from_the_stars_ht",
+  "metrics": {
+    "cometkiwi": {
+      "score": 0.7019035087719298,
+      "num_scored_segments": 114,
+      "higher_is_better": true
+    },
+    "metricx-qe": {
+      "score": 6.788738511376462,
+      "num_scored_segments": 118,
+      "higher_is_better": false
+    }
+  }
+}

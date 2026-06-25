@@ -1,0 +1,17 @@
+{
+  "pkl": "dev/small_boat/small_boat",
+  "system": "small_boat_ht",
+  "reference_system": "small_boat_ht",
+  "metrics": {
+    "cometkiwi": {
+      "score": 0.7000518518518518,
+      "num_scored_segments": 27,
+      "higher_is_better": true
+    },
+    "metricx-qe": {
+      "score": 6.864738319601331,
+      "num_scored_segments": 28,
+      "higher_is_better": false
+    }
+  }
+}

@@ -1,0 +1,233 @@
+#!/usr/bin/env python3
+"""Build the reading-order effect LaTeX table from human-eval summary files.
+
+Reads lines such as::
+
+    Reading order was not a significant predictor, beta = 0.41, p = .3978.
+
+from ``human_eval/analysis_outputs/part_1/single_reading/summaries/q*_summary.txt``
+(see ``human_eval/generate_analysis_summaries.R``) and writes a compact
+``table*`` with order (MT-first vs HT-first) fixed-effect estimates.
+"""
+
+from __future__ import annotations
+
+import argparse
+import re
+import sys
+from dataclasses import dataclass
+from pathlib import Path
+from typing import Literal
+
+
+REPO_ROOT = Path(__file__).resolve().parents[2]
+DEFAULT_OUTPUT = (
+    REPO_ROOT
+    / "analysis"
+    / "manuscript_tables"
+    / "tables"
+    / "tex"
+    / "clmm_clm_reading_order_stats_results.tex"
+)
+DEFAULT_INPUT_DIR = (
+    REPO_ROOT
+    / "human_eval"
+    / "analysis_outputs"
+    / "part_1"
+    / "single_reading"
+    / "summaries"
+)
+
+READING_ORDER_RE = re.compile(
+    r"Reading order was (not )?a significant predictor,\s*"
+    r"beta\s*=\s*([-+]?\d*\.?\d+(?:[eE][-+]?\d+)?),\s*"
+    r"p\s*=\s*\.?(\d*\.?\d+(?:[eE][-+]?\d+)?)\s*\.?",
+    re.IGNORECASE,
+)
+
+# Paper row order: display name, question id, model tag shown in table.
+TABLE_ROWS: list[tuple[str, str, Literal["CLMM", "CLM"]]] = [
+    ("Acceptability", "q1", "CLMM"),
+    ("Smoothness", "q2", "CLM"),
+    ("Immersion", "q3", "CLM"),
+    ("Would Continue Reading", "q4", "CLMM"),
+]
+
+# Lowercase prose labels for the caption (aligned with tab:clmm_clm_stats_results).
+CAPTION_LABELS: dict[str, str] = {
+    "q1": "acceptability",
+    "q2": "smoothness",
+    "q3": "immersion",
+    "q4": "would continue reading",
+}
+
+
+@dataclass(frozen=True)
+class OrderEffect:
+    beta: float
+    p_value: float
+    significant: bool
+
+
+def parse_reading_order_effect(path: Path) -> OrderEffect:
+    if not path.is_file():
+        raise FileNotFoundError(path)
+
+    text = path.read_text(encoding="utf-8")
+    match = READING_ORDER_RE.search(text)
+    if not match:
+        raise ValueError(
+            f'No "Reading order was ... beta = ..., p = ..." line in {path}'
+        )
+
+    significant = match.group(1) is None
+    beta = float(match.group(2))
+    p_raw = match.group(3)
+    p_value = float(p_raw) if p_raw.startswith(("0", ".")) else float(f"0.{p_raw}")
+
+    return OrderEffect(beta=beta, p_value=p_value, significant=significant)
+
+
+def fmt_beta(x: float) -> str:
+    return f"{x:.2f}"
+
+
+def fmt_p(p: float) -> str:
+    if p < 0.0001:
+        return "< 0.0001"
+    return f"{round(p, 4):.4f}"
+
+
+def format_prose_list(labels: list[str]) -> str:
+    if not labels:
+        return ""
+    if len(labels) == 1:
+        return labels[0]
+    if len(labels) == 2:
+        return f"{labels[0]} and {labels[1]}"
+    return ", ".join(labels[:-1]) + f", and {labels[-1]}"
+
+
+def build_significance_blurb(
+    row_effects: list[tuple[str, OrderEffect]],
+) -> str:
+    """Summarize which table rows had significant reading-order effects."""
+    significant = [label for label, effect in row_effects if effect.significant]
+    not_significant = [label for label, effect in row_effects if not effect.significant]
+
+    if significant and not_significant:
+        return (
+            f"Reading order was statistically significant for "
+            f"{format_prose_list(significant)} ($\\alpha = 0.05$) but not for "
+            f"{format_prose_list(not_significant)}."
+        )
+    if significant:
+        return (
+            f"Reading order was statistically significant for "
+            f"{format_prose_list(significant)} ($\\alpha = 0.05$)."
+        )
+    return (
+        f"Reading order was not a statistically significant predictor for "
+        f"{format_prose_list(not_significant)} ($p > 0.05$)."
+    )
+
+
+def build_caption(row_effects: list[tuple[str, OrderEffect]]) -> str:
+    return (
+        r"Reading order fixed effects from CLM and CLMM models "
+        r"of isolated-reading questionnaire Likert ratings. "
+        f"{build_significance_blurb(row_effects)} "
+        r"Full model outputs are displayed in \S\ref{sec:stat-test-results}."
+    )
+
+
+def render_table_row(question: str, model: str, effect: OrderEffect) -> str:
+    cells = [
+        question,
+        model,
+        fmt_beta(effect.beta),
+        fmt_p(effect.p_value),
+    ]
+    return "        " + " & ".join(cells) + r" \\"
+
+
+def render_table(input_dir: Path) -> str:
+    body_rows: list[str] = []
+    sources: list[str] = []
+    row_effects: list[tuple[str, OrderEffect]] = []
+
+    for question, question_id, model_tag in TABLE_ROWS:
+        path = input_dir / f"{question_id}_summary.txt"
+        effect = parse_reading_order_effect(path)
+        body_rows.append(render_table_row(question, model_tag, effect))
+        row_effects.append((CAPTION_LABELS[question_id], effect))
+        sources.append(path.name)
+
+    caption = build_caption(row_effects)
+    source_comment = ", ".join(sources)
+    lines = [
+        "% Auto-generated by build_clmm_clm_reading_order_stats_table.py; do not edit by hand.",
+        f"% Sources: {source_comment}",
+        "% Requires: booktabs",
+        "%",
+        "% \\input{analysis/manuscript_tables/tex/clmm_clm_reading_order_stats_results.tex}",
+        "",
+        r"\begin{table*}[h!]",
+        r"    \centering",
+        r"    \small",
+        r"    \setlength{\tabcolsep}{6pt}",
+        r"    \begin{tabular}{llll}",
+        r"        \toprule",
+        r"        Question & Model & $\beta$ & $p$ \\",
+        r"        \midrule",
+        *body_rows,
+        r"        \bottomrule",
+        r"    \end{tabular}",
+        f"    \\caption{{{caption}}}",
+        r"    \label{tab:clmm_clm_reading_order_stats_results}",
+        r"\end{table*}",
+        "",
+    ]
+    return "\n".join(lines)
+
+
+def main(argv: list[str] | None = None) -> int:
+    parser = argparse.ArgumentParser(
+        description="Build LaTeX table of reading-order fixed effects from summary files."
+    )
+    parser.add_argument(
+        "--input-dir",
+        type=Path,
+        default=DEFAULT_INPUT_DIR,
+        help="Directory with q*_summary.txt files (default: part_1/single_reading/summaries)",
+    )
+    parser.add_argument(
+        "-o",
+        "--output",
+        type=Path,
+        default=DEFAULT_OUTPUT,
+        help="Output .tex path",
+    )
+    args = parser.parse_args(argv)
+
+    input_dir = args.input_dir if args.input_dir.is_absolute() else REPO_ROOT / args.input_dir
+    output_path = args.output if args.output.is_absolute() else REPO_ROOT / args.output
+
+    if not input_dir.is_dir():
+        print(f"error: input directory not found: {input_dir}", file=sys.stderr)
+        return 1
+
+    try:
+        tex = render_table(input_dir)
+    except (FileNotFoundError, ValueError) as exc:
+        print(f"error: {exc}", file=sys.stderr)
+        return 1
+
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    output_path.write_text(tex, encoding="utf-8")
+    print(f"Wrote {output_path.relative_to(REPO_ROOT)}")
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

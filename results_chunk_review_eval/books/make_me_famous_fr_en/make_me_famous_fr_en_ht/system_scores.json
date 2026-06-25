@@ -1,0 +1,17 @@
+{
+  "pkl": "make_me_famous_fr_en",
+  "system": "make_me_famous_fr_en_ht",
+  "reference_system": "make_me_famous_fr_en_ht",
+  "metrics": {
+    "litransproqa": {
+      "score": 0.9170417252695734,
+      "num_scored_segments": 27,
+      "higher_is_better": true
+    },
+    "metricx-qe": {
+      "score": 6.849110205968221,
+      "num_scored_segments": 27,
+      "higher_is_better": false
+    }
+  }
+}

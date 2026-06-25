@@ -1,0 +1,6 @@
+metric,metric_label,metric_preference,n
+litransproqa,LitTransProQA,HT,12
+litransproqa,LitTransProQA,MT,146
+litransproqa,LitTransProQA,tie,228
+metricx-qe,MetricX-QE,HT,156
+metricx-qe,MetricX-QE,MT,229

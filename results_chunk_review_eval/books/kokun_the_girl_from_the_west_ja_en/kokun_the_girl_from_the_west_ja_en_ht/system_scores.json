@@ -1,0 +1,17 @@
+{
+  "pkl": "kokun_the_girl_from_the_west_ja_en",
+  "system": "kokun_the_girl_from_the_west_ja_en_ht",
+  "reference_system": "kokun_the_girl_from_the_west_ja_en_ht",
+  "metrics": {
+    "litransproqa": {
+      "score": 0.9729694092827005,
+      "num_scored_segments": 24,
+      "higher_is_better": true
+    },
+    "metricx-qe": {
+      "score": 9.608586927254995,
+      "num_scored_segments": 24,
+      "higher_is_better": false
+    }
+  }
+}

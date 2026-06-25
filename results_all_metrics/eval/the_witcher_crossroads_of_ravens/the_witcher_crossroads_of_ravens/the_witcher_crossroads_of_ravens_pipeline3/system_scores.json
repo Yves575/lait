@@ -1,0 +1,27 @@
+{
+  "pkl": "eval/the_witcher_crossroads_of_ravens/the_witcher_crossroads_of_ravens",
+  "system": "the_witcher_crossroads_of_ravens_pipeline3",
+  "reference_system": "the_witcher_crossroads_of_ravens_ht",
+  "metrics": {
+    "comet22": {
+      "score": 0.7728696335078534,
+      "num_scored_segments": 191,
+      "higher_is_better": true
+    },
+    "cometkiwi": {
+      "score": 0.6924359375,
+      "num_scored_segments": 192,
+      "higher_is_better": true
+    },
+    "metricx": {
+      "score": 6.4672295394992325,
+      "num_scored_segments": 191,
+      "higher_is_better": false
+    },
+    "metricx-qe": {
+      "score": 6.5681758386393385,
+      "num_scored_segments": 192,
+      "higher_is_better": false
+    }
+  }
+}

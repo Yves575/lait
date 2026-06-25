@@ -1,0 +1,75 @@
+Test: CLM (cumulative link model, ordinal logit)
+
+Model note
+Formula: q2 ~ type + order
+Fixed effects: type (HT vs MT) and order (HT-first vs MT-first).
+No random effects (cumulative link model).
+
+Question
+Smoothness (1 unsmooth -> 5 smooth)
+
+Model summary
+formula: q2 ~ type + order
+data:    model_data
+
+ link  threshold nobs logLik AIC    niter max.grad cond.H 
+ logit flexible  60   -79.91 171.82 5(0)  1.98e-07 4.3e+01
+
+Coefficients:
+              Estimate Std. Error z value Pr(>|z|)   
+typeMT         -1.4903     0.5003  -2.979  0.00289 **
+orderMT-first   0.3036     0.4809   0.631  0.52790   
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Threshold coefficients:
+    Estimate Std. Error z value
+1|2 -4.19390    0.83146  -5.044
+2|3 -2.11214    0.50698  -4.166
+3|4 -1.37195    0.46511  -2.950
+4|5  0.08701    0.43055   0.202
+
+Confidence intervals
+                   2.5 %     97.5 %
+typeMT        -2.5014872 -0.5312378
+orderMT-first -0.6373512  1.2561846
+
+Estimated marginal means (mean.class by type)
+ type mean.class    SE  df asymp.LCL asymp.UCL
+ HT         4.23 0.176 Inf      3.88      4.57
+ MT         3.33 0.222 Inf      2.90      3.77
+
+Results are averaged over the levels of: order 
+Confidence level used: 0.95 
+
+Estimated marginal means (prob by type | q2)
+q2 = 1:
+ type   prob     SE  df asymp.LCL asymp.UCL
+ HT   0.0129 0.0103 Inf  -0.00723    0.0331
+ MT   0.0549 0.0383 Inf  -0.02004    0.1299
+
+q2 = 2:
+ type   prob     SE  df asymp.LCL asymp.UCL
+ HT   0.0820 0.0351 Inf   0.01332    0.1507
+ MT   0.2617 0.0756 Inf   0.11342    0.4099
+
+q2 = 3:
+ type   prob     SE  df asymp.LCL asymp.UCL
+ HT   0.0850 0.0344 Inf   0.01753    0.1526
+ MT   0.1751 0.0572 Inf   0.06297    0.2872
+
+q2 = 4:
+ type   prob     SE  df asymp.LCL asymp.UCL
+ HT   0.3039 0.0641 Inf   0.17835    0.4295
+ MT   0.3134 0.0641 Inf   0.18781    0.4390
+
+q2 = 5:
+ type   prob     SE  df asymp.LCL asymp.UCL
+ HT   0.5161 0.0899 Inf   0.33993    0.6923
+ MT   0.1949 0.0620 Inf   0.07330    0.3165
+
+Results are averaged over the levels of: order 
+Confidence level used: 0.95 
+
+Model warnings
+No warnings captured.

@@ -1,0 +1,17 @@
+{
+  "pkl": "mona_s_eyes_fr_en",
+  "system": "mona_s_eyes_fr_en_mt",
+  "reference_system": "mona_s_eyes_fr_en_ht",
+  "metrics": {
+    "litransproqa": {
+      "score": 0.9993452640768223,
+      "num_scored_segments": 29,
+      "higher_is_better": true
+    },
+    "metricx-qe": {
+      "score": 7.383048106884134,
+      "num_scored_segments": 29,
+      "higher_is_better": false
+    }
+  }
+}

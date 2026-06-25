@@ -1,0 +1,27 @@
+{
+  "pkl": "eval/hooked_a_novel_of_obsession/hooked_a_novel_of_obsession",
+  "system": "hooked_a_novel_of_obsession_pipeline3",
+  "reference_system": "hooked_a_novel_of_obsession_ht",
+  "metrics": {
+    "comet22": {
+      "score": 0.7481789915966386,
+      "num_scored_segments": 119,
+      "higher_is_better": true
+    },
+    "cometkiwi": {
+      "score": 0.7407191666666667,
+      "num_scored_segments": 120,
+      "higher_is_better": true
+    },
+    "metricx": {
+      "score": 7.128252946833769,
+      "num_scored_segments": 120,
+      "higher_is_better": false
+    },
+    "metricx-qe": {
+      "score": 5.894973457852999,
+      "num_scored_segments": 120,
+      "higher_is_better": false
+    }
+  }
+}

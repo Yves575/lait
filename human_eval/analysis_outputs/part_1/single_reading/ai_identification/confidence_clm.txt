@@ -1,0 +1,42 @@
+Test: CLM (cumulative link model, ordinal logit)
+
+Formula:
+confidence_ord ~ correct_guess_factor + actual_version
+
+Question
+Single-reading confidence (Q8) by guess correctness and actual version
+
+Model summary
+formula: confidence_ord ~ correct_guess_factor + actual_version
+data:    model_data
+
+ link  threshold nobs logLik AIC    niter max.grad cond.H 
+ logit flexible  60   -72.06 156.12 6(0)  6.62e-07 3.9e+01
+
+Coefficients:
+                            Estimate Std. Error z value Pr(>|z|)
+correct_guess_factorcorrect -0.05311    0.48435  -0.110    0.913
+actual_versionMT             0.64395    0.49022   1.314    0.189
+
+Threshold coefficients:
+    Estimate Std. Error z value
+1|2  -3.8425     1.0687  -3.596
+2|3  -2.7126     0.6864  -3.952
+3|4   0.2851     0.4466   0.638
+4|5   1.8206     0.5181   3.514
+
+Confidence intervals
+                                 2.5 %    97.5 %
+correct_guess_factorcorrect -1.0071933 0.8999694
+actual_versionMT            -0.3094749 1.6210792
+
+emmeans(model, ~correct_guess_factor, mode = "mean.class")
+ correct_guess_factor mean.class    SE  df asymp.LCL asymp.UCL
+ wrong                      3.63 0.159 Inf      3.32      3.94
+ correct                    3.61 0.154 Inf      3.31      3.91
+
+Results are averaged over the levels of: actual_version 
+Confidence level used: 0.95 
+
+Model warnings
+No warnings captured.

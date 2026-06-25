@@ -1,0 +1,17 @@
+{
+  "pkl": "eval/watching_over_her/watching_over_her",
+  "system": "watching_over_her_ht",
+  "reference_system": "watching_over_her_ht",
+  "metrics": {
+    "cometkiwi": {
+      "score": 0.7601371900826447,
+      "num_scored_segments": 121,
+      "higher_is_better": true
+    },
+    "metricx-qe": {
+      "score": 5.545167024470558,
+      "num_scored_segments": 121,
+      "higher_is_better": false
+    }
+  }
+}

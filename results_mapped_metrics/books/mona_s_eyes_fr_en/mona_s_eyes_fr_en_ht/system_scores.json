@@ -1,0 +1,33 @@
+{
+  "pkl": "mona_s_eyes_fr_en",
+  "system": "mona_s_eyes_fr_en_ht",
+  "reference_system": "mona_s_eyes_fr_en_ht",
+  "metrics": {
+    "litransproqa": {
+      "score": 0.9720427760803143,
+      "num_scored_segments": 29,
+      "higher_is_better": true
+    },
+    "metricx-qe": {
+      "score": 7.544366458366657,
+      "num_scored_segments": 29,
+      "higher_is_better": false
+    },
+    "paragraph_mean_cometkiwi": {
+      "score": 0.7668058709346209,
+      "num_scored_segments": 26,
+      "higher_is_better": true,
+      "source": "[withheld from public GitHub release]"
+    },
+    "paragraph_mean_metricx-qe": {
+      "score": 5.276648356831165,
+      "num_scored_segments": 29,
+      "higher_is_better": false,
+      "source": "[withheld from public GitHub release]"
+    }
+  },
+  "paragraph_metric_mapping": {
+    "source_results_dir": "results_all_metrics",
+    "score_prefix": "paragraph_mean_"
+  }
+}

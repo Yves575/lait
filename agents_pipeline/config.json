@@ -1,0 +1,36 @@
+{
+  "stages": {
+    "style_analysis": {
+      "provider": "claude",
+      "model": "claude-opus-4-6"
+    },
+    "translate": {
+      "provider": "codex",
+      "model": "gpt-5.4"
+    },
+    "litrans_review": {
+      "provider": "codex",
+      "model": "gpt-5.4"
+    },
+    "chunk_literary_review": {
+      "provider": "claude",
+      "model": "claude-opus-4-6"
+    },
+    "revise": {
+      "provider": "codex",
+      "model": "gpt-5.4"
+    },
+    "book_review": {
+      "provider": "codex",
+      "model": "gpt-5.4"
+    },
+    "cross_chunk_audit": {
+      "provider": "codex",
+      "model": "gpt-5.4"
+    },
+    "final_revise": {
+      "provider": "claude",
+      "model": "claude-opus-4-6"
+    }
+  }
+}

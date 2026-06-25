@@ -1,0 +1,27 @@
+{
+  "pkl": "dev/the_place_of_shells/the_place_of_shells",
+  "system": "the_place_of_shells_pipeline2_gemini",
+  "reference_system": "the_place_of_shells_ht",
+  "metrics": {
+    "comet22": {
+      "score": 0.8170888888888889,
+      "num_scored_segments": 27,
+      "higher_is_better": true
+    },
+    "cometkiwi": {
+      "score": 0.7493366666666667,
+      "num_scored_segments": 30,
+      "higher_is_better": true
+    },
+    "metricx": {
+      "score": 6.556924396547778,
+      "num_scored_segments": 29,
+      "higher_is_better": false
+    },
+    "metricx-qe": {
+      "score": 6.126734435558319,
+      "num_scored_segments": 30,
+      "higher_is_better": false
+    }
+  }
+}

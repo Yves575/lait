@@ -1,0 +1,27 @@
+{
+  "pkl": "eval/my_grandfather_the_master_detective/my_grandfather_the_master_detective",
+  "system": "my_grandfather_the_master_detective_pipeline1_gemini",
+  "reference_system": "my_grandfather_the_master_detective_ht",
+  "metrics": {
+    "comet22": {
+      "score": 0.7476488095238095,
+      "num_scored_segments": 420,
+      "higher_is_better": true
+    },
+    "cometkiwi": {
+      "score": 0.7791209523809524,
+      "num_scored_segments": 420,
+      "higher_is_better": true
+    },
+    "metricx": {
+      "score": 5.034806307298797,
+      "num_scored_segments": 420,
+      "higher_is_better": false
+    },
+    "metricx-qe": {
+      "score": 3.7214018447058543,
+      "num_scored_segments": 420,
+      "higher_is_better": false
+    }
+  }
+}

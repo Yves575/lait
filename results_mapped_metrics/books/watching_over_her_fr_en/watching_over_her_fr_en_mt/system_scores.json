@@ -1,0 +1,45 @@
+{
+  "pkl": "watching_over_her_fr_en",
+  "system": "watching_over_her_fr_en_mt",
+  "reference_system": "watching_over_her_fr_en_ht",
+  "metrics": {
+    "litransproqa": {
+      "score": 0.9970388788426764,
+      "num_scored_segments": 28,
+      "higher_is_better": true
+    },
+    "metricx-qe": {
+      "score": 8.638060688972473,
+      "num_scored_segments": 28,
+      "higher_is_better": false
+    },
+    "paragraph_mean_comet22": {
+      "score": 0.7924703747795414,
+      "num_scored_segments": 27,
+      "higher_is_better": true,
+      "source": "[withheld from public GitHub release]"
+    },
+    "paragraph_mean_cometkiwi": {
+      "score": 0.764314162414966,
+      "num_scored_segments": 28,
+      "higher_is_better": true,
+      "source": "[withheld from public GitHub release]"
+    },
+    "paragraph_mean_metricx-qe": {
+      "score": 5.990840168500028,
+      "num_scored_segments": 28,
+      "higher_is_better": false,
+      "source": "[withheld from public GitHub release]"
+    },
+    "paragraph_mean_metricx": {
+      "score": 6.320546156416337,
+      "num_scored_segments": 28,
+      "higher_is_better": false,
+      "source": "[withheld from public GitHub release]"
+    }
+  },
+  "paragraph_metric_mapping": {
+    "source_results_dir": "results_all_metrics",
+    "score_prefix": "paragraph_mean_"
+  }
+}

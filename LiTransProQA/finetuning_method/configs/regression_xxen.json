@@ -1,0 +1,22 @@
+{
+    "experiment_name": "xcomet_regression",
+    "xcomet_model_path": "outputs/quarter_layers/models/quarter_layers/train_df_xxen/20250320_210512/checkpoints/checkpoint-12150/",
+    "train_layers": "quarter",
+    "weight_decay": 0.01,
+    "logging_steps": 100,
+    "num_epochs": 10,
+    "batch_size": 8,
+    "ranking_margin": 1.0,
+    "encoder_learning_rate": 8e-6,
+    "encoder_weight_decay": 0.01,
+    "max_length": 512,
+    "gradient_accumulation_steps": 4,
+    "use_wandb": true,
+    "wandb_project": "xcomet_regression",
+    "output_dir": "outputs/regression",
+    "training_data_path": "wmt24/WMT24_finetuning.csv",
+    "validation_data_path": "wmt24/WMT24_finetuning.csv",
+    "warmup_ratio": 0.1,
+    "save_steps": 300,
+    "eval_steps": 150
+} 

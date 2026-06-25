@@ -1,0 +1,17 @@
+{
+  "pkl": "dev/the_books_of_jacob/the_books_of_jacob",
+  "system": "the_books_of_jacob_ht",
+  "reference_system": "the_books_of_jacob_ht",
+  "metrics": {
+    "cometkiwi": {
+      "score": 0.6592725663716814,
+      "num_scored_segments": 113,
+      "higher_is_better": true
+    },
+    "metricx-qe": {
+      "score": 6.8736837883961615,
+      "num_scored_segments": 116,
+      "higher_is_better": false
+    }
+  }
+}

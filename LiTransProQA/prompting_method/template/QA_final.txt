@@ -1,0 +1,25 @@
+1.Am I on guard for “false friends” or misleading cognates between the source and target languages that could distort the meaning?
+2.Do my word choices convey the same connotations in the target language? For example, while 'Latin school' in a German context implies a prestigious institution, a direct translation into Chinese may require a term like 'better school' to convey the same idea.
+3.Does the translated text flow naturally in the target language, following the conventional writing style and grammar?
+4.Have I adjusted idioms, humor or figures of speech to maintain the original’s intent and effect within the cultural context of the target language? (e.g., "raining cats and dogs" → "llueve a cántaros" in Spanish, or "下倾盆大雨" in Chinese)
+5.When culture-specific terms (food, clothing, idioms, holidays etc.), practices, or references in the source are unfamiliar to  the target readers, have I adapted these in a way that a target reader can understand and appreciate (by using the original term, adding a brief explanation, or substituting with a culturally analogous reference/an equivalent concept etc.)?
+6.Does the translation preserve the same meaning and implications of figurative language, such as metaphors or similes?  
+7.Am I considering the context and unspoken implications so that the translation reflects the source text’s pragmatic meaning (tone, irony, implicature), not just the dictionary definitions of individual words?
+8.Am I handling the cultural differences in how certain emotions, gestures, or expressions are described in an clear and understandable way?  
+9.Am I avoiding excessive domestication that erases the source culture’s identity?
+10.Am I balancing foreignizing strategies with the need for clarity so that I don’t drift into exoticizing the source culture for the target reader?
+11.Have I considered the source culture’s context (historical period, locale, customs) well enough to translate cultural references accurately, knowing that each language group has its own culturally specific features?
+12.Does the translation evoke the same cultural mood as the original?
+13.Does my translation maintain the same tone and level of formality for each character or narrative voice as the original?
+14.Is the tone (formal, informal, neutral, colloquial, etc.) consistent in my translation?
+15.Does the narrative voice in my translation match the original novel’s narrative voice?
+16.Am I preserving the author’s unique voice or style in the source text (e.g., terse and minimalist, or elaborate and lyrical) in my translation?
+17.Have I preserved the narrative point of view and any shifts in perspective exactly as in the original?
+18.Does the translation convey the author’s descriptive imagery vividly and accurately?
+19.Have I maintained consistency in terminology, character names, slang, dialect and other key details throughout the text to avoid confusing the reader?
+20.Have I kept track of plot details to ensure nothing got lost or altered in translation that would cause inconsistencies?
+21.Have I maintained the same level of ambiguity or precision as the source text?
+22.Would a reader of the translation sense the same narrator persona or character as in the original?
+23.Am I conveying the author’s intent behind each passage – the subtext or purpose of why they wrote it – through my translation choices?
+24.Is the translation phrased in the most natural way for the target language, achieving the “closest natural equivalent” of the source message?
+25.Have I considered equivalence at multiple levels, at the word level, sentence level, textual level (cohesion), and pragmatic level (overall effect) – to ensure the translation works as a coherent whole?

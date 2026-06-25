@@ -1,0 +1,14 @@
+{"metric": "comet22", "segment_index": 28, "reason": "max_input_length_exceeded", "token_count": 1694, "max_input_length": 512}
+{"metric": "comet22", "segment_index": 33, "reason": "max_input_length_exceeded", "token_count": 709, "max_input_length": 512}
+{"metric": "comet22", "segment_index": 39, "reason": "max_input_length_exceeded", "token_count": 596, "max_input_length": 512}
+{"metric": "comet22", "segment_index": 41, "reason": "max_input_length_exceeded", "token_count": 712, "max_input_length": 512}
+{"metric": "comet22", "segment_index": 42, "reason": "max_input_length_exceeded", "token_count": 1384, "max_input_length": 512}
+{"metric": "comet22", "segment_index": 43, "reason": "max_input_length_exceeded", "token_count": 548, "max_input_length": 512}
+{"metric": "comet22", "segment_index": 50, "reason": "max_input_length_exceeded", "token_count": 642, "max_input_length": 512}
+{"metric": "comet22", "segment_index": 114, "reason": "max_input_length_exceeded", "token_count": 574, "max_input_length": 512}
+{"metric": "cometkiwi", "segment_index": 28, "reason": "max_input_length_exceeded", "token_count": 1070, "max_input_length": 512}
+{"metric": "cometkiwi", "segment_index": 42, "reason": "max_input_length_exceeded", "token_count": 869, "max_input_length": 512}
+{"metric": "metricx", "segment_index": 28, "reason": "max_input_length_exceeded", "token_count": 3087, "max_input_length": 1536}
+{"metric": "metricx", "segment_index": 42, "reason": "max_input_length_exceeded", "token_count": 2480, "max_input_length": 1536}
+{"metric": "metricx-qe", "segment_index": 28, "reason": "max_input_length_exceeded", "token_count": 2066, "max_input_length": 1536}
+{"metric": "metricx-qe", "segment_index": 42, "reason": "max_input_length_exceeded", "token_count": 1659, "max_input_length": 1536}

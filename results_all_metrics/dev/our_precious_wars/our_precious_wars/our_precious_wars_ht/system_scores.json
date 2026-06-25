@@ -1,0 +1,17 @@
+{
+  "pkl": "dev/our_precious_wars/our_precious_wars",
+  "system": "our_precious_wars_ht",
+  "reference_system": "our_precious_wars_ht",
+  "metrics": {
+    "cometkiwi": {
+      "score": 0.7080000000000001,
+      "num_scored_segments": 26,
+      "higher_is_better": true
+    },
+    "metricx-qe": {
+      "score": 7.0024780804111115,
+      "num_scored_segments": 31,
+      "higher_is_better": false
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "pkl": "the_ark_ja_en",
+  "system": "the_ark_ja_en_ht",
+  "reference_system": "the_ark_ja_en_ht",
+  "metrics": {
+    "litransproqa": {
+      "score": 0.875811777655476,
+      "num_scored_segments": 23,
+      "higher_is_better": true
+    },
+    "metricx-qe": {
+      "score": 8.560535202855649,
+      "num_scored_segments": 23,
+      "higher_is_better": false
+    },
+    "paragraph_mean_cometkiwi": {
+      "score": 0.7290599250106955,
+      "num_scored_segments": 23,
+      "higher_is_better": true,
+      "source": "[withheld from public GitHub release]"
+    },
+    "paragraph_mean_metricx-qe": {
+      "score": 4.774897497356638,
+      "num_scored_segments": 23,
+      "higher_is_better": false,
+      "source": "[withheld from public GitHub release]"
+    }
+  },
+  "paragraph_metric_mapping": {
+    "source_results_dir": "results_all_metrics",
+    "score_prefix": "paragraph_mean_"
+  }
+}

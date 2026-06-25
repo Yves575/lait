@@ -1,0 +1,14 @@
+Test: Exact binomial test (binom.test, H0: p = 0.5)
+
+
+	Exact binomial test
+
+data:  sum(comparison_ai_model$ai_guess_correct == 1, na.rm = TRUE) and sum(!is.na(comparison_ai_model$ai_guess_correct))
+number of successes = 17, number of trials = 30, p-value = 0.5847
+alternative hypothesis: true probability of success is not equal to 0.5
+95 percent confidence interval:
+ 0.3742735 0.7453925
+sample estimates:
+probability of success 
+             0.5666667 
+

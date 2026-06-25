@@ -1,0 +1,27 @@
+{
+  "pkl": "eval/make_me_famous/make_me_famous",
+  "system": "make_me_famous_pipeline3",
+  "reference_system": "make_me_famous_ht",
+  "metrics": {
+    "comet22": {
+      "score": 0.8104080357142857,
+      "num_scored_segments": 112,
+      "higher_is_better": true
+    },
+    "cometkiwi": {
+      "score": 0.8086508620689655,
+      "num_scored_segments": 116,
+      "higher_is_better": true
+    },
+    "metricx": {
+      "score": 4.7376362737910505,
+      "num_scored_segments": 116,
+      "higher_is_better": false
+    },
+    "metricx-qe": {
+      "score": 4.075842229456737,
+      "num_scored_segments": 116,
+      "higher_is_better": false
+    }
+  }
+}

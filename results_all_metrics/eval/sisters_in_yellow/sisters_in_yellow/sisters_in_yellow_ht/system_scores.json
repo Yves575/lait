@@ -1,0 +1,17 @@
+{
+  "pkl": "eval/sisters_in_yellow/sisters_in_yellow",
+  "system": "sisters_in_yellow_ht",
+  "reference_system": "sisters_in_yellow_ht",
+  "metrics": {
+    "cometkiwi": {
+      "score": 0.730552466367713,
+      "num_scored_segments": 223,
+      "higher_is_better": true
+    },
+    "metricx-qe": {
+      "score": 5.057061412141997,
+      "num_scored_segments": 223,
+      "higher_is_better": false
+    }
+  }
+}

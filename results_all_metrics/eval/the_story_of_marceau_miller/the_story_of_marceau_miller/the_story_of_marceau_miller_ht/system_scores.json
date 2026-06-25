@@ -1,0 +1,17 @@
+{
+  "pkl": "eval/the_story_of_marceau_miller/the_story_of_marceau_miller",
+  "system": "the_story_of_marceau_miller_ht",
+  "reference_system": "the_story_of_marceau_miller_ht",
+  "metrics": {
+    "cometkiwi": {
+      "score": 0.7218523076923077,
+      "num_scored_segments": 130,
+      "higher_is_better": true
+    },
+    "metricx-qe": {
+      "score": 6.008182091372354,
+      "num_scored_segments": 133,
+      "higher_is_better": false
+    }
+  }
+}

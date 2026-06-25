@@ -1,0 +1,17 @@
+{
+  "pkl": "dev/confidential/confidential",
+  "system": "confidential_ht",
+  "reference_system": "confidential_ht",
+  "metrics": {
+    "cometkiwi": {
+      "score": 0.7491627906976744,
+      "num_scored_segments": 86,
+      "higher_is_better": true
+    },
+    "metricx-qe": {
+      "score": 5.271247057027595,
+      "num_scored_segments": 86,
+      "higher_is_better": false
+    }
+  }
+}

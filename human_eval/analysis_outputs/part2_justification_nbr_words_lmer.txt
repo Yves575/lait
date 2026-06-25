@@ -1,0 +1,41 @@
+Model summary
+Linear mixed model fit by REML ['lmerMod']
+Formula: justification_nbr_words ~ group + (1 | reader) + (1 | book)
+   Data: model_data
+Control: lmerControl(optimizer = "bobyqa")
+
+REML criterion at convergence: 6928.1
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-3.0619 -0.5366 -0.1503  0.3994  7.6586 
+
+Random effects:
+ Groups   Name        Variance  Std.Dev.
+ reader   (Intercept) 496.96364 22.293  
+ book     (Intercept)   0.05107  0.226  
+ Residual             415.04067 20.373  
+Number of obs: 772, groups:  reader, 30; book, 16
+
+Fixed effects:
+              Estimate Std. Error t value
+(Intercept)     49.685      7.160   6.940
+groupJapanese    3.732     10.132   0.368
+groupPolish     -8.961     10.129  -0.885
+
+Correlation of Fixed Effects:
+            (Intr) grpJpn
+groupJapans -0.707       
+groupPolish -0.707  0.499
+
+Confidence intervals
+                  2.5 %   97.5 %
+.sig01               NA       NA
+.sig02               NA       NA
+.sigma               NA       NA
+(Intercept)    35.65222 63.71781
+groupJapanese -16.12675 23.58994
+groupPolish   -28.81345 10.89117
+
+Model warnings
+No warnings captured.

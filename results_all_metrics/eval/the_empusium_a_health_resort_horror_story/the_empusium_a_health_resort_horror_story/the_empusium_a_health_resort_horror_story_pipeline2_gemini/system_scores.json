@@ -1,0 +1,27 @@
+{
+  "pkl": "eval/the_empusium_a_health_resort_horror_story/the_empusium_a_health_resort_horror_story",
+  "system": "the_empusium_a_health_resort_horror_story_pipeline2_gemini",
+  "reference_system": "the_empusium_a_health_resort_horror_story_ht",
+  "metrics": {
+    "comet22": {
+      "score": 0.8196639639639639,
+      "num_scored_segments": 111,
+      "higher_is_better": true
+    },
+    "cometkiwi": {
+      "score": 0.7427613445378151,
+      "num_scored_segments": 119,
+      "higher_is_better": true
+    },
+    "metricx": {
+      "score": 5.118730740386899,
+      "num_scored_segments": 119,
+      "higher_is_better": false
+    },
+    "metricx-qe": {
+      "score": 4.99760336962839,
+      "num_scored_segments": 120,
+      "higher_is_better": false
+    }
+  }
+}

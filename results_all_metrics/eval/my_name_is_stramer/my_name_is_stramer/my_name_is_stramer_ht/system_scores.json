@@ -1,0 +1,17 @@
+{
+  "pkl": "eval/my_name_is_stramer/my_name_is_stramer",
+  "system": "my_name_is_stramer_ht",
+  "reference_system": "my_name_is_stramer_ht",
+  "metrics": {
+    "cometkiwi": {
+      "score": 0.7026350427350427,
+      "num_scored_segments": 234,
+      "higher_is_better": true
+    },
+    "metricx-qe": {
+      "score": 6.04771370969267,
+      "num_scored_segments": 234,
+      "higher_is_better": false
+    }
+  }
+}

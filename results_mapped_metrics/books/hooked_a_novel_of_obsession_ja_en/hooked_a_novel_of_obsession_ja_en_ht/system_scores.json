@@ -1,0 +1,33 @@
+{
+  "pkl": "hooked_a_novel_of_obsession_ja_en",
+  "system": "hooked_a_novel_of_obsession_ja_en_ht",
+  "reference_system": "hooked_a_novel_of_obsession_ja_en_ht",
+  "metrics": {
+    "litransproqa": {
+      "score": 0.9123745089480576,
+      "num_scored_segments": 29,
+      "higher_is_better": true
+    },
+    "metricx-qe": {
+      "score": 9.203331371833539,
+      "num_scored_segments": 29,
+      "higher_is_better": false
+    },
+    "paragraph_mean_cometkiwi": {
+      "score": 0.6905204679802955,
+      "num_scored_segments": 29,
+      "higher_is_better": true,
+      "source": "[withheld from public GitHub release]"
+    },
+    "paragraph_mean_metricx-qe": {
+      "score": 6.35149966833382,
+      "num_scored_segments": 29,
+      "higher_is_better": false,
+      "source": "[withheld from public GitHub release]"
+    }
+  },
+  "paragraph_metric_mapping": {
+    "source_results_dir": "results_all_metrics",
+    "score_prefix": "paragraph_mean_"
+  }
+}

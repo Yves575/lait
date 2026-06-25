@@ -1,0 +1,42 @@
+Test: CLM (cumulative link model, ordinal logit)
+
+Formula:
+confidence_ord ~ excerpt_strength_factor + order
+
+Question
+Q6 confidence by Q3 preference strength (slight vs clear) and order
+
+Model summary
+formula: confidence_ord ~ excerpt_strength_factor + order
+data:    model_data
+
+ link  threshold nobs logLik AIC   niter max.grad cond.H 
+ logit flexible  30   -40.45 92.90 5(0)  1.37e-11 5.1e+01
+
+Coefficients:
+                             Estimate Std. Error z value Pr(>|z|)
+excerpt_strength_factorclear  1.33272    0.91680   1.454    0.146
+orderMT-first                 0.06117    0.66891   0.091    0.927
+
+Threshold coefficients:
+    Estimate Std. Error z value
+1|2  -2.4602     1.1998  -2.050
+2|3  -0.8480     0.9146  -0.927
+3|4   0.4397     0.9111   0.483
+4|5   2.1898     0.9670   2.265
+
+Confidence intervals
+                                  2.5 %   97.5 %
+excerpt_strength_factorclear -0.4414427 3.213834
+orderMT-first                -1.2588243 1.384517
+
+emmeans(model, ~excerpt_strength_factor, mode = "mean.class")
+ excerpt_strength_factor mean.class    SE  df asymp.LCL asymp.UCL
+ slight                        3.13 0.485 Inf      2.18      4.08
+ clear                         3.90 0.198 Inf      3.51      4.29
+
+Results are averaged over the levels of: order 
+Confidence level used: 0.95 
+
+Model warnings
+No warnings captured.

@@ -1,0 +1,17 @@
+{
+  "pkl": "dev/when_the_museum_is_closed/when_the_museum_is_closed",
+  "system": "when_the_museum_is_closed_ht",
+  "reference_system": "when_the_museum_is_closed_ht",
+  "metrics": {
+    "cometkiwi": {
+      "score": 0.7437172839506173,
+      "num_scored_segments": 81,
+      "higher_is_better": true
+    },
+    "metricx-qe": {
+      "score": 5.2040941913922625,
+      "num_scored_segments": 81,
+      "higher_is_better": false
+    }
+  }
+}

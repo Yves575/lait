@@ -1,0 +1,27 @@
+{
+  "pkl": "dev/when_the_museum_is_closed/when_the_museum_is_closed",
+  "system": "when_the_museum_is_closed_pipeline3",
+  "reference_system": "when_the_museum_is_closed_ht",
+  "metrics": {
+    "comet22": {
+      "score": 0.7770333333333334,
+      "num_scored_segments": 81,
+      "higher_is_better": true
+    },
+    "cometkiwi": {
+      "score": 0.7856691358024692,
+      "num_scored_segments": 81,
+      "higher_is_better": true
+    },
+    "metricx": {
+      "score": 5.541661741556944,
+      "num_scored_segments": 81,
+      "higher_is_better": false
+    },
+    "metricx-qe": {
+      "score": 4.704887665164324,
+      "num_scored_segments": 81,
+      "higher_is_better": false
+    }
+  }
+}

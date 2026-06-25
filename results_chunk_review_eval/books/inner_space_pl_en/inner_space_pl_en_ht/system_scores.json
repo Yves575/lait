@@ -1,0 +1,17 @@
+{
+  "pkl": "inner_space_pl_en",
+  "system": "inner_space_pl_en_ht",
+  "reference_system": "inner_space_pl_en_ht",
+  "metrics": {
+    "litransproqa": {
+      "score": 0.8948393378773125,
+      "num_scored_segments": 26,
+      "higher_is_better": true
+    },
+    "metricx-qe": {
+      "score": 8.456673860549927,
+      "num_scored_segments": 26,
+      "higher_is_better": false
+    }
+  }
+}

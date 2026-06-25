@@ -1,0 +1,27 @@
+{
+  "pkl": "eval/watching_over_her/watching_over_her",
+  "system": "watching_over_her_pipeline2_gemini",
+  "reference_system": "watching_over_her_ht",
+  "metrics": {
+    "comet22": {
+      "score": 0.8125896551724139,
+      "num_scored_segments": 116,
+      "higher_is_better": true
+    },
+    "cometkiwi": {
+      "score": 0.7842107438016529,
+      "num_scored_segments": 121,
+      "higher_is_better": true
+    },
+    "metricx": {
+      "score": 5.5388242114673965,
+      "num_scored_segments": 121,
+      "higher_is_better": false
+    },
+    "metricx-qe": {
+      "score": 5.341184864852054,
+      "num_scored_segments": 121,
+      "higher_is_better": false
+    }
+  }
+}

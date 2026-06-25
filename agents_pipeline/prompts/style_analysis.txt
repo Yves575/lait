@@ -1,0 +1,54 @@
+You are an expert literary analyst and translator.
+
+You have been given the full source text of a {source_lang} novel.
+
+Read the source text at `inputs/full_source.txt`.
+
+Analyse the text for the following, then write a style bible that will guide consistent, high-quality literary translation of every chunk into natural, idiomatic {target_lang} for a {target_lang}-language readership. The style bible should help translators preserve the source's artistic effect through equivalent {target_lang} means, not by copying source-language structure. These profiles and recommendations are guides for preserving the source's effect in {target_lang}, not templates to be copied mechanically into every chunk.
+
+Focus on:
+
+1. Named characters: For each named character who speaks or is described, note their speech register (formal/informal/dialect), distinctive syntax patterns, and any recurring verbal habits.
+
+2. Prose style: Identify the overall register (elevated literary, colloquial, journalistic, etc.), literary domain and period, narrative tense, characteristic sentence rhythm, and diction level.
+
+3. Terminology: List recurring domain-specific or culturally-specific terms that require a consistent {target_lang} rendering. Include untranslatable terms with a recommended translation strategy.
+
+4. Named entities: List all proper nouns (characters, places, organisations) with a decision on how each should appear in the {target_lang} translation (keep source form, translate, romanise, etc.).
+
+Write your analysis to `outputs/style_bible.json` with this exact JSON structure:
+
+{{
+  "character_voice_profiles": [
+    {{
+      "character_id": "<name>",
+      "register": "<description>",
+      "speech_patterns": "<description>",
+      "example_lines": ["<line from source — CALIBRATION ONLY, never copy into translation>"]
+    }}
+  ],
+  "prose_style_profile": {{
+    "register": "<e.g. elevated literary>",
+    "domain": "<e.g. 19th-century French realism>",
+    "narrative_tense": "<past tense / present tense>",
+    "rhythm_target": "<e.g. long, complex sentences with subordinate clauses>",
+    "diction": "<e.g. archaic vocabulary preserved where unambiguous>"
+  }},
+  "terminology": [
+    {{
+      "source_term": "<term in {source_lang}>",
+      "preferred_translation": "<agreed {target_lang} rendering>",
+      "note": "<optional: rationale or usage note>"
+    }}
+  ],
+  "named_entities": [
+    {{
+      "entity": "<name as in source>",
+      "type": "<character | place | organisation | other>",
+      "preferred_target": "<how to render in the {target_lang} translation>",
+      "note": "<optional: keep source form / translate / romanise etc.>"
+    }}
+  ]
+}}
+
+Make sure to include any information important for producing a high quality literary translation. If a section has no entries (e.g. no named characters speak), write an empty array [].

@@ -1,0 +1,60 @@
+Test: GLMER (generalized linear mixed model, binomial logit)
+
+Formula:
+guessed_MT ~ actual_version + single_read_position + (1 | person_id) +      (1 | book_id)
+
+Singular fit check
+isSingular(model): TRUE
+Singular fit detected. Prefer simpler GLM without random effects.
+
+Model summary
+Generalized linear mixed model fit by maximum likelihood (Laplace
+  Approximation) [glmerMod]
+ Family: binomial  ( logit )
+Formula: 
+guessed_MT ~ actual_version + single_read_position + (1 | person_id) +  
+    (1 | book_id)
+   Data: model_data
+Control: glmerControl(optimizer = "bobyqa", optCtrl = list(maxfun = 2e+05))
+
+      AIC       BIC    logLik -2*log(L)  df.resid 
+     91.6     102.0     -40.8      81.6        55 
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-1.1450 -0.8734 -0.7619  1.0012  1.3125 
+
+Random effects:
+ Groups    Name        Variance Std.Dev.
+ person_id (Intercept) 0        0       
+ book_id   (Intercept) 0        0       
+Number of obs: 60, groups:  person_id, 15; book_id, 15
+
+Fixed effects:
+                      Estimate Std. Error z value Pr(>|z|)
+(Intercept)            -0.2707     0.4520  -0.599    0.549
+actual_versionMT        0.5415     0.5236   1.034    0.301
+single_read_position2  -0.2732     0.5235  -0.522    0.602
+
+Correlation of Fixed Effects:
+            (Intr) act_MT
+actl_vrsnMT -0.579       
+sngl_rd_ps2 -0.563 -0.018
+optimizer (bobyqa) convergence code: 0 (OK)
+boundary (singular) fit: see help('isSingular')
+
+
+Random effects (VarCorr)
+ Groups    Name        Std.Dev.
+ person_id (Intercept) 0       
+ book_id   (Intercept) 0       
+
+Confidence intervals
+                           2.5 %    97.5 %
+.sig01                        NA        NA
+.sig02                        NA        NA
+(Intercept)           -1.1567044 0.6152169
+actual_versionMT      -0.4847444 1.5677196
+single_read_position2 -1.2992827 0.7529245
+Model warnings
+No warnings captured.

@@ -1,0 +1,27 @@
+{
+  "pkl": "dev/jackson_alone/jackson_alone",
+  "system": "jackson_alone_pipeline1_gpt54_high",
+  "reference_system": "jackson_alone_ht",
+  "metrics": {
+    "comet22": {
+      "score": 0.7778641791044776,
+      "num_scored_segments": 67,
+      "higher_is_better": true
+    },
+    "cometkiwi": {
+      "score": 0.7645492537313433,
+      "num_scored_segments": 67,
+      "higher_is_better": true
+    },
+    "metricx": {
+      "score": 6.108488396922154,
+      "num_scored_segments": 67,
+      "higher_is_better": false
+    },
+    "metricx-qe": {
+      "score": 5.026176863641881,
+      "num_scored_segments": 67,
+      "higher_is_better": false
+    }
+  }
+}

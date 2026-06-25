@@ -1,0 +1,17 @@
+{
+  "pkl": "the_witcher_crossroads_of_ravens_pl_en",
+  "system": "the_witcher_crossroads_of_ravens_pl_en_ht",
+  "reference_system": "the_witcher_crossroads_of_ravens_pl_en_ht",
+  "metrics": {
+    "litransproqa": {
+      "score": 0.9886075949367089,
+      "num_scored_segments": 23,
+      "higher_is_better": true
+    },
+    "metricx-qe": {
+      "score": 10.203536634859832,
+      "num_scored_segments": 23,
+      "higher_is_better": false
+    }
+  }
+}

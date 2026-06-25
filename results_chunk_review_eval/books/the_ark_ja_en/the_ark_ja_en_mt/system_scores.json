@@ -1,0 +1,17 @@
+{
+  "pkl": "the_ark_ja_en",
+  "system": "the_ark_ja_en_mt",
+  "reference_system": "the_ark_ja_en_ht",
+  "metrics": {
+    "litransproqa": {
+      "score": 0.9914694551458448,
+      "num_scored_segments": 23,
+      "higher_is_better": true
+    },
+    "metricx-qe": {
+      "score": 7.693106112272843,
+      "num_scored_segments": 23,
+      "higher_is_better": false
+    }
+  }
+}

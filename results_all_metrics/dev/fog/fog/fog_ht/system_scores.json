@@ -1,0 +1,17 @@
+{
+  "pkl": "dev/fog/fog",
+  "system": "fog_ht",
+  "reference_system": "fog_ht",
+  "metrics": {
+    "cometkiwi": {
+      "score": 0.695483417085427,
+      "num_scored_segments": 199,
+      "higher_is_better": true
+    },
+    "metricx-qe": {
+      "score": 6.753448810875415,
+      "num_scored_segments": 200,
+      "higher_is_better": false
+    }
+  }
+}

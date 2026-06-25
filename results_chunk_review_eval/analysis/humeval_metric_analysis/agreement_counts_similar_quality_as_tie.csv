@@ -1,0 +1,16 @@
+metric,metric_preference,human_preference_hard_as_tie,n
+litransproqa,HT,HT,6
+litransproqa,HT,MT,5
+litransproqa,HT,tie,13
+litransproqa,MT,HT,154
+litransproqa,MT,MT,55
+litransproqa,MT,tie,83
+litransproqa,tie,HT,235
+litransproqa,tie,MT,79
+litransproqa,tie,tie,142
+metricx-qe,HT,HT,152
+metricx-qe,HT,MT,61
+metricx-qe,HT,tie,99
+metricx-qe,MT,HT,242
+metricx-qe,MT,MT,78
+metricx-qe,MT,tie,138

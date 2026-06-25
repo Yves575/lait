@@ -1,0 +1,9 @@
+Test: None (descriptive)
+
+table(ai_guess_correct)
+
+ 0  1 
+13 17 
+
+mean(ai_guess_correct)
+[1] 0.5666667

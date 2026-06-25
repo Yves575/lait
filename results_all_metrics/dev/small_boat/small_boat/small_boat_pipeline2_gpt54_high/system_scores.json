@@ -1,0 +1,27 @@
+{
+  "pkl": "dev/small_boat/small_boat",
+  "system": "small_boat_pipeline2_gpt54_high",
+  "reference_system": "small_boat_ht",
+  "metrics": {
+    "comet22": {
+      "score": 0.75844,
+      "num_scored_segments": 20,
+      "higher_is_better": true
+    },
+    "cometkiwi": {
+      "score": 0.7597807692307692,
+      "num_scored_segments": 26,
+      "higher_is_better": true
+    },
+    "metricx": {
+      "score": 7.352936413553026,
+      "num_scored_segments": 27,
+      "higher_is_better": false
+    },
+    "metricx-qe": {
+      "score": 6.267721452883312,
+      "num_scored_segments": 28,
+      "higher_is_better": false
+    }
+  }
+}

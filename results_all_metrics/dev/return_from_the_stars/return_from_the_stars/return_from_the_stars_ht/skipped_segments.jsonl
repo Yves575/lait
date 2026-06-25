@@ -1,0 +1,4 @@
+{"metric": "cometkiwi", "segment_index": 26, "reason": "max_input_length_exceeded", "token_count": 531, "max_input_length": 512}
+{"metric": "cometkiwi", "segment_index": 27, "reason": "max_input_length_exceeded", "token_count": 628, "max_input_length": 512}
+{"metric": "cometkiwi", "segment_index": 42, "reason": "max_input_length_exceeded", "token_count": 817, "max_input_length": 512}
+{"metric": "cometkiwi", "segment_index": 79, "reason": "max_input_length_exceeded", "token_count": 587, "max_input_length": 512}

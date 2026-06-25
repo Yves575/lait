@@ -1,0 +1,27 @@
+{
+  "pkl": "eval/sisters_in_yellow/sisters_in_yellow",
+  "system": "sisters_in_yellow_pipeline1_gemini",
+  "reference_system": "sisters_in_yellow_ht",
+  "metrics": {
+    "comet22": {
+      "score": 0.8081695067264574,
+      "num_scored_segments": 223,
+      "higher_is_better": true
+    },
+    "cometkiwi": {
+      "score": 0.7839040358744395,
+      "num_scored_segments": 223,
+      "higher_is_better": true
+    },
+    "metricx": {
+      "score": 4.5821440174440635,
+      "num_scored_segments": 223,
+      "higher_is_better": false
+    },
+    "metricx-qe": {
+      "score": 3.8749536184986613,
+      "num_scored_segments": 223,
+      "higher_is_better": false
+    }
+  }
+}

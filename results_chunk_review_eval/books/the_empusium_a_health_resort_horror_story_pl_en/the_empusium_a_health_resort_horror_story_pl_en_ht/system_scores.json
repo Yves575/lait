@@ -1,0 +1,17 @@
+{
+  "pkl": "the_empusium_a_health_resort_horror_story_pl_en",
+  "system": "the_empusium_a_health_resort_horror_story_pl_en_ht",
+  "reference_system": "the_empusium_a_health_resort_horror_story_pl_en_ht",
+  "metrics": {
+    "litransproqa": {
+      "score": 0.9845388788426763,
+      "num_scored_segments": 28,
+      "higher_is_better": true
+    },
+    "metricx-qe": {
+      "score": 7.862408535821097,
+      "num_scored_segments": 28,
+      "higher_is_better": false
+    }
+  }
+}

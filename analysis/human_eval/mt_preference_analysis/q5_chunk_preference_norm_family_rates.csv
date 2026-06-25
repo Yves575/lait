@@ -1,0 +1,9 @@
+scope,polarity,family,MT_cases_with_family,HT_cases_with_family,MT_total_cases,HT_total_cases,MT_rate,HT_rate
+Q5 chunk preference justifications,NEG,Language,143,355,236,509,0.6059322033898306,0.6974459724950884
+Q5 chunk preference justifications,NEG,Meta-translation,31,102,236,509,0.13135593220338984,0.20039292730844793
+Q5 chunk preference justifications,NEG,Narrative,51,92,236,509,0.21610169491525424,0.1807465618860511
+Q5 chunk preference justifications,NEG,Reader experience,36,140,236,509,0.15254237288135594,0.275049115913556
+Q5 chunk preference justifications,POS,Language,113,239,236,509,0.4788135593220339,0.46954813359528486
+Q5 chunk preference justifications,POS,Meta-translation,14,32,236,509,0.059322033898305086,0.06286836935166994
+Q5 chunk preference justifications,POS,Narrative,75,113,236,509,0.3177966101694915,0.2220039292730845
+Q5 chunk preference justifications,POS,Reader experience,46,159,236,509,0.19491525423728814,0.31237721021611004

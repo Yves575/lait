@@ -1,0 +1,17 @@
+{
+  "pkl": "dev/voracious/voracious",
+  "system": "voracious_ht",
+  "reference_system": "voracious_ht",
+  "metrics": {
+    "cometkiwi": {
+      "score": 0.7282817733990147,
+      "num_scored_segments": 203,
+      "higher_is_better": true
+    },
+    "metricx-qe": {
+      "score": 6.349297980369605,
+      "num_scored_segments": 203,
+      "higher_is_better": false
+    }
+  }
+}

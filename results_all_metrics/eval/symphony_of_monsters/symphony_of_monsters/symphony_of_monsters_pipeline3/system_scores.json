@@ -1,0 +1,27 @@
+{
+  "pkl": "eval/symphony_of_monsters/symphony_of_monsters",
+  "system": "symphony_of_monsters_pipeline3",
+  "reference_system": "symphony_of_monsters_ht",
+  "metrics": {
+    "comet22": {
+      "score": 0.8329758389261744,
+      "num_scored_segments": 149,
+      "higher_is_better": true
+    },
+    "cometkiwi": {
+      "score": 0.8127786163522012,
+      "num_scored_segments": 159,
+      "higher_is_better": true
+    },
+    "metricx": {
+      "score": 4.46084523425912,
+      "num_scored_segments": 159,
+      "higher_is_better": false
+    },
+    "metricx-qe": {
+      "score": 4.210946312115627,
+      "num_scored_segments": 159,
+      "higher_is_better": false
+    }
+  }
+}

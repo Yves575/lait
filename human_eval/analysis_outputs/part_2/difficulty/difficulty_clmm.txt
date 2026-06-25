@@ -1,0 +1,49 @@
+Test: CLMM (cumulative link mixed model, ordinal logit)
+
+Model note
+Formula: difficulty ~ group + order + (1 | reader) + (1 | book)
+Fixed effects: group (source language) and order (HT-first vs MT-first).
+Random intercepts: reader and book.
+Response is an ordered factor (cumulative link mixed model).
+
+Question
+Relative translation quality (similar < better < significantly better)
+
+Model summary
+Cumulative Link Mixed Model fitted with the Laplace approximation
+
+formula: difficulty ~ group + order + (1 | reader) + (1 | book)
+data:    model_data
+
+ link  threshold nobs logLik  AIC     niter     max.grad cond.H 
+ logit flexible  772  -755.47 1524.94 425(1696) 6.69e-04 6.3e+01
+
+Random effects:
+ Groups Name        Variance Std.Dev.
+ book   (Intercept) 0.9486   0.9740  
+ reader (Intercept) 0.1565   0.3956  
+Number of groups:  reader 15,  book 15 
+
+Coefficients:
+              Estimate Std. Error z value Pr(>|z|)  
+groupJapanese  0.68427    0.39399   1.737   0.0824 .
+groupPolish   -0.31652    0.31069  -1.019   0.3083  
+orderMT-first  0.05542    0.14283   0.388   0.6980  
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Threshold coefficients:
+                            Estimate Std. Error z value
+similar_quality|better       -0.9209     0.3517  -2.618
+better|significantly_better   0.9792     0.3516   2.785
+
+Confidence intervals
+                                  2.5 %     97.5 %
+similar_quality|better      -1.61020149 -0.2315527
+better|significantly_better  0.29007841  1.6684040
+groupJapanese               -0.08792884  1.4564669
+groupPolish                 -0.92545319  0.2924124
+orderMT-first               -0.22452823  0.3353605
+
+Model warnings
+No warnings captured.

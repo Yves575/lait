@@ -1,0 +1,4 @@
+meta-llama/llama-3.3-70b-instruct
+Qwen/Qwen2.5-32B-Instruct
+meta-llama/llama-3.1-405b-instruct
+openai/gpt-4o-mini

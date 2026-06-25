@@ -1,0 +1,16 @@
+source_lang,source_lang_label,metric,metric_label,metric_preference,n
+fr,French,litransproqa,LitTransProQA,HT,3
+fr,French,litransproqa,LitTransProQA,MT,59
+fr,French,litransproqa,LitTransProQA,tie,72
+fr,French,metricx-qe,MetricX-QE,HT,55
+fr,French,metricx-qe,MetricX-QE,MT,79
+ja,Japanese,litransproqa,LitTransProQA,HT,2
+ja,Japanese,litransproqa,LitTransProQA,MT,52
+ja,Japanese,litransproqa,LitTransProQA,tie,70
+ja,Japanese,metricx-qe,MetricX-QE,HT,51
+ja,Japanese,metricx-qe,MetricX-QE,MT,73
+pl,Polish,litransproqa,LitTransProQA,HT,7
+pl,Polish,litransproqa,LitTransProQA,MT,35
+pl,Polish,litransproqa,LitTransProQA,tie,86
+pl,Polish,metricx-qe,MetricX-QE,HT,50
+pl,Polish,metricx-qe,MetricX-QE,MT,77

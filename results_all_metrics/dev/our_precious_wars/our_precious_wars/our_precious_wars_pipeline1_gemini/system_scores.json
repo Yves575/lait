@@ -1,0 +1,27 @@
+{
+  "pkl": "dev/our_precious_wars/our_precious_wars",
+  "system": "our_precious_wars_pipeline1_gemini",
+  "reference_system": "our_precious_wars_ht",
+  "metrics": {
+    "comet22": {
+      "score": 0.7798260869565218,
+      "num_scored_segments": 23,
+      "higher_is_better": true
+    },
+    "cometkiwi": {
+      "score": 0.760262962962963,
+      "num_scored_segments": 27,
+      "higher_is_better": true
+    },
+    "metricx": {
+      "score": 6.65036786028317,
+      "num_scored_segments": 28,
+      "higher_is_better": false
+    },
+    "metricx-qe": {
+      "score": 5.949654898335857,
+      "num_scored_segments": 31,
+      "higher_is_better": false
+    }
+  }
+}

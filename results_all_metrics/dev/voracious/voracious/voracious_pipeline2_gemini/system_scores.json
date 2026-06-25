@@ -1,0 +1,27 @@
+{
+  "pkl": "dev/voracious/voracious",
+  "system": "voracious_pipeline2_gemini",
+  "reference_system": "voracious_ht",
+  "metrics": {
+    "comet22": {
+      "score": 0.824527093596059,
+      "num_scored_segments": 203,
+      "higher_is_better": true
+    },
+    "cometkiwi": {
+      "score": 0.7389665024630542,
+      "num_scored_segments": 203,
+      "higher_is_better": true
+    },
+    "metricx": {
+      "score": 5.521160947865453,
+      "num_scored_segments": 203,
+      "higher_is_better": false
+    },
+    "metricx-qe": {
+      "score": 6.639146521760912,
+      "num_scored_segments": 203,
+      "higher_is_better": false
+    }
+  }
+}

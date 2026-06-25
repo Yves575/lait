@@ -1,0 +1,23 @@
+Test: None (paper summary derived from CLMM/CLM outputs)
+
+Q4 — Continue reading (1 no -> 5 yes)
+
+Main result to communicate in paper:
+MT was rated lower on willingness to continue reading than HT
+HT has about 2.2 times the odds of a higher continue reading rating than MT (exp(0.7941) = 2.21).
+The result is not significant (p = .1150); and the 95% CI for the type effect includes zero.
+Reading order has NO effect.
+
+Model statistics:
+MT was not rated significantly lower on willingness to continue reading than HT, beta = -0.79, SE = 0.50, z = -1.58, p = .1150, OR (MT vs HT) = 0.45, 95% CI [0.17, 1.21].
+Reading order was not a significant predictor, beta = 0.07, p = .8860.
+
+Estimated probabilities (CLM fit (same specification as analysis), averaged over order):
+For rating 5 (very likely to continue):
+  HT: 47% probability
+  MT: 32% probability
+
+For ratings 4 or 5 combined:
+  HT: 0.1975 + 0.4708 = 0.6683 (67%)
+  MT: 0.1957 + 0.3185 = 0.5141 (51%)
+So HT has about 67% probability of receiving 4 or 5, while MT has about 51%.

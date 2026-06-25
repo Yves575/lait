@@ -1,0 +1,69 @@
+Test: CLM (cumulative link model, ordinal logit)
+
+Model note
+Formula: difficulty ~ group + order
+Fixed effects: group (source language) and order (HT-first vs MT-first).
+No random effects (cumulative link model).
+
+Question
+Relative translation quality (similar < better < significantly better)
+
+Model summary
+formula: difficulty ~ group + order
+data:    model_data
+
+ link  threshold nobs logLik  AIC     niter max.grad cond.H 
+ logit flexible  772  -825.00 1660.01 4(0)  1.04e-11 1.9e+01
+
+Coefficients:
+              Estimate Std. Error z value Pr(>|z|)    
+groupJapanese  0.69096    0.16502   4.187 2.83e-05 ***
+groupPolish   -0.40414    0.16116  -2.508   0.0122 *  
+orderMT-first -0.04611    0.13373  -0.345   0.7303    
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Threshold coefficients:
+                            Estimate Std. Error z value
+similar_quality|better       -0.7860     0.1351  -5.819
+better|significantly_better   0.7755     0.1349   5.748
+
+Confidence intervals
+                   2.5 %      97.5 %
+groupJapanese  0.3685751  1.01573642
+groupPolish   -0.7208174 -0.08881173
+orderMT-first -0.3083436  0.21605705
+
+Estimated marginal means (mean.class by group)
+ group    mean.class     SE  df asymp.LCL asymp.UCL
+ French         1.99 0.0479 Inf      1.90      2.09
+ Japanese       2.28 0.0487 Inf      2.19      2.38
+ Polish         1.82 0.0488 Inf      1.72      1.92
+
+Results are averaged over the levels of: order 
+Confidence level used: 0.95 
+
+Estimated marginal means (prob by group | difficulty)
+difficulty = similar_quality:
+ group     prob     SE  df asymp.LCL asymp.UCL
+ French   0.318 0.0257 Inf     0.268     0.368
+ Japanese 0.189 0.0207 Inf     0.149     0.230
+ Polish   0.411 0.0290 Inf     0.354     0.468
+
+difficulty = better:
+ group     prob     SE  df asymp.LCL asymp.UCL
+ French   0.372 0.0180 Inf     0.336     0.407
+ Japanese 0.337 0.0190 Inf     0.300     0.375
+ Polish   0.358 0.0183 Inf     0.322     0.394
+
+difficulty = significantly_better:
+ group     prob     SE  df asymp.LCL asymp.UCL
+ French   0.310 0.0254 Inf     0.261     0.360
+ Japanese 0.473 0.0307 Inf     0.413     0.533
+ Polish   0.231 0.0227 Inf     0.187     0.276
+
+Results are averaged over the levels of: order 
+Confidence level used: 0.95 
+
+Model warnings
+No warnings captured.

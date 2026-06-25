@@ -1,0 +1,66 @@
+# Environments
+.env
+.venv/
+.venv311/
+.venv-metricx/
+venv/
+
+# Data paths
+request/
+books/all/
+books/dev_reduce/
+books/dev/
+books/eval/
+books/HT/
+books/HT_books/
+books/HT_chunks/
+books/chunk_review/
+books/extern/
+books/extern_review/
+books/test/
+books/reduce_stats.tsv
+books/DEL1
+books/DEL2
+human_eval/data/study-data-full.json
+human_eval/data/part1-study-data-full.csv
+human_eval/data/part2-study-data-full.csv
+human_eval/data/part2-span-study-data-full.csv
+human_eval/internal_translated_analysis/
+internal_eval/
+internal_eval/data/study-data-full.json
+internal_eval/export_study_data_csv.py
+INTERNAL_*.json
+par3_dataset/
+par3/html_dev/
+par3/html_eval/
+par3/par3_dataset_test/
+dev_books/
+PDF/
+
+# Local model checkpoints
+*.pt
+
+# HT-to-SRC alignment outputs
+books/dev_aligned/
+books/eval_aligned/
+books/alignment_manifests/
+
+# Caches
+__pycache__/
+cache/
+runs/
+runs/*/inputs
+
+# To avoid uploading all the files
+LiTransProQA/prompting_method/final_set/
+LiTransProQA/prompting_method/final_results/
+
+# Coding Agents
+.claudeignore
+CLAUDE.md
+.claude/
+.codex
+
+mapping.json
+statistical/outputs/tables/
+report/

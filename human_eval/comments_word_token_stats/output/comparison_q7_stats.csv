@@ -1,0 +1,7 @@
+field,n_responses,stat,word_count,token_count
+comparison_q7,30,max,380.0,482.0
+comparison_q7,30,mean,69.23333333333333,86.2
+comparison_q7,30,median,57.0,68.5
+comparison_q7,30,min,21.0,23.0
+comparison_q7,30,std,65.12464618122607,82.47106075508528
+comparison_q7,30,sum,2077.0,2586.0

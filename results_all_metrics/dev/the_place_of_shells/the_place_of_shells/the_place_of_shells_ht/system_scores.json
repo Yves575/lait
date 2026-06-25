@@ -1,0 +1,17 @@
+{
+  "pkl": "dev/the_place_of_shells/the_place_of_shells",
+  "system": "the_place_of_shells_ht",
+  "reference_system": "the_place_of_shells_ht",
+  "metrics": {
+    "cometkiwi": {
+      "score": 0.7168448275862068,
+      "num_scored_segments": 29,
+      "higher_is_better": true
+    },
+    "metricx-qe": {
+      "score": 7.577301049232483,
+      "num_scored_segments": 30,
+      "higher_is_better": false
+    }
+  }
+}

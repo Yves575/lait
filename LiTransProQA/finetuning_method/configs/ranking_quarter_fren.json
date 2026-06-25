@@ -1,0 +1,18 @@
+{
+    "xcomet_model_path": "Unbabel/XCOMET-XL",
+    "train_layers": "quarter",
+    "base_directory": "outputs/quarter_layers",
+    "use_wandb": true,
+    "total_train_samples":50000,
+    "training_data_path": "../finetuning_dataset/train_df_fr_en.csv",
+    "validation_data_path": "../finetuning_dataset/validation_df.csv",
+    "training_data_name": "fr_en",
+    "num_epochs": 2,
+    "batch_size": 8,
+    "ranking_margin": 1.0,
+    "encoder_learning_rate": 8e-6,
+    "encoder_weight_decay": 0.01,
+    "max_length": 512,
+    "gradient_accumulation_steps": 4,
+    "wandb_project": "xcomet-ranking"
+} 

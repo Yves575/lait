@@ -1,0 +1,27 @@
+{
+  "pkl": "dev/the_books_of_jacob/the_books_of_jacob",
+  "system": "the_books_of_jacob_pipeline2_gemini",
+  "reference_system": "the_books_of_jacob_ht",
+  "metrics": {
+    "comet22": {
+      "score": 0.7829019230769231,
+      "num_scored_segments": 104,
+      "higher_is_better": true
+    },
+    "cometkiwi": {
+      "score": 0.708946017699115,
+      "num_scored_segments": 113,
+      "higher_is_better": true
+    },
+    "metricx": {
+      "score": 5.956405570371109,
+      "num_scored_segments": 114,
+      "higher_is_better": false
+    },
+    "metricx-qe": {
+      "score": 5.646407164376358,
+      "num_scored_segments": 116,
+      "higher_is_better": false
+    }
+  }
+}

@@ -1,0 +1,26 @@
+1.Identify any words that look similar in both languages. Am I on guard for “false friends” or misleading cognates between the source and target languages that could distort the meaning?
+2.First, identify all proper names, noun phrases, and cultural/historical references in the source. Then answer: do my word choices convey the same connotations in the target language?  
+Example: While "Latin school" in a German context implies a prestigious institution, a direct translation into Chinese may require a term like "better school" to convey the same idea.
+3.Read the translation aloud. Check grammar and syntax. Does the translated text flow naturally in the target language, following conventional writing style and grammar?
+4. Identify all idioms, jokes, metaphors, unusual expressions, and figures of speech in the source. For each, think about its intended effect or meaning. Have I adjusted them to maintain the original’s intent and effect within the cultural context of the target language? (e.g., "raining cats and dogs" → "llueve a cántaros" in Spanish, or "下倾盆大雨" in Chinese)
+5.First, identify all culture-specific terms (food, clothing, idioms, holidays, etc.), practices, or cultural/historical references in the source. For terms that are unfamiliar to the target readers, answer: have I adapted them in a way that a target reader can understand and appreciate (by using the original term, adding a brief explanation, or substituting with a culturally analogous reference or equivalent concept)?
+6.First, identify figurative language such as metaphors, similes, comparisons, or original images in the source. Analyze their meaning and emotional resonance. Does the translation preserve the same meaning and implications?
+7. Reflect on tone, irony, suggestion, or hidden implications in the source. Does the translation reflect the source text’s pragmatic meaning/function, not just the dictionary definitions of individual words?
+8.Am I handling cultural differences in how certain emotions, gestures, or expressions are described in a clear and understandable way?
+9.Revisit all localized terms. Am I avoiding excessive domestication that erases the source culture’s identity?
+10.Review translations that feel “foreign” or unusual. Am I balancing foreignizing strategies with the need for clarity so that I don’t drift into exoticizing the source culture for the target reader?
+11.First, identify all cultural/historical references from the source. Think about the source culture’s context (historical period, locale, customs). Have I considered the context well enough to translate these references accurately, knowing that each language group has its own culturally specific features?
+12.First, read the source text alone and summarize the cultural mood. Then read the translation and summarize the cultural mood. Determine: does the translation evoke the same cultural mood as the original?
+13.Does my translation maintain the same tone and level of formality for each character or narrative voice as in the original?
+14.Is the tone (formal, informal, neutral, colloquial, etc.) consistent in my translation?
+15.Does the narrative voice in my translation match the original novel’s narrative voice?
+16.Am I preserving the author’s unique voice or style in the source text (e.g., terse and minimalist, or elaborate and lyrical) in my translation?
+17.Note the narrative perspective and any changes (1st person, 3rd limited, omniscient). Have I preserved the narrative point of view and any shifts in perspective exactly as in the original?
+18.Highlight vivid descriptions and sensory language. Does the translation convey the author’s descriptive imagery vividly and accurately?
+19.Track key terms, character names, invented words, slang, or dialects. Have I maintained consistency throughout the text to avoid confusing the reader?
+20.Outline plot developments in the source. Have I kept track of plot details to ensure nothing was lost or altered in translation that would cause inconsistencies?
+21.Have I maintained the same level of ambiguity or precision as the source text?
+22.Understand who the narrator is and their role. Would a reader of the translation sense the same narrator persona or character as in the original?
+23.For each passage, ask: why did the author write it this way? Then answer: am I conveying the author’s intent behind each passage—the subtext or purpose of why they wrote it—through my translation choices?
+24.Read the translation as a native would. Is it phrased in the most natural way for the target language, achieving the “closest natural equivalent” of the source message?
+25.Have I considered equivalence at multiple levels—word level, sentence level, textual level (cohesion), and pragmatic level (overall effect)—to ensure the translation works as a coherent whole?

@@ -1,0 +1,44 @@
+Test: CLM (cumulative link model, ordinal logit)
+
+Formula:
+confidence_ord ~ correct_guess_factor + order
+
+Question
+Comparison confidence (Q6) by MT-identification correctness and order
+
+Model summary
+formula: confidence_ord ~ correct_guess_factor + order
+data:    model_data
+
+ link  threshold nobs logLik AIC   niter max.grad cond.H 
+ logit flexible  30   -40.10 92.19 5(0)  3.34e-11 2.4e+01
+
+Coefficients:
+                            Estimate Std. Error z value Pr(>|z|)  
+correct_guess_factorcorrect   1.1740     0.7059   1.663   0.0963 .
+orderMT-first                -0.1607     0.6876  -0.234   0.8152  
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Threshold coefficients:
+    Estimate Std. Error z value
+1|2  -2.9230     1.0943  -2.671
+2|3  -1.3837     0.6863  -2.016
+3|4  -0.1761     0.5778  -0.305
+4|5   1.6357     0.6469   2.529
+
+Confidence intervals
+                                 2.5 %   97.5 %
+correct_guess_factorcorrect -0.1818648 2.611315
+orderMT-first               -1.5281434 1.190598
+
+emmeans(model, ~correct_guess_factor, mode = "mean.class")
+ correct_guess_factor mean.class    SE  df asymp.LCL asymp.UCL
+ wrong                      3.41 0.304 Inf      2.81       4.0
+ correct                    4.05 0.230 Inf      3.60       4.5
+
+Results are averaged over the levels of: order 
+Confidence level used: 0.95 
+
+Model warnings
+No warnings captured.
