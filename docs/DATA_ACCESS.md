@@ -28,9 +28,41 @@ The exact withheld-file manifest is `docs/release/withheld-files.tsv`.
 ## Requesting Controlled Access
 
 Researchers who need source texts or human translations should email the
-authors with a short description of the intended research use. A gated Hugging
-Face dataset is planned; once available, it will require users to accept access
-terms before downloading restricted materials.
+authors with a short description of the intended research use. The controlled
+files are distributed through a gated Hugging Face dataset,
+`<HUGGING_FACE_DATASET_URL>`; users must accept the access terms before
+downloading restricted materials.
+
+## Restoring Controlled-Access Text Locally
+
+After cloning the public GitHub repository, download the gated Hugging Face
+dataset files from `<HUGGING_FACE_DATASET_URL>` into `controlled_access/` at
+the repository root:
+
+```text
+controlled_access/
+  lait_books_controlled_access.jsonl
+  withheld_file_replacements.jsonl
+```
+
+Preview the restoration plan:
+
+```bash
+python3 scripts/restore_controlled_access_data.py
+```
+
+Apply the restoration:
+
+```bash
+python3 scripts/restore_controlled_access_data.py --apply
+```
+
+The script uses the gated JSONL files to create the withheld source and human
+translation files under `books/dev/`, `books/eval/`, and `books/HT/`, and to
+replace sanitized metric/alignment files that contain
+`[withheld from public GitHub release]` with their controlled-access text.
+The script does not restore out-of-scope internal workspaces or raw private
+study records that are not part of the gated release.
 
 ## Public Release Audit
 

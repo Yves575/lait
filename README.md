@@ -12,9 +12,12 @@ discussed in the study and the aggregate analyses used to compare machine
 translations with human translations.
 
 This public GitHub release does **not** include source texts or human
-translations. Those materials are available for research access by emailing the
-authors, and will later be distributed through a gated Hugging Face dataset
-that requires users to agree to access terms.
+translations. Those materials are available for research access through a
+gated Hugging Face dataset, `<HUGGING_FACE_DATASET_URL>`, that requires users
+to agree to access terms.
+After downloading the gated files into `controlled_access/`, run
+`python3 scripts/restore_controlled_access_data.py --apply` to restore the
+source, human-translation, and redacted segment-level text fields locally.
 
 ## Start Here
 
@@ -93,6 +96,31 @@ pip install -r requirements.txt
 
 Copy `.env.example` to `.env` and fill only the provider credentials needed for
 the command you plan to run. Never commit `.env`.
+
+## Controlled-Access Restoration
+
+Some public-release files contain the marker
+`[withheld from public GitHub release]` where source text, human translation
+text, or text-bearing segment fields were removed. Researchers with approved
+access should download the gated Hugging Face dataset contents from
+`<HUGGING_FACE_DATASET_URL>` into `controlled_access/` so the directory
+contains:
+
+```text
+controlled_access/
+  lait_books_controlled_access.jsonl
+  withheld_file_replacements.jsonl
+```
+
+Then restore the controlled-access files into the checkout:
+
+```bash
+python3 scripts/restore_controlled_access_data.py --apply
+```
+
+Run the same command without `--apply` for a dry run. The script restores
+`books/dev/`, `books/eval/`, `books/HT/`, and exact unredacted versions of the
+sanitized metric/alignment files covered by the gated dataset.
 
 ## Public-Release Data Policy
 

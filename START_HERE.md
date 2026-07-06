@@ -37,9 +37,15 @@ participant comments and annotation exports are withheld.
 ## 3. Understand What Is Withheld
 
 Read [docs/DATA_ACCESS.md](docs/DATA_ACCESS.md). Source texts and human
-translations are not included on GitHub. They can be requested from the authors
-for research use, and will later be available through a gated Hugging Face
-dataset with terms acceptance.
+translations are not included on GitHub. Approved researchers can download the
+gated Hugging Face dataset into `controlled_access/` and run:
+
+```bash
+python3 scripts/restore_controlled_access_data.py --apply
+```
+
+That command restores the source, human-translation, and redacted segment-level
+text fields covered by the controlled-access release.
 
 For exact audit trails:
 
