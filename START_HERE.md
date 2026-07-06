@@ -38,7 +38,7 @@ participant comments and annotation exports are withheld.
 
 Read [docs/DATA_ACCESS.md](docs/DATA_ACCESS.md). Source texts and human
 translations are not included on GitHub. Approved researchers can download the
-gated Hugging Face dataset into `controlled_access/` and run:
+gated Hugging Face dataset into `hf_dataset/` and run:
 
 ```bash
 python3 scripts/restore_controlled_access_data.py --apply

@@ -30,16 +30,35 @@ def parse_args() -> argparse.Namespace:
         help="Path to the LAIT repository root.",
     )
     parser.add_argument(
+        "--dir",
+        type=Path,
+        default=Path("hf_dataset"),
+        help=(
+            "Directory containing lait_books_data.jsonl and "
+            "lait_restoration_data.jsonl. Relative paths are resolved from "
+            "the repo root. Override individual files with --books-jsonl or "
+            "--replacements-jsonl."
+        ),
+    )
+    parser.add_argument(
         "--books-jsonl",
         type=Path,
-        default=Path("controlled_access/lait_books_controlled_access.jsonl"),
-        help="Controlled-access book-level JSONL, relative to repo root unless absolute.",
+        default=None,
+        help=(
+            "Controlled-access book-level JSONL. Relative paths are resolved "
+            "from the repo root. Defaults to "
+            "<dir>/lait_books_data.jsonl."
+        ),
     )
     parser.add_argument(
         "--replacements-jsonl",
         type=Path,
-        default=Path("controlled_access/withheld_file_replacements.jsonl"),
-        help="Exact file-replacement JSONL, relative to repo root unless absolute.",
+        default=None,
+        help=(
+            "Exact file-replacement JSONL. Relative paths are resolved from "
+            "the repo root. Defaults to "
+            "<dir>/lait_restoration_data.jsonl."
+        ),
     )
     parser.add_argument(
         "--apply",
@@ -72,6 +91,10 @@ def resolve_under_repo(repo_root: Path, path: Path) -> Path:
     except ValueError as exc:
         raise SystemExit(f"Refusing path outside repo root: {resolved}") from exc
     return resolved
+
+
+def resolve_input_path(repo_root: Path, path: Path) -> Path:
+    return path.resolve() if path.is_absolute() else (repo_root / path).resolve()
 
 
 def read_jsonl(path: Path) -> list[dict[str, Any]]:
@@ -161,7 +184,7 @@ def count_remaining_placeholders(repo_root: Path) -> tuple[int, int]:
         if (
             not path.is_file()
             or ".git" in path.parts
-            or "controlled_access" in path.parts
+            or "hf_dataset" in path.parts
         ):
             continue
         try:
@@ -178,8 +201,16 @@ def count_remaining_placeholders(repo_root: Path) -> tuple[int, int]:
 def main() -> None:
     args = parse_args()
     repo_root = args.repo_root.resolve()
-    books_jsonl = resolve_under_repo(repo_root, args.books_jsonl)
-    replacements_jsonl = resolve_under_repo(repo_root, args.replacements_jsonl)
+    dataset_dir = resolve_input_path(repo_root, args.dir)
+    books_jsonl = resolve_input_path(
+        repo_root,
+        args.books_jsonl or dataset_dir / "lait_books_data.jsonl",
+    )
+    replacements_jsonl = resolve_input_path(
+        repo_root,
+        args.replacements_jsonl
+        or dataset_dir / "lait_restoration_data.jsonl",
+    )
 
     total_planned = 0
     total_changed = 0

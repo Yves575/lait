@@ -36,13 +36,13 @@ downloading restricted materials.
 ## Restoring Controlled-Access Text Locally
 
 After cloning the public GitHub repository, download the gated Hugging Face
-dataset files from `<HUGGING_FACE_DATASET_URL>` into `controlled_access/` at
-the repository root:
+dataset files from `<HUGGING_FACE_DATASET_URL>`. By default, place them in
+`hf_dataset/` at the repository root:
 
 ```text
-controlled_access/
-  lait_books_controlled_access.jsonl
-  withheld_file_replacements.jsonl
+hf_dataset/
+  lait_books_data.jsonl
+  lait_restoration_data.jsonl
 ```
 
 Preview the restoration plan:
@@ -55,6 +55,14 @@ Apply the restoration:
 
 ```bash
 python3 scripts/restore_controlled_access_data.py --apply
+```
+
+If the gated files are in another directory, pass that folder instead:
+
+```bash
+python3 scripts/restore_controlled_access_data.py \
+  --dir /path/to/downloaded/lait-controlled-access \
+  --apply
 ```
 
 The script uses the gated JSONL files to create the withheld source and human
