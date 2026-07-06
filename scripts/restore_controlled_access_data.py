@@ -154,16 +154,25 @@ def restore_replacement_files(
     return planned, changed
 
 
-def count_remaining_placeholders(repo_root: Path) -> int:
-    count = 0
+def count_remaining_placeholders(repo_root: Path) -> tuple[int, int]:
+    data_count = 0
+    doc_or_code_count = 0
     for path in repo_root.rglob("*"):
-        if not path.is_file() or ".git" in path.parts:
+        if (
+            not path.is_file()
+            or ".git" in path.parts
+            or "controlled_access" in path.parts
+        ):
             continue
         try:
-            count += path.read_text(encoding="utf-8").count(PLACEHOLDER)
+            count = path.read_text(encoding="utf-8").count(PLACEHOLDER)
         except UnicodeDecodeError:
             continue
-    return count
+        if path.suffix in {".md", ".py"}:
+            doc_or_code_count += count
+        else:
+            data_count += count
+    return data_count, doc_or_code_count
 
 
 def main() -> None:
@@ -196,8 +205,9 @@ def main() -> None:
     print(f"{mode}: planned={total_planned} changed={total_changed}")
 
     if args.apply:
-        remaining = count_remaining_placeholders(repo_root)
-        print(f"remaining placeholder occurrences: {remaining}")
+        data_remaining, doc_or_code_references = count_remaining_placeholders(repo_root)
+        print(f"remaining data placeholder occurrences: {data_remaining}")
+        print(f"remaining doc/code marker references: {doc_or_code_references}")
 
 
 if __name__ == "__main__":
