@@ -3,6 +3,12 @@
 This directory contains public human-evaluation aggregate outputs, model
 summaries, figures, and scripts.
 
+For the manual process used to develop and calibrate the comment-coding
+schemas, see
+[`docs/COMMENT_CODING_SCHEMA_GUIDELINE.md`](../docs/COMMENT_CODING_SCHEMA_GUIDELINE.md).
+The final category definitions are retained under
+`analysis/manuscript_tables/tex/`.
+
 Included:
 
 - `figures/`: public visual summaries.
@@ -19,4 +25,3 @@ Not included:
 - Raw study exports.
 - Participant-level annotation exports.
 - Row-level comments and text snippets.
-

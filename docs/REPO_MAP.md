@@ -5,6 +5,7 @@
 | Path | Purpose |
 | --- | --- |
 | `docs/NAVIGATION.md` | Reader routes through the repo, including a preprint-to-path map. |
+| `docs/COMMENT_CODING_SCHEMA_GUIDELINE.md` | Authors' process for developing and calibrating the two comment-coding schemas. |
 | `docs/paper_supplement/` | Human-evaluation interface screenshots and participant-facing guidelines referenced by the preprint. |
 | `books/MT/pipeline1/` | P1 machine translation outputs by model. |
 | `books/MT/pipeline2/` | P2 machine translation outputs by model. |

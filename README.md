@@ -29,6 +29,8 @@ and redacted segment-level text fields locally.
 - [docs/DATA_ACCESS.md](docs/DATA_ACCESS.md): what is public, what is withheld,
   and how to request controlled access.
 - [docs/REPRODUCIBILITY.md](docs/REPRODUCIBILITY.md): setup and rerun notes.
+- [docs/COMMENT_CODING_SCHEMA_GUIDELINE.md](docs/COMMENT_CODING_SCHEMA_GUIDELINE.md):
+  how the authors developed and calibrated the comment-coding schemas.
 - [docs/paper_supplement/](docs/paper_supplement/): human-evaluation interface
   screenshots and participant-facing guidelines referenced by the preprint.
 - [docs/release/WITHHELD_FILES.md](docs/release/WITHHELD_FILES.md): exact
