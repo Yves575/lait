@@ -18,7 +18,6 @@ INPUT_PATH = (
     REPO_ROOT
     / "analysis"
     / "manuscript_tables"
-    / "tables"
     / "csv"
     / "eval_books_chunks_compact_summary_stats.csv"
 )
@@ -26,7 +25,6 @@ OUTPUT_PATH = (
     REPO_ROOT
     / "analysis"
     / "manuscript_tables"
-    / "tables"
     / "tex"
     / "eval_books_chunks_compact_summary_stats.tex"
 )
@@ -70,8 +68,10 @@ def read_table_rows(
             data.setdefault(section, {})[stat] = {
                 "htr_tokens": float(row["htr_tokens"]),
                 "htr_words": float(row["htr_words"]),
+                "htr_sentences": float(row["htr_sentences"]),
                 "mtr_tokens": float(row["mtr_tokens"]),
                 "mtr_words": float(row["mtr_words"]),
+                "mtr_sentences": float(row["mtr_sentences"]),
                 "src_tokens": float(row["src_tokens"]),
                 "src_words": float(row["src_words"]),
             }
@@ -90,8 +90,10 @@ def build_section_body(
             STAT_LABELS[stat],
             fmt_intish(values["htr_tokens"]),
             fmt_intish(values["htr_words"]),
+            fmt_intish(values["htr_sentences"]),
             fmt_intish(values["mtr_tokens"]),
             fmt_intish(values["mtr_words"]),
+            fmt_intish(values["mtr_sentences"]),
             fmt_intish(values["src_tokens"]),
             fmt_intish(values["src_words"]),
         ]
@@ -104,7 +106,7 @@ def build_table(data: dict[str, dict[str, dict[str, float]]], n_by_section: dict
     chunks_cfg = SECTION_CONFIG["chunks"]
     n_books = n_by_section["books"]
     n_chunks = n_by_section["chunks"]
-    n_cols = 7
+    n_cols = 9
 
     books_body = build_section_body("books", data["books"])
     chunks_body = build_section_body("chunks", data["chunks"])
@@ -120,14 +122,14 @@ def build_table(data: dict[str, dict[str, dict[str, float]]], n_by_section: dict
         r"\begin{table}[t!]",
         r"    \centering",
         r"    \resizebox{\linewidth}{!}{%",
-        r"    \begin{tabular}{lcccccc}",
+        r"    \begin{tabular}{lcccccccc}",
         r"        \toprule",
-        r"        & \multicolumn{2}{c}{\htr}",
-        r"        & \multicolumn{2}{c}{\mtr}",
+        r"        & \multicolumn{3}{c}{\htr}",
+        r"        & \multicolumn{3}{c}{\mtr}",
         r"        & \multicolumn{2}{c}{\srcr} \\",
-        r"        \cmidrule(lr){2-3} \cmidrule(lr){4-5} \cmidrule(lr){6-7}",
-        r"        & \textsc{Tokens} & \textsc{Words}",
-        r"        & \textsc{Tokens} & \textsc{Words}",
+        r"        \cmidrule(lr){2-4} \cmidrule(lr){5-7} \cmidrule(lr){8-9}",
+        r"        & \textsc{Tokens} & \textsc{Words} & \textsc{Sents}",
+        r"        & \textsc{Tokens} & \textsc{Words} & \textsc{Sents}",
         r"        & \textsc{Tokens} & \textsc{Words} \\",
         r"        \midrule",
         rf"        \multicolumn{{{n_cols}}}{{l}}{{{books_cfg['label']} {books_cfg['icon']} \hfill (\textit{{n={n_books}}})}} \\",
@@ -142,7 +144,8 @@ def build_table(data: dict[str, dict[str, dict[str, float]]], n_by_section: dict
         r"    }",
         r"    \caption{Summary statistics for the evaluation dataset. "
         r"Words are whitespace-delimited counts. Tokens are computed with "
-        r"\texttt{tiktoken} (\texttt{o200k\_base}).}",
+        r"\texttt{tiktoken} (\texttt{o200k\_base}). Sentence counts for "
+        r"\htr{} and \mtr{} use spaCy (\texttt{en\_core\_web\_trf}).}",
         r"    \label{tab:eval_books_chunks_compact_summary_stats}",
         r"\end{table}",
     ]
