@@ -1,6 +1,7 @@
 """Calculate book- and chunk-level word, token, and optional sentence count stats."""
 
 import argparse
+import re
 import sys
 from pathlib import Path
 
@@ -8,11 +9,40 @@ import pandas as pd
 import tiktoken
 
 SPACY_SENTENCE_MODEL = "en_core_web_trf"
+# Same pattern as scripts/chunktext_to_jsonl.py
+_CHUNK_TAG_RE = re.compile(r"<chunk>(.*?)</chunk>", re.DOTALL)
 
 
 def is_empty_chunk(text: str, word_count: int, token_count: int) -> bool:
     """True when a chunk has no substantive text or counts."""
     return not str(text).strip() and word_count <= 0 and token_count <= 0
+
+
+def _append_chunk(
+    rows: list[dict],
+    texts: list[str],
+    *,
+    book: str,
+    file: str,
+    chunk_id,
+    word_count: int,
+    text: str,
+) -> bool:
+    """Append one chunk row. Return False when the chunk is empty and skipped."""
+    token_count = count_tokens(text) if text else 0
+    if is_empty_chunk(text, word_count, token_count):
+        return False
+    rows.append(
+        {
+            "book": book,
+            "file": file,
+            "chunk_id": chunk_id,
+            "word_count": word_count,
+            "token_count": token_count,
+        }
+    )
+    texts.append(text)
+    return True
 
 
 def count_tokens(text: str, encoding_name: str = "o200k_base") -> int:
@@ -37,13 +67,17 @@ def load_spacy_nlp(model_name: str = SPACY_SENTENCE_MODEL):
         )
         raise SystemExit(1)
 
+    used_gpu = False
     try:
-        spacy.prefer_gpu()
-    except Exception:
-        pass
+        from thinc.api import set_gpu_allocator
+
+        set_gpu_allocator("pytorch")
+        used_gpu = bool(spacy.prefer_gpu())
+    except Exception as exc:
+        print(f"spaCy GPU not enabled ({exc}); using CPU", file=sys.stderr)
 
     try:
-        return spacy.load(
+        nlp = spacy.load(
             model_name,
             disable=["ner", "tagger", "lemmatizer", "attribute_ruler"],
         )
@@ -55,6 +89,9 @@ def load_spacy_nlp(model_name: str = SPACY_SENTENCE_MODEL):
         )
         raise SystemExit(1)
 
+    print(f"spaCy {model_name} using {'GPU' if used_gpu else 'CPU'}")
+    return nlp
+
 
 def add_sentence_counts(rows: list[dict], texts: list[str], nlp) -> None:
     """Add spaCy sentence counts to each row, in place."""
@@ -65,7 +102,7 @@ def add_sentence_counts(rows: list[dict], texts: list[str], nlp) -> None:
 
 
 def load_chunk_counts(folder: Path, nlp=None) -> pd.DataFrame:
-    """Load chunk word counts and token counts from every JSONL file in folder.
+    """Load chunk word and token counts from JSONL files, or tagged ``<chunk>`` .txt.
 
     Records with empty text and zero word/token counts are skipped.
     When ``nlp`` is provided, also count sentences with that spaCy model.
@@ -73,8 +110,10 @@ def load_chunk_counts(folder: Path, nlp=None) -> pd.DataFrame:
     rows = []
     texts = []
     skipped = 0
+    jsonl_paths = sorted(p for p in folder.glob("*.jsonl") if p.is_file())
+    txt_paths = sorted(p for p in folder.glob("*.txt") if p.is_file())
 
-    for path in sorted(folder.glob("*.jsonl")):
+    for path in jsonl_paths:
         if not path.is_file():
             continue
 
@@ -107,26 +146,38 @@ def load_chunk_counts(folder: Path, nlp=None) -> pd.DataFrame:
 
         chunk_ids = df["chunk_id"] if "chunk_id" in df.columns else pd.Series(df.index + 1)
         for idx, (chunk_id, word_count) in enumerate(zip(chunk_ids, word_counts)):
-            row = {
-                "book": path.stem,
-                "file": str(path),
-                "chunk_id": chunk_id,
-                "word_count": int(word_count),
-            }
-
             text = ""
             if text_column is not None and idx < len(df):
                 text = str(df.iloc[idx][text_column]) if pd.notna(df.iloc[idx][text_column]) else ""
-                row["token_count"] = count_tokens(text)
-            else:
-                row["token_count"] = 0
 
-            if is_empty_chunk(text, row["word_count"], row["token_count"]):
+            if not _append_chunk(
+                rows,
+                texts,
+                book=path.stem,
+                file=str(path),
+                chunk_id=chunk_id,
+                word_count=int(word_count),
+                text=text,
+            ):
                 skipped += 1
-                continue
 
-            rows.append(row)
-            texts.append(text)
+    if not rows:
+        for path in txt_paths:
+            chunks = [
+                match.group(1).strip("\n")
+                for match in _CHUNK_TAG_RE.finditer(path.read_text(encoding="utf-8"))
+            ]
+            for chunk_id, text in enumerate(chunks, start=1):
+                if not _append_chunk(
+                    rows,
+                    texts,
+                    book=path.stem,
+                    file=str(path),
+                    chunk_id=chunk_id,
+                    word_count=len(text.split()),
+                    text=text,
+                ):
+                    skipped += 1
 
     if skipped:
         print(f"Skipped {skipped} empty chunk(s) in {folder}", file=sys.stderr)
@@ -168,8 +219,9 @@ def write_count_stats(chunk_counts: pd.DataFrame, metric_name: str, output_dir: 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
         description=(
-            "Calculate book and chunk word-count and token-count statistics from JSONL files. "
-            "Optionally also count sentences with spaCy en_core_web_trf."
+            "Calculate book and chunk word-count and token-count statistics from JSONL "
+            "files or tagged <chunk> .txt files. Optionally also count sentences with "
+            "spaCy en_core_web_trf."
         )
     )
 
@@ -177,7 +229,7 @@ def parse_args() -> argparse.Namespace:
         "--chunks-dir",
         type=Path,
         default=Path("books/HT/eval"),
-        help="Directory containing JSONL book chunks (default: books/HT/eval).",
+        help="Directory containing JSONL chunks or tagged <chunk> .txt files (default: books/HT/eval).",
     )
     parser.add_argument(
         "--output-dir",
@@ -214,7 +266,7 @@ def main() -> None:
     nlp = load_spacy_nlp() if args.count_sentences else None
     chunk_counts = load_chunk_counts(chunks_dir, nlp=nlp)
     if chunk_counts.empty:
-        print(f"Error: no JSONL chunks found in {chunks_dir}", file=sys.stderr)
+        print(f"Error: no chunks found in {chunks_dir}", file=sys.stderr)
         raise SystemExit(1)
 
     output_dir.mkdir(parents=True, exist_ok=True)

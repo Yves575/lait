@@ -73,7 +73,6 @@ def read_table_rows(
                 "mtr_words": float(row["mtr_words"]),
                 "mtr_sentences": float(row["mtr_sentences"]),
                 "src_tokens": float(row["src_tokens"]),
-                "src_words": float(row["src_words"]),
             }
 
     return data, n_by_section
@@ -95,7 +94,6 @@ def build_section_body(
             fmt_intish(values["mtr_words"]),
             fmt_intish(values["mtr_sentences"]),
             fmt_intish(values["src_tokens"]),
-            fmt_intish(values["src_words"]),
         ]
         lines.append("        " + " & ".join(cells) + r" \\")
     return lines
@@ -106,7 +104,7 @@ def build_table(data: dict[str, dict[str, dict[str, float]]], n_by_section: dict
     chunks_cfg = SECTION_CONFIG["chunks"]
     n_books = n_by_section["books"]
     n_chunks = n_by_section["chunks"]
-    n_cols = 9
+    n_cols = 8
 
     books_body = build_section_body("books", data["books"])
     chunks_body = build_section_body("chunks", data["chunks"])
@@ -122,15 +120,15 @@ def build_table(data: dict[str, dict[str, dict[str, float]]], n_by_section: dict
         r"\begin{table}[t!]",
         r"    \centering",
         r"    \resizebox{\linewidth}{!}{%",
-        r"    \begin{tabular}{lcccccccc}",
+        r"    \begin{tabular}{lccccccc}",
         r"        \toprule",
         r"        & \multicolumn{3}{c}{\htr}",
         r"        & \multicolumn{3}{c}{\mtr}",
-        r"        & \multicolumn{2}{c}{\srcr} \\",
-        r"        \cmidrule(lr){2-4} \cmidrule(lr){5-7} \cmidrule(lr){8-9}",
+        r"        & \srcr \\",
+        r"        \cmidrule(lr){2-4} \cmidrule(lr){5-7} \cmidrule(lr){8-8}",
         r"        & \textsc{Tokens} & \textsc{Words} & \textsc{Sents}",
         r"        & \textsc{Tokens} & \textsc{Words} & \textsc{Sents}",
-        r"        & \textsc{Tokens} & \textsc{Words} \\",
+        r"        & \textsc{Tokens} \\",
         r"        \midrule",
         rf"        \multicolumn{{{n_cols}}}{{l}}{{{books_cfg['label']} {books_cfg['icon']} \hfill (\textit{{n={n_books}}})}} \\",
         r"        \midrule",
@@ -143,9 +141,10 @@ def build_table(data: dict[str, dict[str, dict[str, float]]], n_by_section: dict
         r"    \end{tabular}",
         r"    }",
         r"    \caption{Summary statistics for the evaluation dataset. "
-        r"Words are whitespace-delimited counts. Tokens are computed with "
-        r"\texttt{tiktoken} (\texttt{o200k\_base}). Sentence counts for "
-        r"\htr{} and \mtr{} use spaCy (\texttt{en\_core\_web\_trf}).}",
+        r"Words are whitespace-delimited counts (omitted for \srcr{}). "
+        r"Tokens are computed with \texttt{tiktoken} (\texttt{o200k\_base}). "
+        r"Sentence counts for \htr{} and \mtr{} use spaCy "
+        r"(\texttt{en\_core\_web\_trf}).}",
         r"    \label{tab:eval_books_chunks_compact_summary_stats}",
         r"\end{table}",
     ]

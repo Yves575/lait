@@ -5,7 +5,7 @@ Reads ``book_stats/{human_translation_counts,machine_translation_counts,source_t
 MTR (MT), and pooled SRC columns.
 
 Optionally refreshes stats via ``book_stats/calculate_stats.py`` (SRC reads
-``books/eval/chunks``; sentence counts are computed only for HT and MT).
+``books/SRC/eval`` tagged ``.txt`` chunks; sentence counts are computed only for HT and MT).
 """
 
 from __future__ import annotations
@@ -25,7 +25,7 @@ VERSION_STATS_DIRS = {
 }
 HT_BOOKS_DIR = REPO_ROOT / "books" / "HT" / "eval"
 MT_CHUNKS_DIR = REPO_ROOT / "books" / "MT_chunks"
-SOURCE_CHUNKS_DIR = REPO_ROOT / "books" / "eval" / "chunks"
+SOURCE_CHUNKS_DIR = REPO_ROOT / "books" / "SRC" / "eval"
 CALCULATE_STATS_SCRIPT = REPO_ROOT / "book_stats" / "calculate_stats.py"
 OUTPUT_PATH = (
     REPO_ROOT
@@ -179,7 +179,7 @@ def parse_args() -> argparse.Namespace:
         action="store_true",
         help=(
             "Re-run calculate_stats for HT, MT, and SRC "
-            "(books/eval/chunks) before export. Sentence counts are "
+            "(books/SRC/eval) before export. Sentence counts are "
             "computed for HT and MT only."
         ),
     )

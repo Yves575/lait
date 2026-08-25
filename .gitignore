@@ -21,6 +21,7 @@ books/test/
 books/reduce_stats.tsv
 books/DEL1
 books/DEL2
+books/SRC/
 human_eval/data/study-data-full.json
 human_eval/data/part1-study-data-full.csv
 human_eval/data/part2-study-data-full.csv
