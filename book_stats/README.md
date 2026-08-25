@@ -13,3 +13,13 @@ and MT) sentence-count summaries. It does not contain book text.
 Scripts in this directory can refresh these summaries when the controlled-access
 inputs are available locally.
 
+To print the combined spaCy sentence total for eval HT and MT chunks (sum of the
+existing `chunk_sentence_count_stats.csv` `sum` rows; no spaCy rerun):
+
+```bash
+python book_stats/count_eval_ht_mt_chunk_sentences.py
+```
+
+Pass `--refresh` only when the eval chunk directories are present and the
+sentence CSVs should be recomputed with `calculate_stats.py --count-sentences`.
+
