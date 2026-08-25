@@ -1,4 +1,4 @@
-"""Build the compact eval books/chunks summary statistics LaTeX table.
+"""Build the compact eval excerpts/chunks summary statistics LaTeX table.
 
 Reads:
   - ``analysis/manuscript_tables/csv/eval_books_chunks_compact_summary_stats.csv``
@@ -38,7 +38,7 @@ STAT_LABELS = {
 }
 SECTION_CONFIG = {
     "books": {
-        "label": r"\textbf{Books}",
+        "label": r"\textbf{Excerpts}",
         "icon": r"\includegraphics[height=1.1em]{figs/books.png}",
     },
     "chunks": {

@@ -4,12 +4,12 @@ Reads:
   - ``book_stats/{human_translation_counts,machine_translation_counts,source_text_counts}/{book,chunk}_{word,token}_count_stats.csv``
   - ``human_eval/comments_word_token_stats/output/{chunk_justification,single_q5,
     single_q6,comparison_q4,comparison_q7}_stats.csv``
-  - ``books/HT/eval/*.jsonl`` (to derive the chunks-per-book distribution).
+  - ``books/HT/eval/*.jsonl`` (to derive the chunks-per-excerpt distribution).
 
 Emits a single LaTeX ``table*`` with two stacked sub-tables (``Words`` on top,
-``Tokens`` on bottom). For Books and Chunks, the ``Words`` sub-table reports
+``Tokens`` on bottom). For Excerpts and Chunks, the ``Words`` sub-table reports
 ``HT`` and ``MT`` only; the ``Tokens`` sub-table also includes ``Source`` rows.
-For ``# Chunks/Book`` and the Participant-Comments columns (which do not split
+For ``# Chunks/Excerpt`` and the Participant-Comments columns (which do not split
 by translation version), the value spans all version rows in that sub-table via
 ``\\multirow``.
 
@@ -117,7 +117,7 @@ def read_comment_stats(path: Path, metric: str) -> dict[str, float]:
 
 
 def compute_chunks_per_book_stats(books_dir: Path) -> tuple[dict[str, float], int]:
-    """Compute per-book chunk-count distribution and book count from JSONL files."""
+    """Compute per-excerpt chunk-count distribution and excerpt count from JSONL files."""
     counts: list[int] = []
     for path in sorted(books_dir.glob("*.jsonl")):
         if not path.is_file():
@@ -202,14 +202,14 @@ def build_data_row(
     version: str,
     data: dict,
 ) -> list[str]:
-    """Build the per-version cells: [book, chunk] values."""
+    """Build the per-version cells: [excerpt, chunk] values."""
     book_val = data["books"][version][metric].get(stat)
     chunk_val = data["chunks"][version][metric].get(stat)
     return [fmt(book_val, stat), fmt(chunk_val, stat)]
 
 
 def build_shared_cells(stat: str, metric: str, data: dict) -> list[str]:
-    """Build the cells that don't split HT/MT: #/Bk + 5 comment columns."""
+    """Build the cells that don't split HT/MT: #/Ex + 5 comment columns."""
     chunks_per_book = fmt(data["chunks_per_book"].get(stat), stat)
     comment_cells = [
         fmt(data["comments"][field][metric].get(stat), stat)
@@ -270,7 +270,7 @@ def build_table(data: dict) -> str:
     n_responses = {field: comment_n(field, data) for field in COMMENT_FIELDS}
 
     header_section_row = (
-        rf"            & & & \multicolumn{{1}}{{c}}{{\textbf{{Books}} {BOOKS_ICON}}}"
+        rf"            & & & \multicolumn{{1}}{{c}}{{\textbf{{Excerpts}} {BOOKS_ICON}}}"
         rf" & \multicolumn{{1}}{{c}}{{\textbf{{Chunks}} {CHUNKS_ICON}}}"
         r" & "
         rf" & \multicolumn{{5}}{{c}}{{\textbf{{Participant Comments}} {COMMENTS_ICON}}} \\"
@@ -291,7 +291,7 @@ def build_table(data: dict) -> str:
     )
     comment_headers = " & ".join(COMMENT_HEADERS[f] for f in COMMENT_FIELDS)
     header_col_row = (
-        r"            & & &     &     & \textsc{\#/Bk}"
+        r"            & & &     &     & \textsc{\#/Ex}"
         rf" & {comment_headers} \\"
     )
 
@@ -302,17 +302,17 @@ def build_table(data: dict) -> str:
 
     column_spec = "lll cc c ccccc"
     caption = (
-        r"Summary statistics for evaluation books, chunks, and participant "
+        r"Summary statistics for evaluation excerpts, chunks, and participant "
         r"free-text comments, split into a \textbf{\textsc{Words}} sub-table "
         r"(whitespace-delimited word counts; we do not report \srcr{} word "
         r"counts because Japanese cannot be split on whitespaces) "
         r"and a \textbf{\textsc{Tokens}} "
         r"sub-table (\texttt{tiktoken} \texttt{o200k\_base} token counts). "
-        r"Books and chunks are reported separately for human-translated "
+        r"Excerpts and chunks are reported separately for human-translated "
         r"(\htr) and machine-translated (\mtr) versions in the "
         r"\textbf{\textsc{Words}} sub-table; the \textbf{\textsc{Tokens}} "
         r"sub-table also includes source-language (\srcr) versions. "
-        r"The \textsc{\#/Bk} (chunks per book) column does not depend on the "
+        r"The \textsc{\#/Ex} (chunks per excerpt) column does not depend on the "
         r"metric and is identical across both sub-tables (and across "
         r"\htr ~/~ \mtr ~/~ \srcr{}, since chunks are aligned across versions). "
         r"\textsc{Participant Comments} include: "

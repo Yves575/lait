@@ -2,14 +2,14 @@
 
 This is a smaller companion to
 ``build_eval_books_and_comments_summary_stats_table.py``. It keeps only the
-book-level token/word statistics and aggregates all participant free-text
-comments into one group, with a ``# Comment/Book`` column analogous to the
+excerpt-level token/word statistics and aggregates all participant free-text
+comments into one group, with a ``# Comment/Excerpt`` column analogous to the
 ``# Claim/Book`` column in the compact dataset-summary table.
 
 Reads:
   - ``book_stats/human_translation_counts/book_{word,token}_count_stats.csv``
   - ``human_eval/comments_word_token_stats/output/all_comments_stats.csv``
-  - ``human_eval/data/study-data-full.json`` (for comments-per-book counts)
+  - ``human_eval/data/study-data-full.json`` (for comments-per-excerpt counts)
 
 Output is written to
 ``analysis/manuscript_tables/tex/eval_books_and_comments_compact_summary_stats.tex``
@@ -240,16 +240,16 @@ def build_table() -> str:
         r"    \resizebox{0.48\textwidth}{!}{%",
         r"    \begin{tabular}{lcc|cc|c}",
         r"        \toprule",
-        rf"         & \multicolumn{{2}}{{c}}{{\textbf{{Books}} {BOOKS_ICON}}} & \multicolumn{{3}}{{c}}{{\textbf{{Participant Comments}} {COMMENTS_ICON}}} \\",
+        rf"         & \multicolumn{{2}}{{c}}{{\textbf{{Excerpts}} {BOOKS_ICON}}} & \multicolumn{{3}}{{c}}{{\textbf{{Participant Comments}} {COMMENTS_ICON}}} \\",
         rf"         & \multicolumn{{2}}{{c}}{{(\textit{{n={n_books}}})}} & \multicolumn{{3}}{{c}}{{(\textit{{n={n_comments}}})}} \\",
         r"        \cmidrule(lr){2-3} \cmidrule(lr){4-6}",
-        r"         & \textsc{Tokens} & \textsc{Words} & \textsc{Tokens} & \textsc{Words} & \textsc{\# Comment/Book}\\",
+        r"         & \textsc{Tokens} & \textsc{Words} & \textsc{Tokens} & \textsc{Words} & \textsc{\# Comment/Excerpt}\\",
         r"        \midrule",
         *body,
         r"        \bottomrule",
         r"    \end{tabular}",
         r"    }",
-        r"    \caption{Summary statistics for evaluation books and participant evaluation comments.}",
+        r"    \caption{Summary statistics for evaluation excerpts and participant evaluation comments.}",
         r"    \label{tab:eval_books_comments_compact_summary_stats}",
         r"\end{table}",
     ]
