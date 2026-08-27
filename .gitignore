@@ -31,6 +31,7 @@ internal_eval/
 internal_eval/data/study-data-full.json
 internal_eval/export_study_data_csv.py
 INTERNAL_*.json
+latex_prompts/
 par3_dataset/
 par3/html_dev/
 par3/html_eval/
@@ -57,10 +58,13 @@ LiTransProQA/prompting_method/final_set/
 LiTransProQA/prompting_method/final_results/
 
 # Coding Agents
+.agents/
 .claudeignore
 CLAUDE.md
 .claude/
-.codex
+.codex/
+.cursor/
+skills-lock.json
 
 mapping.json
 statistical/outputs/tables/
