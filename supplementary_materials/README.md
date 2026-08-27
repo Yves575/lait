@@ -9,3 +9,7 @@ Supplementary materials that did not fit in the main paper's appendix are availa
 ## Interface Screenshots
 
 [Interface.md](Interface.md) shows and describes screenshots from the reading/evaluation interface for the main reading/evaluation flow.
+
+## Prompts
+
+[Prompts.md](Prompts.md) indexes the prompt tables used in the translation pipelines. Look inside each prompt file to see the full details of each prompt.
