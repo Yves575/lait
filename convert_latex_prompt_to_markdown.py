@@ -1,4 +1,4 @@
-"""Convert latex_prompts/*.tex prompt tables into supplementary_materials/prompts/*.md."""
+"""Convert latex_prompts/*.tex prompt tables into docs/paper_supplement/prompts/*.md."""
 
 from __future__ import annotations
 
@@ -7,8 +7,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
 SRC_DIR = ROOT / "latex_prompts"
-DST_DIR = ROOT / "supplementary_materials" / "prompts"
-INDEX_PATH = ROOT / "supplementary_materials" / "Prompts.md"
+DST_DIR = ROOT / "docs" / "paper_supplement" / "prompts"
+INDEX_PATH = ROOT / "docs" / "paper_supplement" / "Prompts.md"
 
 TABLE_ENVS = ("table*", "table", "longtable")
 BEGIN_ENV = re.compile(r"\\begin\{(" + "|".join(re.escape(n) for n in TABLE_ENVS) + r")\}")

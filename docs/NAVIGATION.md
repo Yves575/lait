@@ -16,6 +16,7 @@ Start with these public materials:
 | What did readers say in the human evaluation? | `human_eval/figures/`, `analysis/human_eval/`, `analysis/manuscript_tables/` |
 | How were the comment-coding schemas developed? | `docs/COMMENT_CODING_SCHEMA_GUIDELINE.md` |
 | What did the human-evaluation interface and guidelines look like? | `docs/paper_supplement/` |
+| What prompt tables were used in the paper supplement? | `docs/paper_supplement/Prompts.md` |
 | What data is missing from GitHub? | `docs/DATA_ACCESS.md`, `docs/release/WITHHELD_FILES.md` |
 
 ## If You Skimmed The Abstract
@@ -43,6 +44,7 @@ Use this map to move from the preprint into the repository.
 | Automatic metric results | `results_all_metrics/`, `results_chunk_review_eval/`, `results_mapped_metrics/` |
 | Human-evaluation figures and aggregate summaries | `human_eval/README.md`, `human_eval/figures/`, `human_eval/analysis_outputs/`, `analysis/human_eval/` |
 | Human-evaluation interface screenshots and participant-facing guidelines | `docs/paper_supplement/` |
+| Prompt tables from the paper supplement | `docs/paper_supplement/Prompts.md` |
 | Annotation schemes and model summaries | `analysis/manuscript_tables/`, `analysis/scripts/` |
 | Comment-coding schema development and calibration | `docs/COMMENT_CODING_SCHEMA_GUIDELINE.md` |
 | Public-release scope decisions | `docs/release/PREPRINT_SCOPE_AUDIT.md`, `docs/release/withheld-files.tsv`, `docs/release/sanitized-files.tsv` |
@@ -58,6 +60,7 @@ Use this map to move from the preprint into the repository.
 | Find human-evaluation visual summaries | `human_eval/figures/` |
 | Understand how the comment-coding schemas were developed | `docs/COMMENT_CODING_SCHEMA_GUIDELINE.md` |
 | View human-evaluation interface screenshots and participant-facing guidelines | `docs/paper_supplement/` |
+| Read the paper's prompt tables | `docs/paper_supplement/Prompts.md` |
 | Understand a top-level directory before opening files | The `README.md` inside `books/`, `books/MT/`, `book_stats/`, `human_eval/`, `analysis/`, and `results_*` directories |
 | Rebuild retained tables from aggregate inputs | `analysis/scripts/` |
 | Learn why source/HT files are absent | `docs/DATA_ACCESS.md` |

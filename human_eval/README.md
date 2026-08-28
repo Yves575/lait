@@ -3,6 +3,9 @@
 This directory contains public human-evaluation aggregate outputs, model
 summaries, figures, and scripts.
 
+Interface screenshots and participant-facing guidelines are in
+[`docs/paper_supplement/`](../docs/paper_supplement/).
+
 For the manual process used to develop and calibrate the comment-coding
 schemas, see
 [`docs/COMMENT_CODING_SCHEMA_GUIDELINE.md`](../docs/COMMENT_CODING_SCHEMA_GUIDELINE.md).
