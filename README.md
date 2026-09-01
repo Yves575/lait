@@ -31,8 +31,9 @@ and redacted segment-level text fields locally.
 - [docs/REPRODUCIBILITY.md](docs/REPRODUCIBILITY.md): setup and rerun notes.
 - [docs/COMMENT_CODING_SCHEMA_GUIDELINE.md](docs/COMMENT_CODING_SCHEMA_GUIDELINE.md):
   how the authors developed and calibrated the comment-coding schemas.
-- [docs/paper_supplement/](docs/paper_supplement/): human-evaluation interface
-  screenshots and participant-facing guidelines referenced by the preprint.
+- [docs/paper_supplement/](docs/paper_supplement/): paper supplementary
+  materials (human-evaluation interface, participant guidelines, and prompt
+  tables).
 - [docs/release/WITHHELD_FILES.md](docs/release/WITHHELD_FILES.md): exact
   manifest of files withheld from this public branch.
 - [docs/release/PREPRINT_SCOPE_AUDIT.md](docs/release/PREPRINT_SCOPE_AUDIT.md):

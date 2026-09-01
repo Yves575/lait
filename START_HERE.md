@@ -28,7 +28,7 @@ Use:
 - `results_all_metrics/`
 - `results_chunk_review_eval/`
 - `results_mapped_metrics/`
-- `docs/paper_supplement/`
+- `docs/paper_supplement/` (interface, guidelines, prompt tables)
 
 The public branch redacts source and human-translation text fields in derived
 tables, while retaining aggregate metrics and provenance fields. Row-level

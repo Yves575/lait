@@ -1,10 +1,11 @@
 """Export unified CSV for the eval books/chunks compact summary table.
 
-Reads ``book_stats/{human_translation_counts,machine_translation_counts,source_text_counts}/{book,chunk}_{word,token}_count_stats.csv`` and
-writes one table-ready CSV with HTR (HT), MTR (MT), and pooled SRC columns.
+Reads ``book_stats/{human_translation_counts,machine_translation_counts,source_text_counts}/{book,chunk}_{word,token,sentence}_count_stats.csv``
+(sentence files only for HT and MT) and writes one table-ready CSV with HTR (HT),
+MTR (MT), and pooled SRC columns.
 
 Optionally refreshes stats via ``book_stats/calculate_stats.py`` (SRC reads
-``books/eval/chunks``).
+``books/SRC/eval`` tagged ``.txt`` chunks; sentence counts are computed only for HT and MT).
 """
 
 from __future__ import annotations
@@ -24,13 +25,12 @@ VERSION_STATS_DIRS = {
 }
 HT_BOOKS_DIR = REPO_ROOT / "books" / "HT" / "eval"
 MT_CHUNKS_DIR = REPO_ROOT / "books" / "MT_chunks"
-SOURCE_CHUNKS_DIR = REPO_ROOT / "books" / "eval" / "chunks"
+SOURCE_CHUNKS_DIR = REPO_ROOT / "books" / "SRC" / "eval"
 CALCULATE_STATS_SCRIPT = REPO_ROOT / "book_stats" / "calculate_stats.py"
 OUTPUT_PATH = (
     REPO_ROOT
     / "analysis"
     / "manuscript_tables"
-    / "tables"
     / "csv"
     / "eval_books_chunks_compact_summary_stats.csv"
 )
@@ -43,8 +43,10 @@ FIELDNAMES = (
     "n",
     "htr_tokens",
     "htr_words",
+    "htr_sentences",
     "mtr_tokens",
     "mtr_words",
+    "mtr_sentences",
     "src_tokens",
     "src_words",
 )
@@ -80,7 +82,10 @@ def count_eval_books(books_dir: Path) -> int:
 
 
 def refresh_book_stats() -> None:
-    """Re-run calculate_stats for HT, MT, and pooled SRC (eval source chunks)."""
+    """Re-run calculate_stats for HT, MT, and pooled SRC (eval source chunks).
+
+    Sentence counts (spaCy ``en_core_web_trf``) are computed for HT and MT only.
+    """
     commands = [
         [
             sys.executable,
@@ -89,6 +94,7 @@ def refresh_book_stats() -> None:
             str(HT_BOOKS_DIR),
             "--output-dir",
             str(BOOK_STATS_ROOT / VERSION_STATS_DIRS["HT"]),
+            "--count-sentences",
         ],
         [
             sys.executable,
@@ -97,6 +103,7 @@ def refresh_book_stats() -> None:
             str(MT_CHUNKS_DIR),
             "--output-dir",
             str(BOOK_STATS_ROOT / VERSION_STATS_DIRS["MT"]),
+            "--count-sentences",
         ],
         [
             sys.executable,
@@ -111,20 +118,33 @@ def refresh_book_stats() -> None:
         subprocess.run(cmd, check=True, cwd=REPO_ROOT)
 
 
-def load_section_stats(version: str, section: str) -> dict[str, dict[str, float]]:
-    """Load token and word stats for books or chunks."""
+def load_section_stats(
+    version: str, section: str, *, include_sentences: bool = False
+) -> dict[str, dict[str, float]]:
+    """Load token and word stats for books or chunks, plus sentences when requested."""
     prefix = "book" if section == "books" else "chunk"
     version_dir = BOOK_STATS_ROOT / VERSION_STATS_DIRS[version]
-    return {
+    stats = {
         "token": read_simple_stats(version_dir / f"{prefix}_token_count_stats.csv", "token"),
         "word": read_simple_stats(version_dir / f"{prefix}_word_count_stats.csv", "word"),
     }
+    if include_sentences:
+        stats["sentence"] = read_simple_stats(
+            version_dir / f"{prefix}_sentence_count_stats.csv", "sentence"
+        )
+    return stats
 
 
 def build_rows(n_books: int, n_chunks: int) -> list[dict[str, object]]:
     """Build export rows for books and chunks sections."""
-    htr = {section: load_section_stats("HT", section) for section in SECTIONS}
-    mtr = {section: load_section_stats("MT", section) for section in SECTIONS}
+    htr = {
+        section: load_section_stats("HT", section, include_sentences=True)
+        for section in SECTIONS
+    }
+    mtr = {
+        section: load_section_stats("MT", section, include_sentences=True)
+        for section in SECTIONS
+    }
     src = {section: load_section_stats("SRC", section) for section in SECTIONS}
     n_by_section = {"books": n_books, "chunks": n_chunks}
 
@@ -139,8 +159,10 @@ def build_rows(n_books: int, n_chunks: int) -> list[dict[str, object]]:
                     "n": n,
                     "htr_tokens": htr[section]["token"][stat],
                     "htr_words": htr[section]["word"][stat],
+                    "htr_sentences": htr[section]["sentence"][stat],
                     "mtr_tokens": mtr[section]["token"][stat],
                     "mtr_words": mtr[section]["word"][stat],
+                    "mtr_sentences": mtr[section]["sentence"][stat],
                     "src_tokens": src[section]["token"][stat],
                     "src_words": src[section]["word"][stat],
                 }
@@ -157,7 +179,8 @@ def parse_args() -> argparse.Namespace:
         action="store_true",
         help=(
             "Re-run calculate_stats for HT, MT, and SRC "
-            "(books/eval/chunks) before export."
+            "(books/SRC/eval) before export. Sentence counts are "
+            "computed for HT and MT only."
         ),
     )
     parser.add_argument(
@@ -169,18 +192,23 @@ def parse_args() -> argparse.Namespace:
     return parser.parse_args()
 
 
+def books_dir_for_n() -> Path:
+    """Prefer HT eval chunks for n; fall back to public MT chunks."""
+    if HT_BOOKS_DIR.is_dir() and any(HT_BOOKS_DIR.glob("*.jsonl")):
+        return HT_BOOKS_DIR
+    return MT_CHUNKS_DIR
+
+
 def main() -> None:
     args = parse_args()
 
-    if not HT_BOOKS_DIR.is_dir():
-        print(f"Error: {HT_BOOKS_DIR} is not a directory", file=sys.stderr)
-        raise SystemExit(1)
-
-    if not SOURCE_CHUNKS_DIR.is_dir():
-        print(f"Error: {SOURCE_CHUNKS_DIR} is not a directory", file=sys.stderr)
-        raise SystemExit(1)
-
     if args.refresh:
+        if not HT_BOOKS_DIR.is_dir():
+            print(f"Error: {HT_BOOKS_DIR} is not a directory", file=sys.stderr)
+            raise SystemExit(1)
+        if not SOURCE_CHUNKS_DIR.is_dir():
+            print(f"Error: {SOURCE_CHUNKS_DIR} is not a directory", file=sys.stderr)
+            raise SystemExit(1)
         if not CALCULATE_STATS_SCRIPT.is_file():
             print(f"Error: {CALCULATE_STATS_SCRIPT} not found", file=sys.stderr)
             raise SystemExit(1)
@@ -195,13 +223,26 @@ def main() -> None:
         )
         raise SystemExit(1)
 
-    n_books = count_eval_books(HT_BOOKS_DIR)
-    n_chunks = count_eval_chunks(HT_BOOKS_DIR)
+    for version in ("HT", "MT"):
+        version_dir = BOOK_STATS_ROOT / VERSION_STATS_DIRS[version]
+        for prefix in ("book", "chunk"):
+            sentence_path = version_dir / f"{prefix}_sentence_count_stats.csv"
+            if not sentence_path.is_file():
+                print(
+                    f"Error: {sentence_path.relative_to(REPO_ROOT)} not found. "
+                    "Run with --refresh to generate HT/MT sentence stats.",
+                    file=sys.stderr,
+                )
+                raise SystemExit(1)
+
+    n_dir = books_dir_for_n()
+    n_books = count_eval_books(n_dir)
+    n_chunks = count_eval_chunks(n_dir)
     if n_books == 0:
-        print(f"Error: no JSONL files in {HT_BOOKS_DIR}", file=sys.stderr)
+        print(f"Error: no JSONL files in {n_dir}", file=sys.stderr)
         raise SystemExit(1)
     if n_chunks == 0:
-        print(f"Error: no chunks found in {HT_BOOKS_DIR}", file=sys.stderr)
+        print(f"Error: no chunks found in {n_dir}", file=sys.stderr)
         raise SystemExit(1)
 
     rows = build_rows(n_books, n_chunks)

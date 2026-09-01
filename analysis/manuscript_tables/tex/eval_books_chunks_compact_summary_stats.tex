@@ -5,32 +5,32 @@
 \begin{table}[t!]
     \centering
     \resizebox{\linewidth}{!}{%
-    \begin{tabular}{lcccccc}
+    \begin{tabular}{lccccccc}
         \toprule
-        & \multicolumn{2}{c}{\htr}
-        & \multicolumn{2}{c}{\mtr}
-        & \multicolumn{2}{c}{\srcr} \\
-        \cmidrule(lr){2-3} \cmidrule(lr){4-5} \cmidrule(lr){6-7}
-        & \textsc{Tokens} & \textsc{Words}
-        & \textsc{Tokens} & \textsc{Words}
-        & \textsc{Tokens} & \textsc{Words} \\
+        & \multicolumn{3}{c}{\htr}
+        & \multicolumn{3}{c}{\mtr}
+        & \srcr \\
+        \cmidrule(lr){2-4} \cmidrule(lr){5-7} \cmidrule(lr){8-8}
+        & \textsc{Tokens} & \textsc{Words} & \textsc{Sents}
+        & \textsc{Tokens} & \textsc{Words} & \textsc{Sents}
+        & \textsc{Tokens} \\
         \midrule
-        \multicolumn{7}{l}{\textbf{Books} \includegraphics[height=1.1em]{figs/books.png} \hfill (\textit{n=15})} \\
+        \multicolumn{8}{l}{\textbf{Excerpts} \includegraphics[height=1.1em]{figs/books.png} \hfill (\textit{n=15})} \\
         \midrule
-        \textsc{Mean} & 9,680 & 7,623 & 9,582 & 7,676 & 13,026 & 4,784 \\
-        \textsc{St. Dev.} & 535 & 449 & 626 & 529 & 1,527 & 3,334 \\
-        \textsc{Max} & 10,261 & 7,995 & 10,500 & 8,595 & 15,967 & 8,244 \\
-        \textsc{Min} & 8,600 & 6,747 & 8,474 & 6,928 & 11,155 & 141 \\
+        \textsc{Mean} & 9,680 & 7,623 & 547 & 9,582 & 7,676 & 539 & 13,307 \\
+        \textsc{St. Dev.} & 535 & 449 & 74 & 626 & 529 & 73 & 2,316 \\
+        \textsc{Max} & 10,261 & 7,995 & 668 & 10,500 & 8,595 & 683 & 19,116 \\
+        \textsc{Min} & 8,600 & 6,747 & 440 & 8,474 & 6,928 & 447 & 9,882 \\
         \midrule
-        \multicolumn{7}{l}{\textbf{Chunks} \chunkicon \hfill (\textit{n=386})} \\
+        \multicolumn{8}{l}{\textbf{Chunks} \chunkicon \hfill (\textit{n=386})} \\
         \midrule
-        \textsc{Mean} & 376 & 296 & 372 & 298 & 508 & 186 \\
-        \textsc{St. Dev.} & 66 & 49 & 73 & 57 & 122 & 128 \\
-        \textsc{Max} & 611 & 486 & 644 & 530 & 1,139 & 417 \\
-        \textsc{Min} & 118 & 100 & 121 & 102 & 141 & 1 \\
+        \textsc{Mean} & 376 & 296 & 21 & 372 & 298 & 21 & 442 \\
+        \textsc{St. Dev.} & 66 & 49 & 8 & 73 & 57 & 8 & 130 \\
+        \textsc{Max} & 611 & 486 & 51 & 644 & 530 & 50 & 870 \\
+        \textsc{Min} & 118 & 100 & 4 & 121 & 102 & 4 & 79 \\
         \bottomrule
     \end{tabular}
     }
-    \caption{Summary statistics for the evaluation dataset. Words are whitespace-delimited counts. Tokens are computed with \texttt{tiktoken} (\texttt{o200k\_base}).}
+    \caption{Summary statistics for the evaluation dataset. Words are whitespace-delimited counts (omitted for \srcr{}). Tokens are computed with \texttt{tiktoken} (\texttt{o200k\_base}). Sentence counts for \htr{} and \mtr{} use spaCy (\texttt{en\_core\_web\_trf}).}
     \label{tab:eval_books_chunks_compact_summary_stats}
 \end{table}
