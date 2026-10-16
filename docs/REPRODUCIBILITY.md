@@ -1,7 +1,10 @@
 # Reproducibility
 
 This branch supports public inspection and partial reproduction. Full reruns
-that require source texts or human translations need controlled-access data.
+that require source texts, human translations, or participant-level
+human-evaluation CSVs need controlled-access data. See
+[Data Access](DATA_ACCESS.md) for restoration instructions, including the three
+CSVs expected under `human_eval/data/`.
 
 ## Environment
 

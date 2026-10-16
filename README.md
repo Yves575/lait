@@ -18,7 +18,7 @@ to agree to access terms. After downloading the gated files, run
 `python3 scripts/restore_controlled_access_data.py --apply` from the default
 `hf_dataset/` layout, or pass `--dir` to point to a
 different download folder. The script restores the source, human-translation,
-and redacted segment-level text fields locally.
+redacted segment-level text fields, and the three human-evaluation study CSVs locally.
 
 ## Start Here
 
@@ -132,7 +132,11 @@ python3 scripts/restore_controlled_access_data.py \
 
 Run the same command without `--apply` for a dry run. The script restores
 `books/dev/`, `books/eval/`, `books/HT/`, and exact unredacted versions of the
-sanitized metric/alignment files covered by the gated dataset.
+sanitized metric/alignment files covered by the gated dataset. It also creates
+`human_eval/data/part1-study-data-full.csv`,
+`human_eval/data/part2-study-data-full.csv`, and
+`human_eval/data/part2-span-study-data-full.csv` from exact replacement records.
+These participant-level files remain excluded from public GitHub.
 
 ## Public-Release Data Policy
 

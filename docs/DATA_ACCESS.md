@@ -27,7 +27,8 @@ The exact withheld-file manifest is `docs/release/withheld-files.tsv`.
 
 ## Requesting Controlled Access
 
-Researchers who need source texts or human translations should email the
+Researchers who need source texts, human translations, or the three
+human-evaluation analysis CSVs should email the
 authors with a short description of the intended research use. The controlled
 files are distributed through a gated Hugging Face dataset,
 `<HUGGING_FACE_DATASET_URL>`; users must accept the access terms before
@@ -69,8 +70,20 @@ The script uses the gated JSONL files to create the withheld source and human
 translation files under `books/dev/`, `books/eval/`, and `books/HT/`, and to
 replace sanitized metric/alignment files that contain
 `[withheld from public GitHub release]` with their controlled-access text.
-The script does not restore out-of-scope internal workspaces or raw private
-study records that are not part of the gated release.
+It also creates these participant-level analysis inputs from exact replacement
+records in `lait_restoration_data.jsonl`:
+
+- `human_eval/data/part1-study-data-full.csv`
+- `human_eval/data/part2-study-data-full.csv`
+- `human_eval/data/part2-span-study-data-full.csv`
+
+These files remain excluded from public GitHub. The script creates missing
+directories automatically, validates payload SHA-256 hashes, and refuses to
+overwrite differing unredacted files unless `--force` is supplied.
+`--skip-replacement-files` also skips these CSVs.
+
+The script does not restore out-of-scope internal workspaces, `events.csv`,
+or `study-data-full.json`.
 
 ## Public Release Audit
 

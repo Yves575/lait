@@ -5,6 +5,11 @@
 .venv-metricx/
 venv/
 
+# Controlled-access downloads and local sharing bundles
+hf_dataset/
+controlled_access/
+controlled_access.zip
+
 # Data paths
 request/
 books/all/

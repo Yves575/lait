@@ -2,7 +2,8 @@
 """Restore controlled-access LAIT data into the public-release tree.
 
 The public GitHub release intentionally replaces source, human-translation, and
-some segment-level text fields with a placeholder. This script consumes the
+some segment-level text fields with a placeholder, and omits participant-level
+human-evaluation CSVs. This script consumes the
 controlled-access JSONL files intended for the gated dataset release and
 materializes the withheld data locally.
 
@@ -73,7 +74,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--skip-replacement-files",
         action="store_true",
-        help="Do not restore exact sanitized metric/alignment files.",
+        help="Do not restore exact metric/alignment files or human-evaluation CSVs.",
     )
     parser.add_argument(
         "--force",
